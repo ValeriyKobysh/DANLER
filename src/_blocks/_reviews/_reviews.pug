@@ -1,0 +1,13 @@
+mixin reviewsItem()
+    li.reviews__item
+        span.reviews__avatar
+            img(src="http://placehold.it/100x100/2e2e2e", alt="")
+        p.reviews__comment  Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Которое лучше страна однажды по всей, скатился строчка даль запятых, большого ему текста использовало, заманивший одна инициал составитель живет силуэт знаках.
+        span.reviews__name  Lorem ipsum.
+        a.reviews__link(href="reviews.html") все отзывы
+
+section.reviews
+    ul.reviews__list
+        +reviewsItem()
+        +reviewsItem()
+        +reviewsItem()

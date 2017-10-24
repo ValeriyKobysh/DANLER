@@ -1,0 +1,56 @@
+.video
+    width: 100%
+    margin-bottom: 38px
+    position: relative
+    & > img
+        width: 100%
+    &__link
+        position: absolute
+        top: 50%
+        left: 50%
+        margin-top: -50px
+        margin-left: -50px
+        +size(100px)
+        fill: $hoverLink
+        transition: fill 0.3s ease
+        &:hover
+            fill: $white
+.popup-video
+    position: fixed
+    top: 0
+    left: 0
+    +size(100%)
+    background-color: rgba($black, .8)
+    z-index: 10000
+    display: none
+    align-items: center
+    justify-content: center
+    &_show
+        display: flex!important
+    &__wrap
+        +size(940px, 530px)
+        position: relative
+        & > iframe
+            +size(100%)
+            display: block!important
+    &__close
+        +size(40px)
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        right: 0px
+        top: -40px
+        background-color: $bodyColor
+        transition: all 0.3s ease
+        &:hover
+            background-color: lighten($bodyColor, 10%)
+        &:after, &:before
+            content: ""
+            +size(20px, 1px)
+            background-color: $white
+            position: absolute
+        &:after
+            transform: rotateZ(45deg)
+        &:before
+            transform: rotateZ(-45deg)

@@ -1,0 +1,107 @@
+.slider
+    float: left
+    position: relative
+    overflow: hidden
+
+    .owl-carousel
+        height: 520px
+    .owl-carousel .owl-controls .owl-nav .owl-prev, .owl-carousel .owl-controls .owl-nav .owl-next
+        display: inline-block
+        text-align: center
+        +size(60px)
+        background-color: rgba($hoverLink, .7)
+        transition: 0.5s
+        position: absolute
+        margin: 0
+        border-radius: 0
+        &:hover
+            background-color: $hoverLink
+    .owl-carousel .owl-controls .owl-nav,.owl-carousel .owl-controls .owl-dots
+        position: absolute
+    .owl-carousel .owl-controls .owl-nav
+        width: 100%
+        top: 45%
+    .owl-carousel .owl-controls .owl-dots
+        text-align: center
+        width: 100%
+        top: 90%
+    .owl-carousel .owl-controls .owl-nav .owl-prev
+        left: 0
+    .owl-carousel .owl-controls .owl-nav .owl-next
+        right: 0
+    .owl-carousel .owl-controls .owl-dot
+        display: inline-block
+        vertical-align: middle
+    .owl-dots .owl-dot span
+        display: block
+        margin-right: 10px
+        width: 10px
+        height: 10px
+        background-color: $darkGrey
+        border-radius: 50%
+        &:hover
+            background-color: $hoverLink
+    .owl-dots .active span
+        background-color: $hoverLink
+        +size(12px)
+    .icon-left-open-big, .icon-right-open-big
+        font-size: rem(20px)
+        display: inline-block
+        margin-top: 25%
+        &:before
+            margin: 0
+            width: 0.5em
+.typed-cursor
+    opacity: 1
+    -webkit-animation: blink 0.7s infinite
+    -moz-animation: blink 0.7s infinite
+    animation: blink 0.7s infinite
+@keyframes blink
+    0%
+        opacity: 1
+    50%
+        opacity: 0
+    100%
+        opacity: 1
+@-webkit-keyframes blink
+    0%
+        opacity: 1
+    50%
+        opacity: 0
+    100%
+        opacity: 1
+@-moz-keyframes blink
+    0%
+        opacity: 1
+    50%
+        opacity: 0
+    100%
+        opacity: 1
+.slider-item
+    position: relative
+    .orange
+        color: $hoverLink
+    &-image
+        height: 520px
+.typed-string
+    text-align: center
+    font-size: rem(24px)
+    line-height: rem(36px)
+    padding: 20px 0
+    position: absolute
+    z-index: 10
+    width: 100%
+    background-color: rgba($bodyColor, .8)
+    &-circle
+        text-align: center
+        font-size: rem(24px)
+        line-height: rem(36px)
+        padding: 40px 0 20px
+        position: absolute
+        z-index: 10
+        right: 20px
+        top: 20px
+        width: 200px
+        height: 200px
+        border-radius: 50%
+        background-color: rgba($bodyColor, .8)

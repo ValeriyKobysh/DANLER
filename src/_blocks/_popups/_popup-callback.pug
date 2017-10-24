@@ -1,0 +1,19 @@
+.modal-window
+    .modal-call-back
+        input.modal-state#modal-1(type="checkbox")
+        .modal-fade-screen
+            .modal-inner
+                .modal-close
+                p.modal-inner-description Оставьте свой номер телефона и представитель компании свяжется с Вами в ближайшее время
+                .input-wrapper
+                    input.error-input.pop-up-input.your-name(type="text" placeholder="Как Вас зовут?")
+                    span.must *
+                    label.error-label Test error-label
+                .input-wrapper
+                    input.pop-up-input.your-email(type="email" placeholder="Введите Ваш email")
+                    label.error-label
+                .input-wrapper
+                    input.pop-up-input.number-phone(type="tel" maxlength="12" placeholder="Введите Ваш телефон")
+                    span.must *
+                    label.error-label
+                button.call(type="submit") Перезвонить

@@ -1,0 +1,17 @@
+.s-categories
+    &__list
+        padding: 0 10px
+    &__item
+        width: calc(50% - 5px)
+        margin-bottom: 10px
+        &:nth-child(even)
+            margin-left: 5px
+        &:nth-child(odd)
+            margin-right: 5px
+        &:last-child, &:nth-last-child(2)
+            margin-bottom: 0
+    &__text, &__count
+        font-size: rem(12px)
+        line-height: rem(20px)
+    .text-block
+        padding: 0 20px

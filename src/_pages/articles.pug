@@ -1,0 +1,20 @@
+extends ../_templates/_text-page-templete
+mixin articles()
+    li.section-article-item
+        image.section-article__image(src="img/articles/article-image.png")
+        .section-article-item-wrapper
+            p.section-article-item-heading Разборка мерседес спринтер
+            p.section-article-date
+                image.section-article-date-icon(src="img/icon-calendar.png")
+                span.section-article-date-text Январь, 17, 2017
+            p.section-article-preview Специализированная разборка спринтер (Mercedes Sprinter) от компании Danler – это качественный десятилетний труд профессиональной команды.
+            a.section-article-link(href="article.html") Читать дальше
+block title
+    title Список статей
+block main_content
+    section.section.section_full.section-article
+        h1.section__heading Статья
+        ul.section-article-list
+            - for (var i = 0; i < 1; i++)
+                +articles()
+        include ../_blocks/_pagination/_pagination

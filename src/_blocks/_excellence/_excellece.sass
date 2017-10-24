@@ -1,0 +1,43 @@
+.excellence
+    &__heading, &__title, &__description
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+
+    &__heading
+        color: $bodyColor
+        font-weight: 600
+        line-height: rem(24px)
+        background-color: $hoverLink
+
+    &__list
+        display: flex
+
+    &__item
+        background-color: $bodyColor
+        padding: 14px 20px
+        position: relative
+        overflow: hidden
+
+    &__title
+        text-align: center
+        font-size: rem(18px)
+        font-weight: 600
+        margin-bottom: 15px
+
+    &__icon
+        display: inline-block
+        width: 100%
+        text-align: center
+        margin-bottom: 15px
+
+        & > svg
+            +size(100px)
+            margin: 0
+            fill: none
+            stroke: $hoverLink
+
+    &__description
+        font-size: rem(12px)
+        line-height: rem(18px)

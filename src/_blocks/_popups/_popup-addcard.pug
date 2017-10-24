@@ -1,0 +1,28 @@
+.modal-window
+    .modal-add-product
+        input.modal-state-add-product#modal-add-product(type="checkbox")
+        .modal-fade-screen
+            .modal-inner
+                .modal-close
+                p.modal__heading Вы добавили в корзину
+                span.modal__photo
+                    img.photo(src="/img/product/product-photo-analog.png")
+                span.modal__description Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)
+                a.modal__item-delete(href="#")
+                    span.fa.fa-trash-o(aria-hidden="true")
+                .modal__count.count
+                    p.count__text
+                        span.mark_accent-color Цена:
+                        |1 234 грн. х 1
+                    a.count__link(href="#")
+                        span.icon-plus
+                    a.count__link(href="#")
+                        span.icon-minus
+                .modal__total.total
+                    span.total__text Итого:
+                    span.total__count
+                        span.mark_accent-color 2 468
+                        |грн.
+                .modal__buttons.buttons
+                    a.buttons__link.buttons__link_left(href="#") Продолжить покупки
+                    a.buttons__link.buttons__link_right(href="#") Оформить заказ

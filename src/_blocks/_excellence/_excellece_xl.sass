@@ -1,0 +1,26 @@
+.excellence
+
+    &__heading
+        height: 60px
+        font-size: rem(20px)
+        margin-bottom: 20px
+
+    &__list
+        margin-bottom: 73px
+
+    &__item
+        width: 25%
+
+        &:after
+            content: ""
+            position: absolute
+            top: 40px
+            right: 0
+            +size(1px, 160px)
+            background-color: $white
+
+        &:last-child:after
+            +size(0)
+
+    &__description
+        // margin: 0 20px

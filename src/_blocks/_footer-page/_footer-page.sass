@@ -1,0 +1,42 @@
+.footer-page
+    background-color: $headFooColor
+    &__container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+        color: $white
+        height: 100%
+    &__copyright
+        color: rgba($white,.7)
+        font-size: rem(14px)
+    .social-icon
+        &-list
+            display: flex
+        &-item
+        &-link
+            display: block
+            border: 2px solid $white
+            +size(40px)
+            line-height: 40px
+            text-align: center
+            transition: all 0.5s ease
+            &:hover
+                border: 2px solid $hoverLink
+                color: $hoverLink
+        &-pic
+            font-size: rem(20px)
+
+.bot-navigation
+    .menu
+        &-list
+            display: flex
+            justify-content: space-between
+        &-item
+            &-link
+                color: rgba($white,.7)
+                font-size: rem(14px)
+                font-weight: 600
+                transition: color 0.5s
+                &:hover
+                    color: $hoverLink

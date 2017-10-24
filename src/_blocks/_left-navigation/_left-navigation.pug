@@ -1,0 +1,49 @@
+mixin leftSubNav()
+    .left-subnavigation-item
+        a.left-subnavigation-link(href="#")
+            case leftMenu
+                when 0
+                    figure
+                        span.left-subnavigation-image
+                            img(src="img/category/engines.png")
+                        figcaption
+                            span.left-subnavigation-text Двигатель. Детали двигателя
+                            span.left-subnavigation-text-count  (20)
+                when 1
+                    span.left-subnavigation-text Двигатель. Детали двигателя
+                    span.left-subnavigation-text-count  (20)
+mixin leftNav()
+    .left-navigation-item
+        a.left-navigation-link(href="#")
+            case leftMenu
+                when 0
+                    span.left-navigation-image
+                        img(src="img/mercedes-sprinter.png", alt="")
+                    span.left-navigation-text Разборка<br />Мерседес Вито<br />(1999-2003)
+                    span.icon-right-open-big
+                when 1
+                    span.left-navigation-text Разборка Мерседес Вито (1999-2003)
+                    span.icon-down-open-big
+        .left-subnavigation-list
+            .left-subnavigation-wrapper
+                +leftSubNav()
+                +leftSubNav()
+                +leftSubNav()
+                +leftSubNav()
+                +leftSubNav()
+                +leftSubNav()
+                +leftSubNav()
+                +leftSubNav()
+                +leftSubNav()
+
+aside.left-navigation
+    .left-navigation-list
+        +leftNav()
+        +leftNav()
+        +leftNav()
+        +leftNav()
+        +leftNav()
+        +leftNav()
+            //- include _products_page_left_subnavigation.jade
+    if leftMenu == 1 
+        include ../_section-banner/_section-banner

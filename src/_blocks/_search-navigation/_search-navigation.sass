@@ -1,0 +1,139 @@
+.search-navigation
+    background-color: $lightGrey
+    border-top-left-radius: 20px
+    border-top-right-radius: 20px
+    height: 80px
+    position: relative
+    +clearfix()
+    .catalog-heading
+        color: $black
+        font-size: rem(24px)
+        line-height: rem(30px)
+        font-style: italic
+        text-transform: uppercase
+        font-weight: 700
+        float: left
+        +size(380px, 80px)
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-right: 40px
+        position: relative
+        z-index: 100
+        background-color: $hoverLink
+        box-shadow: 0px 0px 20px 0px rgba($darkGrey, 0.04)
+    .dropp
+        float: left
+        +size(220px, 60px)
+        margin: 10px 0
+        position: relative
+        &:after
+            content: ""
+            position: absolute
+            display: block
+            top: 10px
+            right: 0
+            +size(1px, 40px)
+            background-color: $color-grey-opacity
+        .dropp-header
+            height: 100%
+            background: $white
+            color: $color-grey-opacity
+            position: relative
+            .dropp-header-title
+                display: inline-block
+                font-size: rem(18px)
+                font-weight: 400
+                padding: 15px 0 16px 8px
+            .dropp-header-btn
+                position: absolute
+                top: 25%
+                right: 20px
+                color: $color-grey-opacity
+                .icon-down-open-big
+                    font-size: rem(22px)
+        .dropp-body
+            overflow: hidden
+            width: 100%
+            max-height: 0
+            background: $white
+            color: $color-grey-opacity
+            transition: all 0.3s ease-in-out
+            margin-top: 2px
+            position: absolute
+            z-index: 10
+            &.js-open
+                max-height: 200em
+            label
+                display: block
+                color: $color-grey-opacity
+                text-transform: uppercase
+                cursor: pointer
+                font-size: rem(16px)
+                padding: 10px
+                transition: all 0.3s
+                &:hover,&.js-open
+                    color: black
+                > input
+                    display: none
+    .search-panel
+        float: left
+        position: relative
+        float: left
+        height: 60px
+        margin: 10px 0
+        .search-input
+            +size(100%, 60px)
+            padding: 0 80px 0 20px
+            background: $white
+            font-weight: 400
+            font-family: 'Open Sans', sans-serif
+            font-size: rem(18px)
+            border: none
+            outline: none
+            &::-webkit-input-placeholder
+                font-weight: normal
+            &::-moz-placeholder
+                font-weight: 400
+            &:-ms-input-placeholder
+                font-weight: 400
+            &:-moz-placeholder
+                font-weight: 400
+        .submit
+            position: absolute
+            right: 0
+            top: 0
+            +size(60px)
+            border: none
+            outline: none
+            cursor: pointer
+            background-color: $black
+            &:hover .icon-search
+                color: $hoverLink
+            .icon-search
+                color: $white
+                font-size: rem(24px)
+                transition: 0.5s
+    .basket
+        padding-top: 12px
+        float: left
+        height: 60px
+        margin-right: 0
+        text-align: center
+        .icon-basket
+            display: inline-block
+            padding: 11px 0
+            font-size: rem(22px)
+            color: $black
+        .count
+            font-size: rem(18px)
+            color: $black
+.text-page
+    .search-navigation
+        .catalog-heading
+            display: none
+        .dropp
+            width: 270px
+            margin-bottom: 10px
+        .search-panel
+            margin-bottom: 10px

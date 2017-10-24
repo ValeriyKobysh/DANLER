@@ -1,0 +1,35 @@
+extends ../_templates/_text-page-templete
+
+mixin reviewsItem()
+    .reviews-list__item
+        .reviews-list__left
+            span.reviews-list__avatar
+                img(src="http://via.placeholder.com/100x100/2f2f2f", alt="")
+            .reviews-list__wrap
+                span.reviews-list__name Иван Петрович
+                span.reviews-list__date 31.05.2017
+                a.reviews-list__link(href="https://www.facebook.com/") fb.com/id 1234567
+        .reviews-list__right
+            p.reviews-list__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eveniet quae rem dicta, minima doloribus repellendus nobis cum consequatur eos! Nostrum voluptatibus aliquid alias aspernatur quis dicta, harum sed. Nobis quasi commodi repudiandae ab, at nisi tenetur ipsum sed autem. Sed ex est rem iusto voluptatem eaque vitae minus quidem.
+            //- span.reviews-list__title Фото полученного товара:
+            //- ul.reviews-list__img-list
+            //-     - for(var l = 0; l < 6; l++)
+            //-         li.reviews-list__img-item
+            //-             img.reviews-list__img(src="http://via.placeholder.com/120x90", alt="")
+            //-             span.reviews-list__img-wrap
+            //-                 img.reviews-list__img_large(src="http://via.placeholder.com/600x450", alt="")
+
+block main_content
+    .section-content__container
+        .section.section_full.reviews-list
+            h1.section__heading Отзывы
+            a.reviews-list__add(href="add-review.html")
+                span.reviews-list__add-icon
+                    svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28 32" xml:space="preserve")
+                        path(d="M6,28H0v-6L6,28z M28,6L8,26l-6-6L22,0L28,6z")
+                        path(d="M0,32v-2h22v2H0z")
+                span.reviews-list__add-text Добавить отзыв
+            .reviews-list__list
+                - for(var i = 0; i < 4; i++ )
+                    +reviewsItem()
+            include ../_blocks/_pagination/_pagination

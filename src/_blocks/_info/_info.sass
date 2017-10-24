@@ -1,0 +1,94 @@
+.info
+    display: flex
+    justify-content: space-between
+    width: 100%
+    margin-bottom: 40px
+    padding: 0 20px
+
+    &__photo
+        width: 420px
+        flex-shrink: 0
+
+    &__price
+        color: $bodyColor
+        font-size: rem(14px)
+        line-height: rem(18px)
+        margin-bottom: 7px
+
+        &_color
+            background-color: $hoverLink
+
+    &__sell
+        display: flex
+        flex-wrap: wrap
+        height: 334px
+
+    &__wrap
+        display: flex
+        flex-direction: column
+        width: 140px
+        height: 75px
+
+    &__oe
+        font-size: rem(12px)
+        width: 100%
+        color: $black
+
+    &__availability
+        font-size: rem(12px)
+        line-height: rem(18px)
+        margin-bottom: 7px
+
+        &_true
+            color: $black
+
+        &_false
+            color: $darkGrey
+
+    &__art
+        display: block
+        width: 100%
+        font-size: rem(12px)
+        line-height: rem(18px)
+        color: $black
+
+    &__carousel
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+
+        &-item
+            +size(60px, 60px)
+            border: 1px solid $lightGrey
+
+            &:first-child
+                +size(100%, 315px)
+                margin-bottom: 10px
+
+                img
+                    +size(100%)
+
+            &:last-child
+                margin-right: 0px
+
+        &-link
+            display: block
+
+            img
+                +size(58px)
+
+    &__buy
+        width: 160px
+        height: 40px
+        color: $bodyColor
+        font-size: rem(14px)
+        font-weight: 600
+        padding: 10px 0 10px 10px
+        margin-bottom: 40px
+        background-color: $hoverLink
+        text-align: center
+        
+        &-icon
+            padding-right: 10px
+            border-right: 1px solid $white
+            margin-right: 35px

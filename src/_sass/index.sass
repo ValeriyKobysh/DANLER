@@ -1,0 +1,190 @@
+@import "_default_settings"
+@import "_container/_container"
+@import "_section-content/_section-content"
+@import "_mark/_mark"
+
+//General styles
+@import "../_blocks/_header-page/_header-page"
+@import "../_blocks/_mobile-menu/_mobile-menu"
+@import "../_blocks/_search-navigation/_search-navigation"
+@import "../_blocks/_basket/_basket"
+@import "../_blocks/_top-content/_top-content"
+@import "_section/_section"
+@import "../_blocks/_left-navigation/_left-navigation"
+@import "../_blocks/_slider/_slider"
+@import "../_blocks/_excellence/_excellece"
+@import "../_blocks/_main-content/_main-content"
+@import "../_blocks/_video/_video"
+@import "../_blocks/_reviews/_reviews"
+@import "../_blocks/_text-block/_text-block"
+@import "../_blocks/_breadcrumps/_breadcrumps"
+@import "../_blocks/_section-article/_section-article" 
+@import "../_blocks/_popups/_popup"
+@import "../_blocks/_section-order/_section-order"
+@import "../_blocks/_galery/_galery"
+@import "../_blocks/_pagination/_pagination"
+@import "../_blocks/_reviews-list/_reviews-list"
+@import "../_blocks/_add-review/_add-review"
+@import "../_blocks/_last-products/_last-products"
+@import "../_blocks/_404/_404"
+@import "../_blocks/_section-categories/_section-categories"
+@import "../_blocks/_section-banner/_section-banner"
+@import "../_blocks/_footer-page/_footer-page"
+@import "../_blocks/_s-contact/_s-contact"
+@import "../_blocks/_section-delivery/_section-delivery"
+@import "../_blocks/_s-product/_s-product"
+@import "../_blocks/_info/_info"
+@import "../_blocks/_about/_about"
+@import "../_blocks/_section-products/_section-products"
+@import "_error/_error"
+
+@include media-breakpoint-up($xs)
+    
+// Small devices (landscape phones, 576px and up)
+@include media-breakpoint-up($sm)  
+
+// Medium devices (tablets, 740px and up)
+@include media-breakpoint-up($md+57px)
+    @import "../_blocks/_header-page/_header-page_md_to_xl"
+    @import "../_blocks/_footer-page/_footer-page_md_to_xl"
+    @import "_section/_section_md_to_xl"
+    @import "../_blocks/_main-content/_main-content_md_to_xl"
+    @import "../_blocks/_popups/_popup_md_to_xl"
+    @import "../_blocks/_galery/_galery_md_to_xl"
+    @import "../_blocks/_last-products/_last-products_md_to_xl"
+
+// Large devices (desktops, 992px and up)
+@include media-breakpoint-up($lg)  
+    
+ // Extra large devices (large desktops, 1280px and up)
+@include media-breakpoint-up($xl+57px) 
+    @import "_section-content/_section-content_xl"
+    @import "_container/_container_xl"
+    @import "../_blocks/_header-page/_header-page_xl"
+    @import "../_blocks/_mobile-menu/_mobile-menu_xl"
+    @import "../_blocks/_search-navigation/_search-navigation_xl"
+    @import "../_blocks/_basket/_basket_xl"
+    @import "../_blocks/_footer-page/_footer-page_xl"
+    @import "_section/_section_xl"
+    @import "../_blocks/_left-navigation/_left-navigation_xl"
+    @import "../_blocks/_slider/_slider_xl"
+    @import "../_blocks/_excellence/_excellece_xl"
+    @import "../_blocks/_main-content/_main-content_xl"
+    @import "../_blocks/_video/_video_xl"
+    @import "../_blocks/_reviews/_reviews_xl"
+    @import "../_blocks/_text-block/_text-block_xl"
+    @import "../_blocks/_popups/_popup_xl"
+    @import "../_blocks/_section-order/_section-order_xl"
+    @import "../_blocks/_galery/_galery_xl"
+    @import "../_blocks/_pagination/_pagination_xl"
+    @import "../_blocks/_reviews-list/_reviews-list_xl"
+    @import "../_blocks/_add-review/_add-review_xl"
+    @import "../_blocks/_last-products/_last-products_xl"
+    @import "../_blocks/_404/_404_xl"
+    @import "../_blocks/_section-article/_section-article_xl"
+    @import "../_blocks/_section-categories/_section-categories_xl"
+    @import "../_blocks/_s-contact/_s-contact_xl"
+    @import "../_blocks/_s-product/_s-product_xl"
+    @import "../_blocks/_info/_info_xl"
+    @import "../_blocks/_about/_about_xl"
+
+//=====================================================
+
+// Extra small devices (portrait phones, less than 360px)
+@include media-breakpoint-down($xs)  
+
+// Small devices (landscape phones, less than 568px)
+@include media-breakpoint-down($sm)
+
+// Medium devices (tablets, less than 768px)
+@include media-breakpoint-down($md+57px)
+    @import "_section-content/_section-content_xs"
+    @import "_container/_container_xs"
+    @import "../_blocks/_header-page/_header-page_xs"
+    @import "../_blocks/_mobile-menu/_mobile-menu_xs"
+    @import "../_blocks/_search-navigation/_search-navigation_xs"
+    @import "../_blocks/_basket/_basket_xs"
+    @import "../_blocks/_footer-page/_footer-page_xs"
+    @import "_section/_section_xs"
+    @import "../_blocks/_left-navigation/_left-navigation_xs"
+    @import "../_blocks/_slider/_slider_xs"
+    @import "../_blocks/_main-content/_main-content_xs"
+    @import "../_blocks/_video/_video_xs"
+    @import "../_blocks/_reviews/_reviews_xs"
+    @import "../_blocks/_excellence/_excellece_xs"
+    @import "../_blocks/_text-block/_text-block_xs"
+    @import "../_blocks/_popups/_popup_xs"
+    @import "../_blocks/_section-order/_section-order_xs"
+    @import "../_blocks/_galery/_galery_xs"
+    @import "../_blocks/_pagination/_pagination_xs"
+    @import "../_blocks/_reviews-list/_reviews-list_xs"
+    @import "../_blocks/_add-review/_add-review_xs"
+    @import "../_blocks/_last-products/_last-products_xs"
+    @import "../_blocks/_404/_404_xs"
+    @import "../_blocks/_section-article/_section-article_xs"
+    @import "../_blocks/_section-categories/_section-categories_xs"
+    @import "../_blocks/_s-contact/_s-contact_xs"
+    @import "../_blocks/_s-product/_s-product_xs"
+    @import "../_blocks/_info/_info_xs"
+    @import "../_blocks/_about/_about_xs"
+    @import "../_blocks/_section-products/_section-products_xs"
+
+// Large devices (desktops, less than 992px)
+@include media-breakpoint-down($lg)
+
+// Extra large devices (desktops, less than 1280px)
+@include media-breakpoint-down($xl+57px)
+    @import "../_blocks/_search-navigation/_search-navigation_xs_to_xl"
+    @import "../_blocks/_header-page/_header-page_xs_to_xl"
+    @import "../_blocks/_left-navigation/_left-navigation_xs_to_xl"
+    @import "../_blocks/_add-review/_add-review_xs_to_xl"
+    @import "../_blocks/_section-categories/_section-categories_xs_to_xl"
+    @import "../_blocks/_text-block/_text-block_xs_to_xl"
+
+//=====================================================
+
+// Apply styles starting from large devices(992px) and up to extra large devices(1200px)
+@include media-breakpoint-between($lg, $xl) 
+
+
+// Apply styles starting from medium devices(740px) and up to large devices(1280px)
+@include media-breakpoint-between($md+57px, $xl+57px)
+    @import "_section-content/_section-content_md"
+    @import "_container/_container_md"
+    @import "../_blocks/_header-page/_header-page_md"
+    @import "../_blocks/_mobile-menu/_mobile-menu_md"
+    @import "../_blocks/_search-navigation/_search-navigation_md"
+    @import "../_blocks/_basket/_basket_md"
+    @import "../_blocks/_footer-page/_footer-page_md"
+    @import "_section/_section_md"
+    @import "../_blocks/_left-navigation/_left-navigation_md"
+    @import "../_blocks/_slider/_slider_md"
+    @import "../_blocks/_excellence/_excellece_md"
+    @import "../_blocks/_main-content/_main-content_md"
+    @import "../_blocks/_video/_video_md"
+    @import "../_blocks/_reviews/_reviews_md"
+    @import "../_blocks/_text-block/_text-block_md"
+    @import "../_blocks/_popups/_popup_md"
+    @import "../_blocks/_section-order/_section-order_md"
+    @import "../_blocks/_galery/_galery_md"
+    @import "../_blocks/_pagination/_pagination_md"
+    @import "../_blocks/_reviews-list/_reviews-list_md"
+    @import "../_blocks/_add-review/_add-review_md"
+    @import "../_blocks/_last-products/_last-products_md"
+    @import "../_blocks/_section-article/_section-article_md"
+    @import "../_blocks/_section-categories/_section-categories_md"
+    @import "../_blocks/_s-contact/_s-contact_md"
+    @import "../_blocks/_s-product/_s-product_md"
+    @import "../_blocks/_info/_info_md"
+    @import "../_blocks/_about/_about_md"
+    @import "../_blocks/_section-products/_section-products_md"
+
+
+// Apply styles starting from small devices(576px) and up to medium devices(768px)
+@include media-breakpoint-between($sm, $md) 
+
+
+// Apply styles starting from extra small devices(360px) and up to small devices(740px)
+@include media-breakpoint-between($xs, $md)
+
+

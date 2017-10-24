@@ -1,0 +1,189 @@
+.modal
+    &-call-back
+    &-state, &-state-prod, &-state-add-product
+        display: none
+        &:checked + .modal-fade-screen
+            opacity: 1
+            display: flex
+        &-prod
+    &-fade-screen
+        position: fixed
+        top: 0
+        left: 0
+        +size(100%)
+        background-color: rgba($black, 0.85)
+        opacity: 0
+        transition: opacity 0.25s ease
+        display: none
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        z-index: 99999999999
+    &-close
+        position: absolute
+        top: 0
+        right: 0
+        +size(25px)
+        background: transparent
+        cursor: pointer
+        &::after, &::before
+            position: absolute
+            top: 3
+            right: 0
+            bottom: 0
+            left: 50%
+            +size(1px, 25px)
+            background: $headFooColor
+            content: ""
+            display: block
+            transform: rotate(45deg)
+        &:hover::after, &:hover::before
+            background: $darkGrey
+        &::before
+            transform: rotate(-45deg)
+    &-inner
+        background: $white
+        max-height: 95%
+        max-width: 500px
+        overflow: auto
+        position: relative
+        transition: opacity 0.25s ease
+        color: $headFooColor
+        text-align: center
+        &-photo-prod
+            float: left
+            +size(140px)
+            margin-right: 40px
+            img
+                width: 100%
+        &-head-prod
+            text-align: left
+            float: left
+            width: 55%
+            font-size: rem(18px)
+        &-description
+            float: left
+            width: 100%
+            text-align: center
+            font-size: rem(16px)
+            line-height: rem(30px)
+            margin-bottom: 40px
+        .pop-up-input
+            font-size: rem(14px)
+            border: 1px solid $black
+            color: $black
+            width: 100%
+            outline: none
+            margin-bottom: 40px
+            padding: 14px 10px
+        .must
+            position: absolute
+            right: -15px
+            top: 0
+            color: $error
+        .error-label
+            left: 0
+            top: 45px
+        .input-wrapper
+            float: left
+            margin: 0 60px
+            width: 300px
+            position: relative
+        .call
+            width: 300px
+            border: none
+            background-color: $hoverLink
+            padding: 8px 0
+            color: $black
+            font-size: rem(24px)
+            cursor: pointer
+            outline: none
+    &-add-product
+        .modal-inner
+            padding: 10px 20px 20px
+            text-align: left
+    &__heading
+        width: 100%
+        text-align: left
+        font-size: rem(20px)
+        font-weight: 400
+        line-height: rem(30px)
+        color: $headFooColor
+        margin-bottom: 35px
+    &__photo
+        width: 100px
+        display: inline-block
+        max-height: 100px
+        float: left
+        margin-right: 20px
+        margin-bottom: 40px
+        .photo
+            width: 100%
+    &__description
+        display: inline-block
+        float: left
+        width: 300px
+        color: $darkGrey
+        max-height: 100px
+        margin-bottom: 40px
+    &__item-delete
+        color: $darkGrey
+        font-size: rem(20px)
+        float: right
+        transition: color 0.3s ease
+        &:hover
+            color: $bodyColor
+    &__count, &__total
+        float: left
+        width: 100%
+        font-size: rem(14px)
+        line-height: rem(18px)
+        color: $bodyColor
+        margin-bottom: 20px
+    &__count
+        padding-bottom: 20px
+        border-bottom: 1px solid #000
+        .count
+            &__text
+                float: left
+                margin-right: 40px
+            &__link
+                background-color: $darkGrey
+                border-radius: 50%
+                padding: 2px
+                display: inline-block
+                transition: background-color 0.3s
+                margin-right: 10px
+                &:hover
+                    background-color: $bodyColor, 9.7%
+                    .icon-plus, .icon-minus
+                        color: $hoverLink
+                .icon-plus, .icon-minus
+                    font-size: rem(14px)
+    &__total
+        .total
+            &__text
+                float: left
+            &__count
+                float: right
+    &__buttons
+        float: left
+        width: 100%
+        .buttons
+            &__link
+                background-color: $darkGrey
+                color: $white
+                font-weight: 600
+                display: block
+                width: 200px
+                text-align: center
+                font-size: rem(14px)
+                padding: 10px 0
+                transition: all 0.3s
+                &:hover
+                    color: $hoverLink
+                    background-color: lighten($bodyColor, 12%)
+                &_left
+                    float: left
+                &_right
+                    float: right

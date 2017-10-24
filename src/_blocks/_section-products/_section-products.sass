@@ -1,0 +1,296 @@
+.section-products
+    padding-left: 20px
+    padding-right: 20px
+    
+    &-filter, &-count
+        margin-bottom: 40px
+        &-wrapper-input
+            position: relative
+            display: flex
+        &-label
+            color: $darkGrey
+            font-size: rem(14px)
+            display: inline-block
+            padding: 11px 0
+            margin-right: 5px
+        &-heading
+            color: $black
+            font-size: rem(12px)
+            border: 1px solid $darkGrey
+            padding: 11px 10px
+            position: relative
+            margin-left: 4px
+            flex-shrink: 0
+            .icon
+                position: absolute
+                right: 10px
+        &-list
+            display: none
+            border: 1px solid $darkGrey
+            border-top: none
+            position: absolute
+            z-index: 2
+            width: 69%
+            top: 41px
+            background-color: $white
+            input
+                display: none
+        &-item
+            text-align: left
+            color: $black
+            font-size: rem(12px)
+            display: block
+            label
+                cursor: pointer
+                padding: 6px 10px
+                display: block
+            &:hover
+                background-color: darken($white, 38%)
+
+    &-filter
+        display: flex
+        justify-content: space-between
+
+        &-heading, &-list
+            width: 220px
+
+        &-list
+            right: 0
+            
+    &-count
+        &-wrapper-input
+            width: 20%
+
+        &-heading, &-list
+            width: 76px
+
+        &-list
+            right: -1px
+
+    &-view
+        &-wrapper-input
+            float: right
+            width: 20%
+        &-list
+            text-align: right
+            font-size: 0
+            input[type="radio"]
+                display: none
+        &-item
+            display: inline-block
+            border: 1px solid $bodyColor
+            width: 40px
+            height: 40px
+            padding: 10px
+            margin-left: 20px
+        &-icon
+            color: $darkGrey
+            cursor: pointer
+            svg
+                width: 20px
+                height: 20px
+                fill: $darkGrey
+            &:hover
+                color: $bodyColor
+    input:checked + .section-products-view-icon svg
+        fill: $bodyColor
+    &-list
+        margin-bottom: 40px
+        display: flex
+
+    &-item
+        border: 1px solid $lightGrey
+        margin-bottom: 20px
+        position: relative
+        padding: 10px
+        &:after
+            content: ""
+            position: absolute
+            bottom: -2px
+            left: 0.25%
+            height: 1px
+            width: 99.5%
+            background-color: $lightGrey
+        &-image
+            width: 100%
+            height: 160px
+            margin-right: 10px
+
+            img
+                width: 100%
+                height: 160px
+        &-button
+            
+    &-text
+        display: block
+        color: $black
+        font-size: rem(14px)
+        line-height: rem(18px)
+        width: 100%
+        height: 115px
+        overflow: hidden
+
+    &-price, &-availability, &-id-product
+        display: inline-block
+
+    &-price
+        color: $bodyColor
+        font-size: rem(14px)
+        line-height: rem(18px)
+        margin-bottom: 12px
+        width: 60%
+
+        &-color
+            background-color: $hoverLink
+
+    &-availability
+        font-size: rem(12px)
+        line-height: rem(18px)
+        text-align: right
+        color: $bodyColor
+        width: 37%
+        &-true
+            color: $black
+        &-false
+            color: $darkGrey
+    &-id-product
+        width: 100%
+        color: $darkGrey
+        font-size: rem(12px)
+        line-height: rem(18px)
+
+    &-link
+        &-to-basket, &-call-back, &-about
+            display: flex
+            align-items: center
+            height: 40px
+        &-to-basket
+            background-color: $bodyColor
+            width: 100%
+            font-weight: 600
+            font-size: rem(14px)
+            line-height: rem(18px)
+            margin-bottom: 20px
+            transition: 0.5s
+            &:hover
+                background-color: $darkGrey
+            &-icon
+                font-size: rem(16px)
+                padding: 0 20px
+                border-right: 1px solid #fff
+                margin-right: 40px
+                color: $hoverLink
+        &-call-back
+            background-color: $hoverLink
+            color: $bodyColor
+            width: 40px
+            padding: 3px
+            font-size: rem(24px)
+        &-about
+            width: 160px
+            color: $bodyColor
+            border: 1px solid $bodyColor
+            padding: 7px 0
+            font-size: rem(14px)
+            &-text
+
+            &:hover .section-products-link-about-icon svg
+                fill: $hoverLink
+            &-icon
+                padding: 0 20px
+                transition: 0.5s
+                svg
+                    width: 20px
+                    height: 20px
+    &-inline
+        .section-products
+            &-list
+                flex-direction: column
+
+            &-item
+                width: 100%
+                display: flex
+
+                & > *
+                    flex-shrink: 0
+
+                &-image
+                    width: 220px
+                    height: 165px
+
+                &-text
+                    margin-right: 20px
+                    padding-right: 20px
+                    width: 250px
+                    border-right: 2px solid $lightGrey
+
+                &-button
+                    width: 213px
+                    display: flex
+                    flex-wrap: wrap
+                    align-items: flex-end
+
+            &-link
+
+                &-to-basket
+                    margin-top: 50px
+                    margin-bottom: 0
+
+                &-call-back
+                    margin-right: 13px
+
+    &-block
+
+        .section-products
+
+            &-list
+                flex-wrap: wrap
+                justify-content: space-between
+
+            &-item
+                height: 287px
+                width: calc(100% / 3 - 10px)
+                overflow: hidden
+                border-bottom: 2px solid $lightGrey
+
+                &-image
+
+                    margin-bottom: 10px
+
+                &-text
+
+                &-button
+                    width: calc(100% + 22px)
+                    margin: 3px -11px
+                    padding: 0 10px 20px 10px
+                    z-index: 10
+                    left: 0
+                    position: relative
+                    background-color: $white
+                    display: flex
+                    flex-wrap: wrap
+                    &:after
+                        content: ""
+                        position: absolute
+                        bottom: -2px
+                        left: 0.25%
+                        height: 1px
+                        width: 99.5%
+                        background-color: $hoverLink
+                &:hover
+                    border-color: $hoverLink
+                    border-bottom: none
+                    overflow: visible
+                    &:after
+                        height: 0
+                    & .section-products-item-button
+                        border: 1px solid $hoverLink
+                        border-top: none
+            &-link
+                &-call-back
+                    margin-right: 10px
+
+            &-text
+                height: 70px
+            &-id-product
+                display: none

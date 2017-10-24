@@ -1,0 +1,164 @@
+.home-page
+    .left-navigation
+        float: left
+        width: 380px
+        position: relative
+        margin-right: 40px
+        &-item
+            // +clearfix
+            background-color: $white
+            font-size: 0
+            cursor: pointer
+            &:last-child
+                &:hover
+                    border-bottom: none
+            &:hover
+                border-bottom: 1px solid #000
+                .left-subnavigation-list
+                    opacity: 1
+                    top: 0
+        &-link
+            display: block
+            color: lighten($black, 13%)
+            margin-bottom: 1px
+            position: relative
+            &:before
+                content: ''
+                position: absolute
+                top: 0
+                left: 0
+                +size(100%)
+            &:hover
+                margin-bottom: 0
+                &:before
+                    background-color: rgba(lighten($black, 61.8%), 0.7)
+                .left-navigation-text
+                    color: $white
+                .icon-right-open-big
+                    color: $hoverLink
+        &-image
+            width: 42%
+            height: 86px
+
+            img
+                height: 100%
+
+        &-image, &-text
+            display: inline-block
+            vertical-align: middle
+        &-text
+            width: 58%
+            color: lighten($black, 13%)
+            font-size: rem(15px)
+            line-height: rem(24px)
+            position: relative
+            padding: 0 45px 0 17px
+            z-index: 1
+            transition: all 0.1s ease
+        .icon-right-open-big
+            font-size: rem(44px)
+            color: lighten($black, 62%)
+            position: absolute
+            bottom: 20%
+            right: 0
+            z-index: 1
+            transition: all 0.3s ease
+    .left-subnavigation
+        &-list
+            position: absolute
+            top: -9999px
+            left: 100%
+            width: 821px
+            opacity: 0
+            transition: opacity 0.5s
+            border-left: 40px solid transparent
+            z-index: 2
+        &-wrapper
+            background-color: rgba($white,.9)
+            display: flex
+            flex-wrap: wrap
+            align-content: flex-start
+            min-height: 605px
+        &-item
+            text-align: center
+            width: 260px
+            height: 122px
+        &-link
+            display: block
+            border: 2px solid transparent
+            &:hover
+                border: 2px solid $hoverLink
+        &-image
+            display: block
+            padding: 8px 0
+            height: 94px
+            vertical-align: middle
+            & img
+                position: relative
+                top: 50%
+                transform: translateY(-50%)
+        &-text
+            margin-right: 5px
+        &-text, &-text-count
+            font-size: rem(14px)
+            color: lighten($black, 13%)
+            margin-bottom: 4px
+            display: inline-block
+        &-text-count
+            font-weight: 700
+
+.products-page
+    .left-navigation
+        float: left
+        width: 380px
+        position: relative
+        margin-bottom: 40px
+        &-list
+            background-color: $white
+            border: 1px solid darken($white, 29.5%)
+            border-top: none
+            width: 100%
+            margin-bottom: 40px
+            min-height: 768px
+        &-item
+            position: relative
+        &-link
+            display: block
+            color: $darkGrey
+            text-transform: uppercase
+            font-size: rem(12px)
+            line-height: rem(30px)
+            transition: color 0.5s ease
+            padding: 12px 0 6px
+            &:hover
+                color: $black
+        &-text
+            padding-left: 40px
+            padding-right: 65px
+            display: inline-block
+            font-weight: 600
+        .is-active
+            color: $black
+        .icon-down-open-big
+            position: absolute
+            font-size: 22px
+            right: 35px
+            top: 10px
+    .left-subnavigation
+        &-list
+            display: none
+    .left-subnavigation
+        &-link
+            display: block
+            color: $darkGrey
+            font-size: rem(14px)
+            transition: color 0.5s
+            margin-bottom: 10px
+            &:hover
+                color: $black
+        &-text
+            padding-left: 40px
+            &-active
+                font-weight: 700
+            &-count
+                font-weight: 700

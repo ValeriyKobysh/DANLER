@@ -1,0 +1,98 @@
+.section-article
+
+    &-wrapper
+        width: 72%
+        margin: 0 auto
+        margin-bottom: 30px
+
+    &-image
+        max-width: 45%
+        float: left
+        margin-right: 20px
+
+    &-date
+
+        &-icon
+            
+        &-text
+            margin-left: 10px
+            color: $headFooColor
+            font-size: rem(14px)
+            line-height: rem(30px)
+
+    .share
+        margin-bottom: 40px
+
+        span
+            color: black
+            margin-right: 35px
+
+        .social-icon
+
+            &-list
+                display: inline-block
+
+            &-item
+                display: inline-block
+                margin-right: 5px
+
+            &-link
+                border: 2px solid black 
+                color: black
+
+    &-list
+        display: flex
+        flex-wrap: wrap
+
+    &-item
+        cursor: pointer
+        color: $headFooColor
+        border: 1px solid $lightGrey
+        transition: all 0.5s
+
+        &:hover
+            border: 1px solid $hoverLink
+
+            .section-article-link
+                background-color: $headFooColor
+                color: $hoverLink
+
+        &-wrapper
+            padding: 20px
+
+        &-heading
+            font-size: rem(18px)
+            text-align: center
+            font-weight: 600
+            margin-bottom: 10px
+            height: 48px
+            overflow: hidden
+
+        .section-article
+
+            &-image
+                display: block
+                height: 193px
+                overflow: hidden
+
+            &-date
+                text-align: left
+                margin-bottom: 15px
+                
+    &-preview
+        font-size: rem(16px)
+        line-height: rem(24px)
+        margin-bottom: 25px
+        height: 115px
+        overflow: hidden
+
+    &-link
+        float: right
+        display: inline-block
+        background-color: $darkGrey
+        padding: 12px 40px
+        transition: all 0.5s
+        margin-bottom: 20px
+
+    &__image
+        width: 100%

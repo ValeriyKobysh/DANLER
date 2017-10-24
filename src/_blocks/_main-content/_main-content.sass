@@ -1,0 +1,89 @@
+.home-page
+
+    .main-content
+        display: flex
+        flex-direction: column
+
+        .main-heading
+            line-height: rem(24px)
+            font-weight: 700
+            color: $bodyColor
+            text-align: center
+
+        .second-heading
+            font-weight: 600
+            text-align: center
+            color: $bodyColor
+
+        .accordion-tabs-minimal 
+            font-size: 0
+            margin-bottom: 40px
+            +clearfix()
+
+            .tab-header-and-content 
+                list-style: none
+                display: inline
+                position: relative
+
+                &:last-child
+
+                    .tab-link:after
+                        +size(0)
+
+                .tab-link 
+                    color: $bodyColor
+                    background-color: darken($white, 12%)
+                    display: inline-block
+                    position: relative
+                    font-weight: 600
+                    width: 25%
+                    text-align: center
+                    padding: 7px 0
+
+                    &:after
+                        content: ""
+                        position: absolute
+                        top: 2px
+                        left: 0
+                        +size(1px, 35px)
+                        background-color: $white
+
+                    &.is-active 
+                        background-color: $hoverLink
+
+                        &:after
+                            +size(0)
+
+                    .triangle
+                        display: none
+                        position: absolute
+                        bottom: -12px
+                        +size(20px)
+                        z-index: 1
+                        fill: $hoverLink
+
+            .tab-content 
+                display: none
+                float: left
+                border: 4px solid darken($white, 12%);
+                border-top: none
+                color: $bodyColor
+                line-height: rem(24px)
+
+                .image
+                    float: left
+                    overflow: hidden
+
+                    &-pic
+                        height: 100%
+
+                .text
+                    float: right
+                    height: 100%
+                    position: relative
+
+                    .line
+                        position: absolute
+                        stroke: $hoverLink
+                        stroke-width: 3px
+                        +size(100px, 50px)

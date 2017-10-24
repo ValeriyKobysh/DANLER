@@ -1,0 +1,37 @@
+.about
+    margin-bottom: 20px
+    padding: 0 20px
+    &-description, &-heading, .section-product-about-description
+        padding: 0 20px
+
+    &-description
+        margin-bottom: 20px
+
+    &-heading
+        font-weight: 600
+        margin-bottom: 10px
+
+    &-item
+        background-color: darken($white, 5%)
+        border-bottom: 1px solid $white
+        width: 100%
+        font-size: 0
+
+        &:nth-child(odd)
+            background-color: $lightGrey
+
+    .left-col
+        display: inline-block
+        vertical-align: middle
+        width: 20%
+        border-right: 1px solid $white
+        padding: 13px 0 13px 20px
+        font-size: rem(14px)
+        
+    .right-col
+        font-size: rem(14px)
+        display: inline-block
+        vertical-align: middle
+        padding: 13px 0 13px 20px
+        width: 80%
+        padding-left: 10px

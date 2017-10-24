@@ -1,0 +1,26 @@
+.pagination
+    text-align: center
+    margin-bottom: 40px
+    &-item
+        display: inline-block
+        margin-right: 8px
+    &-link
+        color: $darkGrey
+        +size(40px)
+        font-size: rem(16px)
+        line-height: rem(40px)
+        display: block
+        border: 1px solid $lightGrey
+        transition: all 0.5s ease
+        &:hover
+            border: 1px solid $hoverLink
+            color: $black
+        &-active
+            border: none
+            background-color: $lightGrey
+            &:hover
+                border: none
+                color: $darkGrey
+    .icon-right-open-big, .icon-left-open-big
+        &:before
+            margin: 0

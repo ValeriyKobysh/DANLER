@@ -1,0 +1,120 @@
+.header-page
+    height: 140px
+
+    &__top
+        background-color: $headFooColor
+        height: 40px
+        display: flex
+        align-items: center
+
+    &__bot
+        height: 100px
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        .top-navigation
+
+            .menu
+
+                &-list
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+
+                &-item
+
+                    &-link
+                        color: $white
+                        font-size: rem(20px)
+                        position: relative
+                        display: block
+                        // padding: 10px 17px
+                        
+                        &:after, &:before
+                            content: ''
+                            position: absolute
+                            left: 0
+                            background: $hoverLink
+                            transition: transform 0.1s
+                            transition-timing-function: cubic-bezier(1, 0.68, 0.16, 0.9)
+                            /* top and bottom line */
+                            +size(100% 1.5px)
+                            transform: scale3d(0, 1, 1)
+                        /* top line */
+                        &:before
+                            top: 0
+                            transform-origin: 0 50%
+                            /* Delays (first reverse, then current) */
+                            transition-delay: 0.1s
+                        /* bottom line */
+                        &:after
+                            bottom: 0
+                            transform-origin: 100% 50%
+                            /* Delays (first reverse, then current) */
+                            transition-delay: 0.3s
+        .call-back
+            &-link
+                background-color: $darkGrey
+                border: 0
+                border-radius: 10px
+                transition: all 0.5s ease
+                cursor: pointer
+                display: flex
+                justify-content: center
+                align-items: center
+                outline: none
+                &:hover
+                    background-color: $bodyColor
+            &-text
+                color: $white
+    .mobile-menu
+        margin-left: 1px
+        +size(40px)
+        position: relative
+        .mobile-menu-pic
+            position: absolute
+            top: -9px
+            left: 0
+            display: block
+            +size(40px)
+            font-size: rem(40px)
+            &:before
+                margin: 0
+    &__logo
+        text-align: center
+        text-transform: uppercase
+        font-size: rem(12px)
+
+        & img
+            height: 70%
+
+        &-text
+            display: block
+            
+    &__navigation
+        flex-grow: 1
+        padding: 0 15px
+    &-call-back
+.contact-info
+    display: flex
+    position: relative
+.phone-list, .show-all-phone, .location-list
+    float: left
+.phone-list
+    display: none
+
+.phone-link, .location-text, .show-all-phone-link, .show-all-phone-text
+    color: $white
+    font-weight: 400
+    vertical-align: middle
+.icon-item
+    font-size: rem(24px)
+    vertical-align: middle
+    color: $hoverLink
+.show-all-phone
+    &-link
+        line-height: 33px
+        font-weight: 600
+        margin-left: 5px
+        border-bottom: 1px solid $hoverLink

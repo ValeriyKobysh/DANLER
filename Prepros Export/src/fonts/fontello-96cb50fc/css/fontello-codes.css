@@ -1,0 +1,22 @@
+
+.icon-mobile-menu-open:before { content: '\e800'; } /* '' */
+.icon-phone:before { content: '\e801'; } /* '' */
+.icon-down-open-big:before { content: '\e802'; } /* '' */
+.icon-left-open-big:before { content: '\e803'; } /* '' */
+.icon-right-open-big:before { content: '\e804'; } /* '' */
+.icon-up-open-big:before { content: '\e805'; } /* '' */
+.icon-basket:before { content: '\e806'; } /* '' */
+.icon-search:before { content: '\e807'; } /* '' */
+.icon-location:before { content: '\e808'; } /* '' */
+.icon-cancel:before { content: '\e809'; } /* '' */
+.icon-plus:before { content: '\e80a'; } /* '' */
+.icon-minus:before { content: '\e80b'; } /* '' */
+.icon-th-large:before { content: '\e80c'; } /* '' */
+.icon-at:before { content: '\e80d'; } /* '' */
+.icon-twitter:before { content: '\f099'; } /* '' */
+.icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-list-bullet:before { content: '\f0ca'; } /* '' */
+.icon-vkontakte:before { content: '\f189'; } /* '' */
+.icon-cart-plus:before { content: '\f217'; } /* '' */
+.icon-odnoklassniki:before { content: '\f30c'; } /* '' */
+.icon-gplus:before { content: '\f30f'; } /* '' */

@@ -1,0 +1,31 @@
+extends ../_templates/_text-page-templete
+
+//- mixin reviewsItem()
+
+block main_content
+    .section-content__container
+        .section.section_full.add-review
+            include ../_blocks/_breadcrumps/_breadcrumps
+            h1.section__heading Добавление отзыва
+            form.add-review__form
+                .add-review__top
+                    .add-review__left
+                        img.add-review__avatar(src="http://via.placeholder.com/100x100", alt="")
+                        label.add-review__avatar-select
+                            input#avatar-file(type="file")
+                            | Выберите фото
+                    .add-review__right
+                        input.add-review__field.error-input(type="text" placeholder="Ваше имя")
+                        input.add-review__field(type="text" placeholder="Ссылка на отзыв")
+                .add-review__bot
+                    textarea.add-review__review
+                    //- ul.add-review__photo-list
+                    //-     li.add-review__photo-item
+                    //-         img(src="http://via.placeholder.com/120x90", alt="")
+                    .add-review__buttons
+                        //- label.add-review__photo-select Добавить фото
+                        //-     img.add-review__photo-icon(src="img/icon-pic.png", alt="")
+                        //-     input#photo-file(type="file" multiple)
+                        button.add-review__submit(type="button") Добавить отзыв
+block custom_scripts
+    script(src="js/_add-review.js")

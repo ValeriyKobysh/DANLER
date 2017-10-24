@@ -1,0 +1,29 @@
+.footer-page
+    height: 250px
+    &__copyright
+        width: 100%
+        order: 1
+        text-align: center
+    &__navigation
+        +size(50%, 160px)
+    &__social-icon
+        +size(100px, 160px)
+    .social-icon
+        &-list
+            flex-wrap: wrap
+            justify-content: space-between
+            height: 100%
+        &-item
+            margin-bottom: 20px
+            &:nth-child(5), &:nth-child(6)
+                margin-bottom: 0
+.bot-navigation
+    height: 100%
+    .menu
+        &-list
+            height: 100%
+            flex-direction: column
+            justify-content: space-between
+        &-item
+            width: 100%
+            text-align: center

@@ -1,0 +1,9 @@
+.wrapper-page
+    position: relative
+    min-height: 100%
+    padding-bottom: 120px /*change to padding-bottom = height footer*/
+    min-width: 360px
+    +media(max-width (map-get($breakpoints, desktop))+30px)
+        padding-bottom: 150px
+    +media(max-width (map-get($breakpoints, tablet))+30px)
+        padding-bottom: 250px

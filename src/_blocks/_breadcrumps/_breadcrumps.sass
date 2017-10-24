@@ -1,0 +1,40 @@
+.breadcrumps
+    margin-bottom: 26px
+    padding-left: 20px
+
+    &-list
+        display: flex
+        flex-wrap: wrap
+        width: 85%
+        vertical-align: top
+
+    &-item
+        display: inline-block
+
+        &:last-child
+
+            .breadcrumps-link:after
+                content: ""
+
+    &-link
+        color: lighten($black, 40.5%)
+        font-size: rem(12px)
+
+        &:after
+            content: '/'
+            color: $black
+            margin-right: 5px
+            margin-left: 5px
+
+        &:hover
+            color: $black
+
+    &-home
+        font-size: 0
+        display: inline-block
+        vertical-align: top
+        margin-right: 7px
+
+        svg
+            width: 20px
+            height: 20px

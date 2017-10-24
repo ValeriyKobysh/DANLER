@@ -1,0 +1,31 @@
+.slider
+    +size(100%, 257px)
+    .owl-carousel
+        height: auto
+    .owl-carousel .owl-controls .owl-nav .owl-prev, .owl-carousel .owl-controls .owl-nav .owl-next
+        +size(40px)
+    .owl-carousel .owl-controls .owl-nav
+        top: 45%
+    .owl-carousel .owl-controls .owl-dots
+        bottom: 20px
+    .icon-left-open-big, .icon-right-open-big
+        font-size: rem(16px)
+        margin-top: 25%
+    &-item
+        height: 257px
+        &-image
+            height: 100%
+.typed-string
+    font-size: rem(12px)
+    line-height: rem(20px)
+    padding: 10px
+    &-circle
+        font-size: rem(12px)
+        line-height: rem(16px)
+        padding: 25px 0 10px
+        right: 5px
+        top: 5px
+        width: 100px
+        height: 100px
+        border-radius: 50%
+        background-color: rgba($bodyColor, .8)

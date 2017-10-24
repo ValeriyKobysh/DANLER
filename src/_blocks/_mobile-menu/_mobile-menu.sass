@@ -1,0 +1,127 @@
+.mobile
+    
+    &-menu
+
+        &__block
+            position: relative
+
+        &__list
+            display: none
+            position: absolute
+            z-index: 20
+            top: 0
+
+        &__item
+            position: relative
+            border-bottom: 1px solid $bodyColor
+
+            &:last-child
+                border: none
+
+            &.is-expanded
+                display: block
+
+        &__link
+            display: flex
+            align-items: center
+            justify-content: space-between
+            +size(100%, 50px)
+            border: 0
+            background-color: $darkGrey
+            color: $white
+            transition: 0.5s
+            font-weight: 600
+            font-size: rem(18px)
+            padding: 0 15px 0 20px
+            outline: none
+            cursor: pointer
+
+            &.is-active
+                background-color: $useDarkGrey
+
+            &_dropdown:after
+                content: ""
+                display: block
+                +size(10px)
+                margin-top: -5px
+                border-left: 2px solid $hoverLink
+                border-bottom: 2px solid $hoverLink
+                border-radius: 2px
+                transform: rotate(-45deg)
+
+    &-submenu
+
+        &__list
+            display: none
+            width: 100%
+
+        &__item
+            position: relative
+
+        &__link
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 100%
+            border: 0
+            color: $white
+            outline: none
+            background-color: $bodyColor
+            padding: 15px 15px 15px 20px
+            text-transform: uppercase
+            font-weight: 400
+            font-size: rem(16px)
+            transition: all 0.5s ease
+
+            &:active
+                color: $hoverLink
+
+            &:after
+                content: ""
+                display: block
+                +size(10px)
+                margin-top: -5px
+                border-left: 2px solid $hoverLink
+                border-bottom: 2px solid $hoverLink
+                transform: rotate(-45deg)
+
+        &__catalog-list
+            display: none
+            flex-wrap: wrap
+            justify-content: space-between
+            background-color: $white
+
+            &.active
+                display: flex
+
+        &__catalog-item
+            box-sizing: border-box
+
+
+        &__catalog-link
+            display: block
+            box-sizing: border-box
+            border: 2px solid $lightGrey
+            color: black
+            padding: 5px
+            height: 140px
+            overflow: hidden
+            font-size: rem(12px)
+            line-height: rem(18px)
+            transition: all 0.5s ease
+
+        &__catalog-image, &__catalog-text
+            display: flex
+            align-items: center
+
+        &__catalog-image
+            justify-content: center
+            margin-bottom: 10px
+            height: 83px
+
+        &__catalog-text
+            word-wrap: break-word
+            width: 100%
+
+            & .mark
+                font-weight: 700

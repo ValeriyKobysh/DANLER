@@ -1,0 +1,70 @@
+.add-review
+    &__top, &__left, &__right, &__buttons
+        display: flex
+    &__top
+        justify-content: space-between
+        margin-bottom: 40px
+    &__bot
+        margin-bottom: 40px
+    &__avatar
+        +size(100px)
+        margin-right: 15px
+        &-select
+            font-size: rem(14px)
+            color: $darkGrey
+            text-decoration: underline
+            cursor: pointer
+            align-self: flex-end
+            transition: color 0.5s ease
+            &:hover, &:active
+                color: $headFooColor
+        &-select > input
+            display: none
+    &__field
+        align-self: flex-end
+        height: 40px
+        font-size: rem(14px)
+        font-weight: 300
+        padding: 0 10px
+    &__field, &__review
+        color: $darkGrey
+        border: 1px solid $darkGrey
+        &:focus
+            outline: none
+            border-color: $headFooColor
+    &__review
+        font-family: "Open Sans"
+        +size(100%, 300px)
+        resize: none
+        margin-bottom: 15px
+    &__buttons
+        justify-content: flex-end
+    &__photo-list
+        display: flex
+        flex-wrap: wrap
+    &__photo-item
+        margin-right: 20px
+        margin-bottom: 20px
+        +size(116px, 87px)
+    &__photo-item > img
+        +size(100%)
+    &__photo-select
+        @extend .add-review__avatar-select
+    &__photo-icon
+        margin-left: 20px
+        display: inline-block
+        vertical-align: middle
+    &__photo-select > input
+        display: none
+
+    &__submit
+        background-color: $hoverLink
+        border: 0
+        height: 40px
+        font-weight: 600
+        font-size: rem(16px)
+        line-height: 1.5
+        color: $bodyColor
+        cursor: pointer
+        outline: none
+        &:hover, &:active

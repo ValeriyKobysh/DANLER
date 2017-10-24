@@ -1,0 +1,49 @@
+.home-page
+    .main-content
+        .main-heading
+            font-size: rem(20px)
+            margin-bottom: 32px
+        .second-heading
+            font-size: rem(18px)
+            margin-bottom: 35px
+        .accordion-tabs-minimal
+            .tab-header-and-content
+                .tab-link
+                    font-size: rem(14px)
+                    &:after
+                        height: 25px
+                    .triangle
+                        right: 40%
+                &:nth-child(3)
+                    .tab-link
+                        width: 17%
+                        .triangle
+                            right: 30%
+                &:nth-child(4)
+                    .tab-link
+                        width: 33%
+            .tab-content
+                font-size: rem(12px)
+                padding-top: 30px 
+                position: relative
+                overflow: hidden
+                .image
+                    width: 100%
+                    position: absolute
+                    left: 0
+                    top: 30px
+                .text
+                    +size(100%)
+                    margin: 0
+                    padding: 32px 30px 40px 28px
+                    line-height: rem(18px)
+                    background-color: rgba($white, .8)
+                    .before-line
+                        top: 17px
+                        left: 10px
+                    .after-line
+                        bottom: 30px
+                        right: 25px
+                    .after-line-second
+                        bottom: 12px
+                        right: 10px

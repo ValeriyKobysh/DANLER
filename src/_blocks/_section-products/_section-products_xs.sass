@@ -1,0 +1,237 @@
+.section-products
+    padding-left: 10px
+    padding-right: 10px
+    &-heading
+        font-size: rem(18px)
+    &-filter, &-count
+        &-label
+            display: block
+        &-list
+            left: 0
+            top: 82px
+            display: none
+    &-filter
+        &-wrapper-input
+            flex-direction: column
+        &-heading
+            margin: 0
+    &-count
+        &-wrapper-input
+            width: 60px
+            display: none
+        &-heading
+            margin: 0
+    &-view
+        &-wrapper-input
+            width: 27%
+            padding: 40px 0 0px
+            height: 41px
+        &-list
+            display: block
+            height: 100%
+            width: 100%
+        &-item
+            border: none
+            width: 34px
+            height: 34px
+            margin-left: 0
+    &-item
+        display: block
+        width: 100%
+        height: auto
+        overflow: visible
+        margin-right: 0
+        &-image
+            width: 267px
+            height: 200px
+            img
+                height: 100%
+        &-text
+            width: 100%
+            margin-right: 0
+            border-right: none
+            padding-right: 0
+        &-button
+            margin: 0 0 0 -11px
+            padding-top: 0
+            z-index: 10
+            position: absolute
+            right: 10px
+            background-color: $white
+            width: 40px
+            display: flex
+            flex-wrap: wrap
+            flex-direction: column
+    &-text
+        max-height: 70px
+        height: auto
+        margin-bottom: 10px
+    &-id-product
+        display: none
+    &-link
+        &-to-basket, &-about, &-call-back
+            width: 40px
+            height: 40px
+            margin-right: 0
+            margin-left: 0
+        &-to-basket
+            text-align: center
+            display: block
+            margin-bottom: 5px
+            &-text
+                display: none
+            &-icon
+                padding: 0
+                border-right: none
+                margin-right: 0
+        &-about
+            display: block
+            box-sizing: border-box
+            &-icon
+                padding: 0
+            &-text
+                display: none
+        &-call-back
+            display: block
+            margin-bottom: 5px
+
+    &-inline
+
+        .section-products
+
+
+            &-item
+                flex-wrap: wrap
+
+                &-image
+                    width: 245px
+
+                &-text
+                    order: 1
+                    margin: 0
+                    padding: 0
+                    width: 100%
+                    border-right: 0
+
+                &-button
+                    width: 40px
+
+            &-link
+
+                &-to-basket, &-about, &-call-back
+                    justify-content: center
+                    display: flex
+
+                &-to-basket
+                    margin-top: 0
+                    margin-bottom: 5px
+
+                &-call-back
+                    margin-right: 0
+
+
+    &-block
+        .section-products
+
+            &-availability, &-price
+                width: 100%
+
+            &-heading
+                font-size: rem(18px)
+            &-filter, &-count
+                &-label
+                    display: block
+                &-list
+                    left: 0
+                    top: 82px
+                    display: none
+            &-filter
+                &-wrapper-input
+                &-heading
+                    margin: 0
+            &-count
+                &-wrapper-input
+                &-heading
+                    margin: 0
+            &-view-wrapper-input
+                display: none
+            &-list
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+            &-item
+                display: flex
+                flex-direction: column
+                width: calc(50% - 5px)
+                height: auto
+                overflow: visible
+                margin-right: 0
+                border-bottom: 2px solid #e5e5e5
+                padding: 0
+                padding-left: 0
+                &:nth-child(odd)
+                &:after
+                    height: 0
+                &-image
+                    width: 100%
+                    height: 123px
+                    img
+                        height: 100%
+                &-text
+                    margin-right: 0
+                    border-right: none
+                    padding-right: 0
+                    margin-bottom: 5px
+                &-button
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    margin: 0
+                    padding: 5px
+                    z-index: 10
+                    background-color: $white
+                    width: 100%
+                    border: none
+                    &:after
+                        display: none
+                &:hover, &:active
+                    border-bottom: 2px solid $hoverLink
+                    &:after
+                        height: 0
+                        border: none
+                    & .section-products-item-button
+                        border: none
+            
+            &-text, &-availability, &-price
+                padding: 0 5px
+            &-text
+                height: 70px
+                margin-bottom: 10px
+            &-id-product
+                display: none
+            &-availability
+                display: block
+                width: 100%
+            &-link
+                &-to-basket, &-about, &-call-back
+                    display: flex
+                    align-items: center
+                    justify-content: center
+
+                &-to-basket
+                    &-text
+                        display: none
+                    &-icon
+                        padding: 0
+                        border-right: none
+                        margin-right: 0
+                &-about
+                    display: block
+                    box-sizing: border-box
+                    &-icon
+                        display: inline-block
+                        padding: 0 10px
+                    &-text
+                        display: none
+                &-call-back
+                    margin-right: 0

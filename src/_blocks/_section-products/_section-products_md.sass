@@ -1,0 +1,92 @@
+.section-products
+    width: 100%
+    &-item
+        &-button
+            padding-top: 40px
+    &-link
+        &-to-basket
+            &-icon
+                padding: 0 20px
+                margin-right: 20px
+        &-about
+            width: 90px
+            text-align: center
+            &-icon
+                display: none
+
+    &-text
+        height: 100px
+    &-filter
+        &-wrapper-input
+
+    &-inline
+
+        .section-products
+
+            &-item
+
+                &-text
+                    padding-right: 10px
+                    margin-right: 10px
+
+                &-button
+                    width: 150px
+
+            &-link
+
+                &-to-basket
+                    width: 145px
+                    margin-top: 0
+
+                    &-icon
+                        padding: 0 10px
+                    
+                &-about
+                    justify-content: center
+
+    &-block
+        .section-products
+            &-item
+                height: 298px+61px
+                overflow: visible
+                border-bottom: none
+                &:after
+                    bottom: -1px
+                &:hover:after
+                    border: 1px solid $hoverLink
+                &-button
+                    border: 1px solid $lightGrey
+                    border-top: none
+                    flex-wrap: nowrap
+                    &:after
+                        height: 0
+            &-text
+                height: 87px
+            &-link
+
+                &-to-basket
+                    width: 40px
+                    padding: 10px 0
+                    margin-right: 10px
+                    margin-bottom: 0
+                    flex-shrink: 0
+                    &-text
+                        display: none
+                    &-icon
+                        padding: 0 8px
+                        margin-right: 0px
+                        border-right: none
+                &-about
+                    width: 95px
+                    height: 40px
+                    order: 1
+                    flex-grow: 1
+                    justify-content: center
+                    margin-right: 10px
+                    &-icon
+                        display: none
+                        padding: 0 10px
+                &-call-back
+                    margin: 0
+                    flex-shrink: 0
+                    order: 2

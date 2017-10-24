@@ -1,0 +1,252 @@
+.s-product
+
+    .section__heading
+        overflow: hidden
+        font-size: rem(20px)
+        font-weight: 600
+        color: $black
+        margin-bottom: 20px
+        height: 65px
+        width: 100%
+
+    .wrapper-phone-list
+        position: relative
+        width: 100%
+        height: 0
+        margin-top: -5px
+
+    .phone
+
+        &-list
+            position: absolute
+            top: 0
+
+            .icon-item
+                margin-right: 20px
+
+        &-item
+            width: 100%
+            font-weight: 600
+            font-size: rem(14px)
+            padding: 0 0 0 20px
+            margin: 0
+            background-color: $darkGrey
+            transition: 0.5s
+            &:hover
+                background-color: $headFooColor
+
+    .call-back-link-prod, .show-all-phones
+        display: flex
+        align-items: center
+        color: $white
+        font-weight: 600
+        font-size: rem(14px)
+        background-color: $darkGrey
+        height: 40px
+        width: 100%
+        transition: background 500ms
+
+        &:hover
+            background-color: $headFooColor
+
+    .show-all-phones
+        font-weight: 400
+        justify-content: center
+
+        &-color
+            color: $hoverLink
+
+    .call-back-link
+
+        &-prod
+            margin-bottom: 17px
+
+        &-icon
+            font-size: 20px
+            padding: 0 20px
+            border-right: 1px solid $white
+            margin-right: 25px
+
+    .show-all-phones
+        text-align: center
+        margin-bottom: 1px
+
+    .accordion-tabs-minimal
+
+        &:after 
+            content: ""
+            display: table
+            clear: both
+
+        .tab-header-and-content
+            display: inline
+            .tab-link
+                color: $white
+                background-color: $darkGrey
+                display: inline-block
+                font-size: rem(16px)
+                font-weight: 400
+                width: 21.59%
+                text-align: center
+                padding: 7px 0
+                border-top-left-radius: 10px
+                border-top-right-radius: 10px
+                &.is-active
+                    background-color: $headFooColor
+            .tab-content
+                display: none
+                width: 100%
+                float: left
+                border: 1px solid $headFooColor
+                border-top-right-radius: 10px
+                padding: 20px 0
+                color: $headFooColor
+                font-size: rem(14px)
+                line-height: rem(18px)
+
+    .contact-form
+        padding-left: 20px
+        padding-right: 20px
+
+        &-row
+
+        ul
+            display: flex
+            justify-content: space-between
+
+            li
+                width: calc(100% / 3 - 15px)
+                position: relative
+
+        &-field, &-text
+
+            width: 100%
+            border: 1px solid $darkGrey
+            padding: 13px 0 13px 10px
+            font-family: "Open Sans", sans-serif
+            font-size: rem(14px)
+            margin-bottom: 40px
+
+            &:focus
+                outline: none
+                border: 1px solid $black
+
+        &-label
+            left: 0
+            width: 100%
+
+        &-text
+            min-height: 160px
+            max-width: 100%
+
+        &-button
+            width: 100%
+            font-size: rem(16px)
+            font-weight: 600
+            background-color: $hoverLink
+            padding: 13px 0
+            border: none
+            outline: none
+            cursor: pointer
+
+    .share
+        margin-bottom: 20px
+        padding: 0 20px
+        text-align: right
+
+        span
+            color: black
+            margin-right: 35px
+
+        .social-icon
+
+            &-list
+                display: inline-block
+
+            &-item
+                display: inline-block
+                margin-right: 5px
+
+                &:last-child
+                    margin-right: 0
+
+            &-link
+                border: 2px solid black
+                color: black
+
+    &__analog
+        padding: 0 20px
+
+        &-heading
+            font-size: 1.5rem
+            font-weight: 600
+            color: $black
+            margin-bottom: 20px
+
+        &-list
+            display: flex
+            justify-content: space-between
+
+        &-item
+            width: calc(100% / 3 - 10px)
+            border: 1px solid $lightGrey
+            padding: 10px
+
+        &-image
+            max-width: 100%
+            height: 160px
+
+        &-text
+            height: 55px
+            display: block
+            color: $headFooColor
+            font-size: 0.875rem
+            line-height: 1.125rem
+            margin-bottom: 5px
+
+        &-link
+            background-color: $headFooColor
+            color: $white
+            display: flex
+            height: 40px
+            align-items: center
+
+            &-icon
+                color: $hoverLink
+                fill: $hoverLink
+                padding: 0 20px
+                border-right: 1px solid $white
+                margin-right: 30px
+
+            &-text
+                font-size: 0.875rem
+
+
+        &-list
+            
+        // &-item
+        //     float: left
+        //     width: 32.431%
+        //     margin-right: 10px
+        //     text-align: center
+        //     border: 1px solid $lightGrey
+        //     // +padding(10px)
+        //     position: relative
+        //     &:last-child
+        //         margin-right: 0
+        //     &:after
+        //         content: ""
+        //         height: 1px
+        //         width: 99%
+        //         background-color: $lightGrey
+        //         position: absolute
+        //         bottom: -2px
+        //         left: 0.5%
+        // &-image
+        //     +size(100%, 160px)
+
+
+
+
+
+

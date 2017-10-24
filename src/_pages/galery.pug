@@ -1,0 +1,15 @@
+extends ../_templates/_text-page-templete
+
+mixin galeryItem()
+    li.galery__item
+        img.galery__img(src="http://via.placeholder.com/400x300", alt="")
+        span.galery__title Деталь двигателя Мерседес Спринтер
+
+block main_content
+    .section-content__container
+        .section.section_full.galery
+            h1.section__heading Галерея
+            ul.galery__list
+                - for(var i = 0; i < 8; i++ )
+                    +galeryItem()
+            include ../_blocks/_pagination/_pagination

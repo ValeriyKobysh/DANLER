@@ -1,0 +1,22 @@
+extends ../_templates/_products-template
+mixin catalog()
+    li.s-categories__item
+        a.s-categories__link(href="#")
+            span.s-categories__image
+                img(src="img/category/engines.png")
+            span.s-categories__text Двигатель. Детали двигателя
+                span.s-categories__count  (20)
+block suctom_css
+
+block title
+    title Категории
+block main_content
+    section.section.section_path.s-categories
+        include ../_blocks/_breadcrumps/_breadcrumps
+        h1.section__heading Контакты
+        ul.s-categories__list
+            - for (var i = 0; i < 12; i++)
+                +catalog()
+        .text-block
+            p.text-block-heading Разборка микроавтобусов DanLer
+            p.text-block-text Разборка авто Danler - это разборка Европейских микроавтобусов на оригинальные запчасти. Мы работаем на рынке автозапчастей с 2000 года и можем предложить Вам широкий ассортимент оригинальных б/у запчастей на: Mercedes Sprinter с 1996 по 2006 г.в. 2.3 sdi, 2.9 tdi, 2.2 cdi, 2.7 cdi, Mercedes Vito 638, 639с 1999 по 2006 г.в. 2.2 cdi Volkswagen LT 28, LT 35, LT 46 с 1996 по 2006 г.в. 2.5 tdi, 2.8 tdi 2.8 cdi, Volkswagen Transporter T4 с 1996 по 2003 г.в. 1.9 tdi, 2.5 tdi Reno Trafic с 2001 по 2014 г.в.  1.9 dci, 2.5 dci, Opel Vivaro 1.9 dci, 2.5 dci с 2001 по 2014 г.в. 1.9 dci. 2.5 dci.

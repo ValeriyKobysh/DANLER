@@ -1,0 +1,137 @@
+.section-order
+    &-left-col
+        float: left
+    &-right-col
+        text-align: right
+        float: right
+        .section-order-label
+            width: 41%
+    &-delivery, &-pay
+        &-heading
+            color: $black
+            font-size: rem(16px)
+            width: 55.1%
+            text-align: left
+            display: inline-block
+            border: 1px solid $darkGrey
+            padding: 11px 20px
+            position: relative
+            margin-left: 4px
+            .icon
+                position: absolute
+                right: 20px
+        &-list
+            display: none
+            border: 1px solid $darkGrey
+            border-top: none
+            position: absolute
+            z-index: 2
+            width: 55.1%
+            right: 0
+            background-color: $white
+            input
+                display: none
+        &-item
+            text-align: left
+            color: $black
+            font-size: rem(16px)
+            display: block
+            label
+                cursor: pointer
+                padding: 6px 20px
+                display: block
+            &:hover
+                background-color: $mediumGrey
+    &-pay-list
+        z-index: 1
+    &-label
+        font-weight: 400
+        font-size: rem(18px)
+        color: $mediumGrey
+        display: inline-block
+        width: 27%
+        text-align: left
+        vertical-align: top
+        padding-top: 11px
+    .error-label
+        left: 28%
+    &-wrapper-input
+        +clearfix()
+        position: relative
+    &-input, &-textarea, &-submit
+        width: 55.1%
+        padding: 13px 20px
+        font-size: rem(16px)
+    &-input, &-textarea
+        border: 1px solid $darkGrey
+    &-input
+        &:focus
+            outline: none
+            border-color: #000
+    &-textarea
+        font-family: "Open Sans", sans-serif
+        font-weight: 400
+        resize: none
+        height: 160px
+        &:focus
+            outline: none
+    &-submit
+        border: none
+        background-color: $darkGrey
+        color: $white
+        outline: none
+        cursor: pointer
+    // .modal
+    //     &-submit
+    //     &-state
+    //         display: none
+    //         &:checked + .modal-fade-screen
+    //             opacity: 1
+    //             visibility: visible
+    //     &-fade-screen
+    //         +position(fixed, 0)
+    //         background-color: rgba(#000, 0.85)
+    //         opacity: 0
+    //         padding-top: 35vh
+    //         text-align: left
+    //         transition: opacity 0.25s ease
+    //         visibility: hidden
+    //         z-index: 99999999999
+    //     &-close
+    //         position: absolute
+    //         top: 0
+    //         right: 0
+    //         +size(1.5em)
+    //         background: transparent
+    //         cursor: pointer
+    //         &::after, &::before 
+    //             +position(absolute, 3px 3px 0 50%)
+    //             +size(0.15em 1.5em)
+    //             background: map-get($background-color, header-footer)
+    //             content: ""
+    //             display: block
+    //             margin: -3px 0 0 -1px
+    //             transform: rotate(45deg)
+    //         &:hover::after, &:hover::before
+    //             // background: darken($modal-close-color, 10%)
+    //         &::before
+    //             transform: rotate(-45deg)
+    //     &-inner 
+    //         background: #fff
+    //         margin: auto
+    //         margin-top: 0
+    //         max-height: 95%
+    //         overflow: auto
+    //         position: relative
+    //         transition: opacity 0.25s ease
+    //         width: 600px
+    //         color: map-get($background-color, header-footer)
+    //         text-align: center
+    //         +padding(20px null)
+    //         &-heading
+    //             font-size: rem(20px)
+    //             font-weight: 600
+    //             margin-bottom: 40px
+    //         &-description
+    //             font-size: rem(16px)
+    //             margin-bottom: 40px

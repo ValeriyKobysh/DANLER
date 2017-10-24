@@ -1,0 +1,27 @@
+.s-categories
+    &__list
+        display: flex
+        flex-wrap: wrap
+        margin-bottom: 40px
+    &__item
+        border: 2px solid transparent
+        &:hover
+            border-color: $hoverLink
+    &__link
+        display: block
+    &__image
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 94px
+    &__text
+        display: block
+        padding: 0 5px
+        overflow: hidden
+        text-overflow: ellipsis
+    &__text, &__count
+        color: lighten($black, 13%)
+    &__count
+        font-weight: 700
+    .text-block
+

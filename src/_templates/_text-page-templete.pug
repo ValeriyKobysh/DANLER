@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css")
+        link(rel="stylesheet" href="fonts/font-icons/css/font-icons.css")
+        link(rel="stylesheet" href="css/index.css")
+        block suctom_css
+        block title
+    body.text-page
+        include ../_blocks/_header-page/_header-page
+        include ../_blocks/_mobile-menu/_mobile-menu
+        include ../_blocks/_search-navigation/_search-navigation
+        section.section-content.container
+            block main_content
+        include ../_blocks/_footer-page/_footer-page
+        script(src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js")
+        script(src="libs/jquery-maskedinput/jquery-maskedinput.js")
+        script(src="js/main.js")
+        block custom_scripts
+            
+        include ../_blocks/_popups/_popup-callback
