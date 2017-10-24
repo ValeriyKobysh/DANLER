@@ -7006,7 +7006,8 @@ body {
     height: 40px;
     font-size: 1rem; }
   .header-page__logo {
-    width: 180px; }
+    width: 180px;
+    height: 70px; }
   .header-page .basket {
     display: none; }
   .mobile-menu__list {
