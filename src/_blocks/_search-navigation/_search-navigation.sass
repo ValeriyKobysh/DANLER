@@ -2,9 +2,10 @@
     background-color: $lightGrey
     border-top-left-radius: 20px
     border-top-right-radius: 20px
-    height: 80px
+    height: 60px
     position: relative
     +clearfix()
+
     .catalog-heading
         color: $black
         font-size: rem(24px)
@@ -13,7 +14,7 @@
         text-transform: uppercase
         font-weight: 700
         float: left
-        +size(380px, 80px)
+        +size(380px, 60px)
         display: flex
         align-items: center
         justify-content: center
@@ -22,11 +23,13 @@
         z-index: 100
         background-color: $hoverLink
         box-shadow: 0px 0px 20px 0px rgba($darkGrey, 0.04)
+
     .dropp
         float: left
-        +size(220px, 60px)
-        margin: 10px 0
+        +size(220px, 50px)
+        margin: 5px 0
         position: relative
+
         &:after
             content: ""
             position: absolute
@@ -35,16 +38,19 @@
             right: 0
             +size(1px, 40px)
             background-color: $color-grey-opacity
+
         .dropp-header
             height: 100%
             background: $white
             color: $color-grey-opacity
             position: relative
+
             .dropp-header-title
                 display: inline-block
                 font-size: rem(18px)
                 font-weight: 400
                 padding: 15px 0 16px 8px
+
             .dropp-header-btn
                 position: absolute
                 top: 25%
@@ -52,6 +58,7 @@
                 color: $color-grey-opacity
                 .icon-down-open-big
                     font-size: rem(22px)
+
         .dropp-body
             overflow: hidden
             width: 100%
@@ -76,12 +83,13 @@
                     color: black
                 > input
                     display: none
+
     .search-panel
         float: left
         position: relative
         float: left
-        height: 60px
-        margin: 10px 0
+        height: 50px
+        margin: 5px 0
         .search-input
             +size(100%, 60px)
             padding: 0 80px 0 20px
@@ -115,11 +123,12 @@
                 font-size: rem(24px)
                 transition: 0.5s
     .basket
-        padding-top: 12px
+        padding-top: 5px
         float: left
-        height: 60px
+        height: 50px
         margin-right: 0
         text-align: center
+
         .icon-basket
             display: inline-block
             padding: 11px 0
