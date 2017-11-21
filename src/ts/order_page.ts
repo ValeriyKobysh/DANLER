@@ -1,7 +1,7 @@
 // Dropdown delivert method on order page
-    $('.section-order-delivery-heading').on('click', function(){
-        $(this).next('.section-order-delivery-list').slideToggle('fast');
-    })
+    $('.js-delivery').on('click', function () {
+        $(this).next('.order__list').slideToggle('fast');
+    });
 
     $('[name="delivery-item"]').click(function() {
         $('[data-name="'+this.name+'"]').text(this.parentNode.innerText);
@@ -10,15 +10,26 @@
 // End dropdown delivert methot on order page
 
 // Dropdown pay method on order page
-    $('.section-order-pay-heading').on('click', function(){
-        $(this).next('.section-order-pay-list').slideToggle('fast');
-    })
+    $('.js-payment').on('click', function () {
+        $(this).next('.order__list').slideToggle('fast');
+    });
 
     $('[name="pay-item"]').click(function() {
         $('[data-name="'+this.name+'"]').text(this.parentNode.innerText);
         $(this).closest('ul').slideUp();
     })
-// End pay delivert methot on order page
+// End pay methot on order page
+
+// Dropdown city method on order page
+    $('.js-city').on('click', function () {
+        $(this).next('.order__list').slideToggle('fast');
+    });
+
+    $('[name="city-item"]').click(function () {
+        $('[data-name="' + this.name + '"]').text(this.parentNode.innerText);
+        $(this).closest('ul').slideUp();
+    });
+// End city methot on order page
 
 
 // Modal window
@@ -33,3 +44,19 @@
         // e.stopPropagation();
     });
 // End Modal window
+
+/**
+ * Count product
+ */
+$('.order__product-calcs').click(function(e) {
+    let count: number = parseInt($(this).children('.order__product-count').text());
+    
+    if(e.target.classList.contains('order__product-calc_plus')){
+        count++;
+        $(this).children('.order__product-count').text(count)
+    } else if (e.target.classList.contains('order__product-calc_minus')){
+        count == 1 ? count = 1 : count--;
+
+        $(this).children('.order__product-count').text(count)
+    }
+})

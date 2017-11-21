@@ -26,15 +26,8 @@ mixin leftNav()
                     span.icon-down-open-big
         .left-subnavigation-list
             .left-subnavigation-wrapper
-                +leftSubNav()
-                +leftSubNav()
-                +leftSubNav()
-                +leftSubNav()
-                +leftSubNav()
-                +leftSubNav()
-                +leftSubNav()
-                +leftSubNav()
-                +leftSubNav()
+                - for(i=0; i < 15; i++)
+                    +leftSubNav()
 
 aside.left-navigation
     .left-navigation-list
