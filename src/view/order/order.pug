@@ -1,0 +1,138 @@
+extends ../_templates/_text-page-templete
+
+mixin input(placeholder)
+    .order__group
+        input.order__input(type="text" form="order-form" placeholder=placeholder)
+        span.error__lbl 
+
+mixin items(title, id, name)
+    li.order__item
+        label.order__pick(for=id) #{title}
+            input(type="radio" id=id name=name form="order-form")
+block title
+    title Оформление товара
+block main_content
+    .section-content__container
+        // Дальше меняется разметка
+        section.section.section_full.order
+            h1.section__heading Оформление товара
+
+            form.order__form#order-form
+                .order__left
+                    .order__group
+                        label.order__label Выберите способ оплаты
+
+                        a.order__title.js-payment(href="javascript:;")
+                            span.order__title-text(data-name="pay-item" form="order-form") Способ оплаты
+                            i.icon.icon-down-open-big
+
+                        ul.order__list
+                            +items("Карта Приват Банка", "privat-bank", "pay-item")
+                            +items("Оплата наличными", "cash", "pay-item")
+                            +items("Наложений платёж", "cod", "pay-item")
+
+                        span.error__lbl 12343231421354error
+
+                    .order__group
+                        label.order__label Выберите способ отправки
+
+                        a.order__title.js-delivery(href="javascript:;")
+                            span.order__title-text(data-name="delivery-item") Транспортная компания
+                            i.icon.icon-down-open-big
+
+                        ul.order__list
+                            +items("Новая почта", "new-post", "delivery-item")
+                            +items("Самовывоз", "yourself-del", "delivery-item")
+                            +items("Деливери", "del-del", "delivery-item")
+                            +items("Евроэкспресс", "eurooexpress", "delivery-item")
+                            +items("Автолюкс", "autolux", "delivery-item")
+                            +items("Гюнсел", "gunsel", "delivery-item")
+                            +items("Ин-Тайм", "intime", "delivery-item")
+                            +items("Ночной Экспресс", "nightexpress", "delivery-item")
+                            +items("Ин-Тайм", "intime", "delivery-item")
+
+                        span.error__lbl
+
+                    .order__group
+                        label.order__label Выберите город доставки
+
+                        a.order__title.js-city(href="javascript:;")
+                            span.order__title-text(data-name="city-item") Город доставки
+                            i.icon.icon-down-open-big
+
+                        ul.order__list
+                            +items("Чернигов", "chernigiv", "city-item")
+                            +items("Киев", "kyiv", "city-item")
+                            +items("и т.д", "other", "city-item")
+
+                        span.error__lbl
+
+                    +input("Адрес доставки")
+
+                    +input("Ваше Имя")
+                    
+                    +input("Ваша Фамилия")
+
+                    +input("Ваш e-mail")
+
+                    .order__group.order__group_row
+                        label.order__label +380
+
+                        input.order__input.order__input_small(type="text")
+
+                        input.order__input(type="text")
+
+                        span.error__lbl fdfdfdfdfdf
+
+                    .order__group
+                        label.order__label Ваш номер будет использован для обработки данного заказа
+
+                    .order__group
+                        textarea.order__textarea(placeholder="Ваш комментарий")
+
+                    .order__group
+                        button.order__submit(type="submit") Отправить
+
+                        a.order__link(href="/") Продолжить покупки
+
+                .order__right
+                    ul.order__products.list
+                        - for(i = 0; i < 2; i++)
+                            li.order__product
+
+                                .order__product-image
+                                    img(src="img/product/product-photo.png", alt="")
+                                
+                                .order__product-info
+                                    span.order__product-heading Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)
+
+                                    .order__product-wrap
+                                        span.order__product-price <strong>1200</strong> грн
+
+                                        .order__product-calcs
+                                            a.order__product-calc.order__product-calc_minus(href="javascript:;")
+
+                                            span.order__product-count 1
+
+                                            a.order__product-calc.order__product-calc_plus(href="javascript:;")
+
+                                        button.order__product-remove(type="button")
+                                            span.fa.fa-trash-o
+
+                    .order__total К оплате &nbsp;<strong>1200</strong>&nbsp;грн
+
+                    .order__thanks <strong>Спасибо за заказ в нашей компании</strong>
+
+                    .order__logo
+                        img(src="img/logo-order-page.svg", alt="")
+                        | РАЗБОРКА МИКРОАВТОБУСОВ <br />DANLER
+
+            .modal-submit
+                input.modal-state#modal-1(type="checkbox")
+                .modal-fade-screen
+                    .modal-inner
+                        .modal-close
+                        p.modal-inner-heading Спасибо! Ваша заявка принята
+                        p.modal-inner-description Наш менеджер свяжется с Вами в ближайшее время
+block custom_scripts
+    script(src="js/order_page.js")

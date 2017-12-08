@@ -1,91 +1,135 @@
 .basket
+    padding-top: 5px
+    display: inline-flex
+    width: 120px
+    height: 50px
+    margin-right: 0
+    text-align: center
 
-    &-list
-        display: none
+    &__trigger
+        font-size: rem(18px)
+        color: $black
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+
+    &__icon
+        display: inline-block
+        font-size: rem(22px)
+        margin-right: 5px
+
+    &__list
         position: absolute
         width: $xs - 20px
         right: 40px
-        top: 80px
+        top: 60px
         z-index: 10
         background-color: $white
-        padding: 10px 10px 0 10px
         border: 1px solid $lightGrey
 
-        .submit
-            background-color: darken($white, 59.5%)
-            display: block
-            font-size: rem(14px)
-            text-align: center
-            margin-left: -10px
-            margin-right: -10px
-            padding: 13px 0
-            font-weight: 600
-            transition: all 0.5s ease
-            &:hover
-                background-color: $headFooColor
-                
-    &-item
+    &__item
         border-bottom: 1px solid $bodyColor
         margin-bottom: 20px
-        padding-bottom: 10px
-        +clearfix()
+        padding: 10px 10px 10px 0
+        display: flex
+        flex-wrap: wrap
+
         &:last-child
             border-bottom: none
-            padding-bottom: 0
+            padding: 0
             margin-bottom: 0
+
         &:nth-last-child(2)
             border-bottom: none
-            padding-bottom: 0
-        &:hover
-            .fa-trash-o
+            padding: 10px 10px 0 10px
+            justify-content: space-between
+
+    &__empty
+        color: $bodyColor
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+        width: 100%
+        height: 45px
+
+    &__delete
+        +size(40px)
+        background-color: $white
+        border: 0
+        text-align: center
+        cursor: pointer
+        outline: none
+
+        &:hover, &:active
+
+            *
                 color: $bodyColor
-            .basket-item-link
-                text-decoration: underline
-        .fa-trash-o
+
+        *
+            font-size: 24px
             color: $lightGrey
-            font-size: rem(24px)
-            vertical-align: middle
-            float: left
-            padding-top: 10px
-            margin-right: 10px
-        &-image
-            display: inline-block
-            vertical-align: middle
-            +size(40px)
-            float: left
-            margin-right: 10px
-        &-link
-            display: inline-block
-            color: $bodyColor
-            font-size: rem(14px)
-            float: left
-            width: 65%
-            margin-bottom: 10px
-            &:hover
-                text-decoration: underline
-        &-price
-            padding-left: 25px
-            color: $bodyColor
-            font-size: rem(14px)
-        &-total
-            color: $bodyColor
-            font-size: rem(14px)
-            float: right
-            &-text
-                float: left
-                color: $bodyColor
-                font-size: rem(14px)
+            transition: all .3s ease
+
+    &__image
+        +size(40px)
+        margin-right: 10px
+
     &__link
-        background-color: darken($white, 59.5%)
-        float: right
+        color: $bodyColor
+        font-size: rem(14px)
+        +size(72%, 40px)
+        text-align: left
+        overflow: hidden
+
+        &:hover
+            text-decoration: underline
+
+    &__price-wrap
+        padding-top: 10px
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__price, &__total
+        font-size: rem(14px)
+        color: $bodyColor
+
+    &__price
+        padding-left: 25px
+
+        .mark
+            background-color: $hoverLink
+
+    &__btn
+        background-color: $darkGrey
         border-radius: 50%
-        display: inline-block
-        padding: 2px 4px
+        +size(30px)
         margin-left: 10px
+        font-size: rem(14px)
         transition: background-color 0.3s ease
+        border: 0
+        outline: none
+        color: $white
+        cursor: pointer
+
         &:hover
             background-color: lighten($bodyColor, 9.7%)
             .icon-plus, .icon-minus
                 color: $hoverLink
-        .icon-plus, .icon-minus
-            font-size: rem(14px)
+
+    &__submit
+        background-color: $darkGrey
+        font-size: rem(14px)
+        font-weight: 600
+        transition: all 0.5s ease
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        height: 45px
+
+        &:hover
+            background-color: $headFooColor

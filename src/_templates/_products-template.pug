@@ -9,6 +9,7 @@ html(lang="ru")
         block suctom_css
         link(rel="stylesheet" href="css/index.css")
         block title
+        script(src="libs/vuejs/vue.js")
     body.products-page
         - var leftMenu = 1 
         include ../_blocks/_header-page/_header-page
@@ -21,6 +22,7 @@ html(lang="ru")
         include ../_blocks/_footer-page/_footer-page
         script(src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js")
         script(src="libs/jquery-maskedinput/jquery-maskedinput.js")
+        script(src="libs/vuejs/vue.js")
         script(src="js/main.js")
         block custom_scripts
 

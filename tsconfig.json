@@ -5,7 +5,7 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "target": "ES5",
-        "outDir": "src/js",
+        "outDir": "dist/js",
         "sourceMap": true
     },
         "files": [

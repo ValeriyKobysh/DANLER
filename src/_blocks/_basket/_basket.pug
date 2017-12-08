@@ -1,24 +1,32 @@
-mixin basketItem()
-    li.basket-item
-        a.basket-item-delete(href="#")
-            span.fa.fa-trash-o(aria-hidden="true")
-        img.basket-item-image(src="img/product/product-photo.png")
-        a.basket-item-link(href="#") Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)
-        span.basket-item-price
-            span.mark_accent-color Цена:
-            | 1 234 грн. х 1
-        a.basket__link(href="#")
-            span.icon-minus
-        a.basket__link(href="#")
-            span.icon-plus
+.basket#basket
+    a.basket__trigger(@click.prevent="showBasket" href="javascript:;")
+        span.basket__icon.icon-basket 
+        | ({{countItems}})
 
-ul.basket-list
-    - for (var x = 0; x < 10; x++)
-        +basketItem()
-    li.basket-item
-        span.basket-item-total-text Итого:
-        span.basket-item-total
-            span.mark_accent-color 2 468
-            |грн.
-    li.basket-item
-        a.submit(href="#") Оформить заказ
+    ul.basket__list(v-show="show")
+        li.basket__item(v-if="countItems == 0") 
+            span.basket__empty Ваша корзина пуста
+
+        li.basket__item(v-else v-for="(item, index) in items" :key="index")
+            button.basket__delete(@click="delete(index)"): span.fa.fa-trash-o(aria-hidden="true")
+
+            img.basket__image(:src="item.img")
+
+            a.basket__link(:href="item.url") {{item.title}}
+
+            .basket__price-wrap
+                span.basket__price
+                    span.mark Цена:&nbsp;
+                    | {{delimiter(item.price)}} грн. х {{item.count}}
+
+                .basket__btns
+                    button.basket__btn(@click="increment(index)"): span.icon-plus
+
+                    button.basket__btn(@click="decrement(index)"): span.icon-minus
+
+        li.basket__item(v-if="countItems != 0")
+            span.basket__total Итого:
+            span.basket__total {{totalPrice}} грн.
+
+        li.basket__item(v-if="countItems != 0")
+            a.basket__submit(href="/order/") Оформить заказ

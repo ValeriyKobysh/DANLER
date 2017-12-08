@@ -1,0 +1,141 @@
+extends ../_templates/_products-template
+
+mixin carouselItem()
+    li.info__carousel-item
+        a.info__carousel-link.fancybox(href="img/product/product-photo.png" data-fancybox="gallery-item" title="Двигатель. Детали двигателя")
+            img(src="img/product/product-photo.png")
+
+mixin aboutItem(title, value)
+    li.about-item
+        span.left-col #{title}
+        span.right-col #{value}
+
+mixin analogItem()
+    li.s-product-analog-item
+        img.s-product-analog-image(src="img/product/product-photo-analog.png")
+        span.s-product-analog-text Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)
+        a.s-product-analog-link(href="#")
+            span.s-product-analog-link-icon.icon-plus
+            span.s-product-analog-link-text Подробнее
+
+block suctom_css
+    link(rel="stylesheet" href="libs/fancybox/jquery.fancybox.css")
+block title
+    title Описание товара
+block main_content
+    section.section.section_path.s-product
+        include ../_blocks/_breadcrumps/_breadcrumps
+        .s-product__info.info
+            .info__photo
+                ul.info__carousel
+                    - for (i = 0; i < 6; i++)
+                        +carouselItem()
+            .info__sell.wrapper-phone
+                span.section__heading.section__heading_left Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)
+                span.info__oe ОЕ Номер: 13132111131131331
+                .info__wrap
+                    span.info__price
+                        span.info__price_color Цена: 
+                        | 1234 грн.
+                    span.info__availability.info__availability_true В наличии
+                    span.info__art Артикул:
+                a.info__buy(href="javascript:;")
+                    span.info__buy-icon.icon-cart-plus
+                    span.info__buy-text Купить
+                a.call-back-link-prod(href="javascript:;")
+                    span.call-back-link-icon.icon-phone
+                    span.call-back-link-text Перезвоните мне
+                a.show-all-phones(href="#") + 380 ...  
+                    span.show-all-phones-color показать номер
+                .wrapper-phone-list
+                    ul.phone-list
+                        li.phone-item
+                            span.icon-item.phone-icon
+                                i.icon-phone
+                            a.phone-link(href="callto: +380937008000") +38(093) 700 - 8000
+                        li.phone-item
+                            span.icon-item.phone-icon
+                                i.icon-phone
+                            a.phone-link(href="callto: +380977008070") +38(097) 700 - 8070
+                        li.phone-item
+                            span.icon-item.phone-icon
+                                i.icon-phone
+                            a.phone-link(href="callto: +380992701500") +38(099) 270 - 1500
+        .s-product__about.about
+            ul.accordion-tabs-minimal
+                li.tab-header-and-content
+                    a(href="#").tab-link Описание
+                    .tab-content
+                        p.about-description Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter): в отличном состоянии. Купить блок двигателя на авторазборке.
+                        p.about-heading Характеристики:
+                        ul.about-list
+                            +aboutItem("Производитель", "Мерседес")
+                            +aboutItem("Модель", "Mercedes Sprinter")
+                            +aboutItem("Тип запчасти", "Оригинал")
+                            +aboutItem("Состояние", "Б/У")
+                            +aboutItem("Кузов", "")
+                            +aboutItem("Год выпуска", "1996-2006")
+                li.tab-header-and-content
+                    a(href="#").tab-link Написать нам
+                    .tab-content
+                        form#contact-form.contact-form
+                            .contact-form-row
+                                ul
+                                    li
+                                        input#field-name.contact-form-field(type="text" placeholder="Ваше имя" name="name" form="contact-form")
+                                        label.contact-form-label.error-label(for="field-name")
+                                    li
+                                        input#field-phone.contact-form-field(type="tel" placeholder="Ваш телефон" name="phone" form="contact-form")
+                                        label.contact-form-label.error-label(for="field-phone")
+                                    li
+                                        input#field-email.contact-form-field.error-input(type="email" placeholder="Ваш e-mail" name="email" form="contact-form")
+                                        label.contact-form-label.error-label(for="field-email") Text errorText errorText errorText errorText errorText
+                            .contact-form-row
+                                textarea.contact-form-text(name="text" form="contact-form" placeholder="Задайте Ваш вопрос")
+                            .contact-form-row
+                                button.contact-form-button(type="submit") Отправить
+                li.tab-header-and-content
+                    a(href="#").tab-link Отзывы о товаре
+                    .tab-content
+        .share
+            span Поделиться
+            include ../_blocks/_social-icon-list/_social-icon-list
+        .s-product__analog
+            p.s-product__analog-heading Похожие товары
+            ul.s-product__analog-list
+                - for(i = 0; i < 3; i++)
+                    li.s-product__analog-item
+                        img.s-product__analog-image(src="img/product/product-photo-analog.png")
+                        span.s-product__analog-text Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)
+                        a.s-product__analog-link(href="#")
+                            span.s-product__analog-link-icon.icon-plus
+                            span.s-product__analog-link-text Подробнее
+
+    .modal-window
+        .modal-call-back
+            input.modal-state-prod#modal-2(type="checkbox")
+            .modal-fade-screen
+                .modal-inner.modal-inner-prod
+                    .modal-close
+                    span.modal-inner-photo-prod
+                        img(src="/img/product/product-photo-analog.png")
+                    p.modal-inner-head-prod Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)
+                    p.modal-inner-description Оставьте свой номер телефона и представитель компании свяжется с Вами в ближайшее время
+                    .input-wrapper
+                        input.error-input.pop-up-input.your-name(type="text" placeholder="Как Вас зовут?")
+                        span.must *
+                        label.error-label Test error-label
+                    .input-wrapper
+                        input.pop-up-input.your-email(type="email" placeholder="Введите Ваш email")
+                        label.error-label
+                    .input-wrapper
+                        input.pop-up-input.number-phone(type="tel" maxlength="12" placeholder="Введите Ваш телефон")
+                        span.must *
+                        label.error-label
+                    button.call(type="submit") Перезвонить
+
+    include ../_blocks/_popups/_popup-addcard
+block custom_scripts
+    script(src="libs/owl-carousel-js/owl.carousel.min.js")
+    script(src="libs/fancybox/jquery.fancybox.min.js")
+    script(src="js/product_page.js")

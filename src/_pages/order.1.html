@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="fonts/font-icons/css/font-icons.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <title>Оформление товара</title>
+    <script src="libs/vuejs/vue.js"></script>
+  </head>
+  <body class="text-page">
+    <header class="header-page">
+      <div class="header-page__top">
+        <div class="container">
+          <div class="contact-info wrapper-phone">
+            <ul class="phone-list">
+                  <li class="phone-item"><span class="icon-item phone-icon"><i class="icon-phone"></i></span><a class="phone-link" href="callto: +380937008000">+38(093) 700 - 8000</a></li>
+                  <li class="phone-item"><span class="icon-item phone-icon"><i class="icon-phone"></i></span><a class="phone-link" href="callto: +380937008000">+38(093) 700 - 8000</a></li>
+                  <li class="phone-item"><span class="icon-item phone-icon"><i class="icon-phone"></i></span><a class="phone-link" href="callto: +380937008000">+38(093) 700 - 8000</a></li>
+            </ul>
+            <div class="show-all-phone"><span class="icon-item phone-icon"><i class="icon-phone"></i></span><span class="show-all-phone-text">+38 (093) ...</span><a class="show-all-phone-link" href="#">показать всё</a></div>
+            <div class="basket"><span class="icon-basket"></span><span class="count">(0)</span></div>
+            <ul class="location-list">
+              <li class="location-item"><span class="icon-item location-icon"><i class="icon-location"></i></span><span class="location-text">г. Чернигов, ул. Инструментальная,7</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header-page__bot"><a class="mobile-menu" href="#"><i class="mobile-menu-pic icon-mobile-menu-open"></i></a>
+          <div class="header-page__logo"><a href="#"><img src="img/logo.svg" alt=""/><span class="header-page__logo-text">Разборка микроавтобусов</span></a></div>
+          <div class="header-page__navigation">
+            <nav class="top-navigation">
+              <ul class="menu-list">
+                              <li class="menu-item"><a class="menu-item-link" href="index.html">Главная</a></li>
+                              <li class="menu-item"><a class="menu-item-link" href="delivery.html">Доставка и оплата</a></li>
+                              <li class="menu-item"><a class="menu-item-link" href="packaging.html">Упаковка</a></li>
+                              <li class="menu-item"><a class="menu-item-link" href="articles.html">Статьи</a></li>
+                              <li class="menu-item"><a class="menu-item-link" href="contact-info.html">Контакты</a></li>
+                              <li class="menu-item"><a class="menu-item-link" href="reviews.html">Отзывы</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-page-call-back">
+            <button class="call-back-link js-callback-trigger"><span class="call-back-icon"><i class="icon-item icon-phone"></i></span><span class="call-back-text">Заказать звонок</span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="mobile-menu__block container">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Главная</a>
+        </li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link mobile-menu__link_dropdown" href="#">Каталог</a>
+          <ul class="mobile-submenu__list">
+            <li class="mobile-submenu__item">
+              <button class="mobile-submenu__link">Мерседес Вито</button>
+              <ul class="mobile-submenu__catalog-list">
+                <li class="mobile-submenu__catalog-item"><a class="mobile-submenu__catalog-link" href="#"><span class="mobile-submenu__catalog-image"><img src="img/category/engines.png" alt=""/></span><span class="mobile-submenu__catalog-text">Двигатель. <span class="mark">&nbsp;(20)</span></span></a></li>
+                <li class="mobile-submenu__catalog-item"><a class="mobile-submenu__catalog-link" href="#"><span class="mobile-submenu__catalog-image"><img src="img/category/engines.png" alt=""/></span><span class="mobile-submenu__catalog-text">Двигатель. <span class="mark">&nbsp;(20)</span></span></a></li>
+                <li class="mobile-submenu__catalog-item"><a class="mobile-submenu__catalog-link" href="#"><span class="mobile-submenu__catalog-image"><img src="img/category/engines.png" alt=""/></span><span class="mobile-submenu__catalog-text">Двигатель. <span class="mark">&nbsp;(20)</span></span></a></li>
+                <li class="mobile-submenu__catalog-item"><a class="mobile-submenu__catalog-link" href="#"><span class="mobile-submenu__catalog-image"><img src="img/category/engines.png" alt=""/></span><span class="mobile-submenu__catalog-text">Двигатель. <span class="mark">&nbsp;(20)</span></span></a></li>
+                <li class="mobile-submenu__catalog-item"><a class="mobile-submenu__catalog-link" href="#"><span class="mobile-submenu__catalog-image"><img src="img/category/engines.png" alt=""/></span><span class="mobile-submenu__catalog-text">Двигатель. <span class="mark">&nbsp;(20)</span></span></a></li>
+                <li class="mobile-submenu__catalog-item"><a class="mobile-submenu__catalog-link" href="#"><span class="mobile-submenu__catalog-image"><img src="img/category/engines.png" alt=""/></span><span class="mobile-submenu__catalog-text">Двигатель. <span class="mark">&nbsp;(20)</span></span></a></li>
+                <li class="mobile-submenu__catalog-item"><a class="mobile-submenu__catalog-link" href="#"><span class="mobile-submenu__catalog-image"><img src="img/category/engines.png" alt=""/></span><span class="mobile-submenu__catalog-text">Двигатель. <span class="mark">&nbsp;(20)</span></span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Доставка и оплата</a>
+        </li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Статья</a>
+        </li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Упаковка</a>
+        </li>
+        <li class="mobile-menu__item"><a class="mobile-menu__link" href="#">Контакты</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <section class="search-navigation">
+        <div class="catalog-heading">Каталог</div>
+        <form class="search-form">
+          <div class="dropp">
+            <div class="dropp-header"><span class="dropp-header-title js-value">Все модели</span><a class="dropp-header-btn js-dropp-action" href="#"><i class="icon-down-open-big"></i></a></div>
+            <div class="dropp-body">
+                  <label for="mercedes-sprinter">Mercedes Sprinter
+                    <input type="radio" id="mercedes-sprinter" name="dropp" value="Mercedes Sprinter"/>
+                  </label>
+                  <label for="mercedes-vito">Mercedes Vito
+                    <input type="radio" id="mercedes-vito" name="dropp" value="Mercedes Vito"/>
+                  </label>
+                  <label for="opel-vivaro">Opel Vivaro
+                    <input type="radio" id="opel-vivaro" name="dropp" value="Opel Vivaro"/>
+                  </label>
+                  <label for="renault-trafic">Renault Trafic
+                    <input type="radio" id="renault-trafic" name="dropp" value="Renault Trafic"/>
+                  </label>
+                  <label for="volkswagen-lt">Volkswagen LT
+                    <input type="radio" id="volkswagen-lt" name="dropp" value="Volkswagen LT"/>
+                  </label>
+                  <label for="volkswagen-t4">Volkswagen T4
+                    <input type="radio" id="volkswagen-t4" name="dropp" value="Volkswagen T4"/>
+                  </label>
+            </div>
+          </div>
+          <div class="search-panel">
+            <input class="search-input" type="text" form="search-form" name="search-field" placeholder="Введите название"/>
+            <button class="submit" type="submit"><span class="icon-search"></span></button>
+          </div>
+        </form>
+        <div class="basket" id="basket"><a class="basket__trigger" @click.prevent="showBasket" href="javascript:;"><span class="basket__icon icon-basket"> </span>({{countItems}})</a>
+          <ul class="basket__list" v-show="show">
+            <li class="basket__item" v-if="countItems == 0"> <span class="basket__empty">Ваша корзина пуста</span></li>
+            <li class="basket__item" v-else="v-else" v-for="(item, index) in items" :key="index">
+              <button class="basket__delete" @click="delete(index)"><span class="fa fa-trash-o" aria-hidden="true"></span></button><img class="basket__image" :src="item.img"/><a class="basket__link" :href="item.url">{{item.title}}</a>
+              <div class="basket__price-wrap"><span class="basket__price"><span class="mark">Цена:&nbsp;</span>{{delimiter(item.price)}} грн. х {{item.count}}</span>
+                <div class="basket__btns">
+                  <button class="basket__btn" @click="increment(index)"><span class="icon-plus"></span></button>
+                  <button class="basket__btn" @click="decrement(index)"><span class="icon-minus"></span></button>
+                </div>
+              </div>
+            </li>
+            <li class="basket__item" v-if="countItems != 0"><span class="basket__total">Итого:</span><span class="basket__total">{{totalPrice}} грн.</span></li>
+            <li class="basket__item" v-if="countItems != 0"><a class="basket__submit" href="/order/">Оформить заказ</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <section class="section-content container">
+      <div class="section-content__container">
+        <!-- Дальше меняется разметка-->
+        <section class="section section_full order">
+          <h1 class="section__heading">Оформление товара</h1>
+          <form class="order__form" id="order-form">
+            <div class="order__left">
+              <div class="order__group">
+                <label class="order__label">Выберите способ оплаты</label><a class="order__title js-payment" href="javascript:;"><span class="order__title-text" data-name="pay-item" form="order-form">Способ оплаты</span><i class="icon icon-down-open-big"></i></a>
+                <ul class="order__list">
+                  <li class="order__item">
+                    <label class="order__pick" for="privat-bank">Карта Приват Банка
+                      <input type="radio" id="privat-bank" name="pay-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="cash">Оплата наличными
+                      <input type="radio" id="cash" name="pay-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="cod">Наложений платёж
+                      <input type="radio" id="cod" name="pay-item" form="order-form"/>
+                    </label>
+                  </li>
+                </ul><span class="error__lbl">12343231421354error</span>
+              </div>
+              <div class="order__group">
+                <label class="order__label">Выберите способ отправки</label><a class="order__title js-delivery" href="javascript:;"><span class="order__title-text" data-name="delivery-item">Транспортная компания</span><i class="icon icon-down-open-big"></i></a>
+                <ul class="order__list">
+                  <li class="order__item">
+                    <label class="order__pick" for="new-post">Новая почта
+                      <input type="radio" id="new-post" name="delivery-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="yourself-del">Самовывоз
+                      <input type="radio" id="yourself-del" name="delivery-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="del-del">Деливери
+                      <input type="radio" id="del-del" name="delivery-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="eurooexpress">Евроэкспресс
+                      <input type="radio" id="eurooexpress" name="delivery-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="autolux">Автолюкс
+                      <input type="radio" id="autolux" name="delivery-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="gunsel">Гюнсел
+                      <input type="radio" id="gunsel" name="delivery-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="intime">Ин-Тайм
+                      <input type="radio" id="intime" name="delivery-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="nightexpress">Ночной Экспресс
+                      <input type="radio" id="nightexpress" name="delivery-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="intime">Ин-Тайм
+                      <input type="radio" id="intime" name="delivery-item" form="order-form"/>
+                    </label>
+                  </li>
+                </ul><span class="error__lbl"></span>
+              </div>
+              <div class="order__group">
+                <label class="order__label">Выберите город доставки</label><a class="order__title js-city" href="javascript:;"><span class="order__title-text" data-name="city-item">Город доставки</span><i class="icon icon-down-open-big"></i></a>
+                <ul class="order__list">
+                  <li class="order__item">
+                    <label class="order__pick" for="chernigiv">Чернигов
+                      <input type="radio" id="chernigiv" name="city-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="kyiv">Киев
+                      <input type="radio" id="kyiv" name="city-item" form="order-form"/>
+                    </label>
+                  </li>
+                  <li class="order__item">
+                    <label class="order__pick" for="other">и т.д
+                      <input type="radio" id="other" name="city-item" form="order-form"/>
+                    </label>
+                  </li>
+                </ul><span class="error__lbl"></span>
+              </div>
+              <div class="order__group">
+                <input class="order__input" type="text" form="order-form" placeholder="Адрес доставки"/><span class="error__lbl"> </span>
+              </div>
+              <div class="order__group">
+                <input class="order__input" type="text" form="order-form" placeholder="Ваше Имя"/><span class="error__lbl"> </span>
+              </div>
+              <div class="order__group">
+                <input class="order__input" type="text" form="order-form" placeholder="Ваша Фамилия"/><span class="error__lbl"> </span>
+              </div>
+              <div class="order__group">
+                <input class="order__input" type="text" form="order-form" placeholder="Ваш e-mail"/><span class="error__lbl"> </span>
+              </div>
+              <div class="order__group order__group_row">
+                <label class="order__label">+380</label>
+                <input class="order__input order__input_small" type="text"/>
+                <input class="order__input" type="text"/><span class="error__lbl">fdfdfdfdfdf</span>
+              </div>
+              <div class="order__group">
+                <label class="order__label">Ваш номер будет использован для обработки данного заказа</label>
+              </div>
+              <div class="order__group">
+                <textarea class="order__textarea" placeholder="Ваш комментарий"></textarea>
+              </div>
+              <div class="order__group">
+                <button class="order__submit" type="submit">Отправить</button><a class="order__link" href="/">Продолжить покупки</a>
+              </div>
+            </div>
+            <div class="order__right">
+              <ul class="order__products list">
+                <li class="order__product">
+                  <div class="order__product-image"><img src="img/product/product-photo.png" alt=""/></div>
+                  <div class="order__product-info"><span class="order__product-heading">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</span>
+                    <div class="order__product-wrap"><span class="order__product-price"><strong>1200</strong> грн</span>
+                      <div class="order__product-calcs"><a class="order__product-calc order__product-calc_minus" href="javascript:;"></a><span class="order__product-count">1</span><a class="order__product-calc order__product-calc_plus" href="javascript:;"></a></div>
+                      <button class="order__product-remove" type="button"><span class="fa fa-trash-o"></span></button>
+                    </div>
+                  </div>
+                </li>
+                <li class="order__product">
+                  <div class="order__product-image"><img src="img/product/product-photo.png" alt=""/></div>
+                  <div class="order__product-info"><span class="order__product-heading">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</span>
+                    <div class="order__product-wrap"><span class="order__product-price"><strong>1200</strong> грн</span>
+                      <div class="order__product-calcs"><a class="order__product-calc order__product-calc_minus" href="javascript:;"></a><span class="order__product-count">1</span><a class="order__product-calc order__product-calc_plus" href="javascript:;"></a></div>
+                      <button class="order__product-remove" type="button"><span class="fa fa-trash-o"></span></button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="order__total">К оплате &nbsp;<strong>1200</strong>&nbsp;грн</div>
+              <div class="order__thanks"><strong>Спасибо за заказ в нашей компании</strong></div>
+              <div class="order__logo"><img src="img/logo-order-page.svg" alt=""/>РАЗБОРКА МИКРОАВТОБУСОВ <br />DANLER</div>
+            </div>
+          </form>
+          <div class="modal-submit">
+            <input class="modal-state" id="modal-1" type="checkbox"/>
+            <div class="modal-fade-screen">
+              <div class="modal-inner">
+                <div class="modal-close"></div>
+                <p class="modal-inner-heading">Спасибо! Ваша заявка принята</p>
+                <p class="modal-inner-description">Наш менеджер свяжется с Вами в ближайшее время</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <footer class="footer-page">
+      <div class="footer-page__container container">
+        <div class="footer-page__copyright">Razborka-avto.com DanLer © 2016</div>
+        <div class="footer-page__navigation">
+          <nav class="bot-navigation">
+            <ul class="menu-list">
+                          <li class="menu-item"><a class="menu-item-link" href="index.html">Главная</a></li>
+                          <li class="menu-item"><a class="menu-item-link" href="delivery.html">Доставка и оплата</a></li>
+                          <li class="menu-item"><a class="menu-item-link" href="packaging.html">Упаковка</a></li>
+                          <li class="menu-item"><a class="menu-item-link" href="articles.html">Статьи</a></li>
+                          <li class="menu-item"><a class="menu-item-link" href="contact-info.html">Контакты</a></li>
+                          <li class="menu-item"><a class="menu-item-link" href="reviews.html">Отзывы</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-page__social-icon">
+          <ul class="social-icon-list">
+            <li class="social-icon-item"><a class="social-icon-link" href="#" title="Поделиться"><i class="social-icon-pic icon-facebook"></i></a></li>
+            <li class="social-icon-item"><a class="social-icon-link" href="#" title="Поделиться"><i class="social-icon-pic icon-gplus"></i></a></li>
+            <li class="social-icon-item"><a class="social-icon-link" href="#" title="Поделиться"><i class="social-icon-pic icon-odnoklassniki"></i></a></li>
+            <li class="social-icon-item"><a class="social-icon-link" href="#" title="Поделиться"><i class="social-icon-pic icon-twitter"></i></a></li>
+            <li class="social-icon-item"><a class="social-icon-link" href="#" title="Поделиться"><i class="social-icon-pic icon-vkontakte"></i></a></li>
+            <li class="social-icon-item"><a class="social-icon-link" href="#" title="Поделиться"><i class="social-icon-pic icon-at"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+    <script src="libs/jquery-maskedinput/jquery-maskedinput.js"></script>
+    <script src="libs/vuejs/vue.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/order_page.js"></script>
+    <div class="dialog" id="dialog-callback" :class="show">
+      <div class="dialog__overlay" @click="closeDialog"></div>
+      <div class="dialog__container">
+        <button class="dialog__close" @click="closeDialog"></button>
+        <div class="dialog__content" v-if="!ok">
+          <div class="dialog__title">Оставьте свой номер телефона и представитель компании свяжется с Вами в ближайшее время</div>
+          <div class="dialog__group">
+            <input class="field dialog__field" type="text" placeholder="Ваше имя" v-model="formFields.name"/><span class="error-msg">{{errorFields.name}}</span>
+          </div>
+          <div class="dialog__group">
+            <input class="field dialog__field" type="email" placeholder="Ваш email" v-model="formFields.email" pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/"/><span class="error-msg">{{errorFields.email}}</span>
+          </div>
+          <div class="dialog__group">
+            <input class="field dialog__field" type="tel" v-mask="'(###) ###-##-##'" placeholder="Ваш телефон" v-model="formFields.phone"/><span class="error-msg">{{errorFields.phone}}</span>
+          </div>
+          <button class="btn btn_accent dialog__btn" type="button" @click="postRequest">Перезвонить</button>
+        </div>
+        <div class="dialog__content" v-else="v-else">
+          <div class="dialog__title">Ваш запрос успешно принят</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

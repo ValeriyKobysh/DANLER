@@ -1,0 +1,44 @@
+mixin phoneItem()
+    li.phone-item
+        span.icon-item.phone-icon
+            i.icon-phone
+        a.phone-link(href="callto: +380937008000") +38(093) 700 - 8000
+
+header.header-page
+        .header-page__top
+            .container
+                .contact-info.wrapper-phone
+                    ul.phone-list
+                        - for (var x = 0; x < 3; x++)
+                            +phoneItem()
+                    .show-all-phone
+                        span.icon-item.phone-icon
+                            i.icon-phone
+                        span.show-all-phone-text +38 (093) ...
+                        a.show-all-phone-link(href="#") показать всё
+                    .basket
+                        span.icon-basket
+                        span.count (0)
+                    ul.location-list
+                        li.location-item
+                            span.icon-item.location-icon
+                                i.icon-location
+                            span.location-text г. Чернигов, ул. Инструментальная,7
+        .container
+            .header-page__bot
+                a.mobile-menu(href="#")
+                    i.mobile-menu-pic.icon-mobile-menu-open
+                .header-page__logo
+                    a(href="#")
+                        img(src="img/logo.svg", alt="")
+                        //- span.header-page__logo-an-color Dan
+                        //- span.header-page__logo-wh-color Ler
+                        span.header-page__logo-text Разборка микроавтобусов
+                .header-page__navigation
+                    nav.top-navigation
+                        //- include ../_menu-list/_menu-list
+                .header-page-call-back
+                    button.call-back-link.js-callback-trigger
+                        span.call-back-icon
+                            i.icon-item.icon-phone
+                        span.call-back-text Заказать звонок

@@ -1,0 +1,39 @@
+// @import "../bower_components/neat/core/_neat"
+@import "_variables"
+@import "_functions"
+@import "_mixins"
+@import "_fonts.scss"
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+ul
+    list-style-type: none
+a
+    text-decoration: none
+    color: $white
+
+html, body
+    height: 100%
+    font-family: $baseff
+    font-weight: 400
+    font-size: $basefz
+    min-height: 100%
+    background-color: $bodyColor
+    color: $white
+
+body
+    display: flex
+    flex-direction: column
+    & > *
+        flex-shrink: 0
+        min-width: $xs
+
+@import "../libs/fancybox/jquery.fancybox.min.scss"
+// @import "../libs/owl-carousel-js/owl.theme.default.min.scss"
+@import "../libs/owl-carousel-js/owl.carousel.scss"
+
+@import "font-awesome.scss"
+@import "font-icons.scss"

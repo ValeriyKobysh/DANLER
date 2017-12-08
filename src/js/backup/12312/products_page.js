@@ -1,0 +1,5 @@
+$(document).on('click','.section-products-filter-heading',function(){$(this).next('.section-products-filter-list').slideToggle('fast');})
+$(document).on('click','[name="products-filter"]',function(){$('[data-name="'+this.name+'"]').text(this.parentNode.innerText);$(this).closest('ul').slideUp();})
+$(document).on('click','.section-products-count-heading',function(){$(this).next('.section-products-count-list').slideToggle('fast');})
+$(document).on('click','[name="products-count"]',function(){$('[data-name="'+this.name+'"]').text(this.parentNode.innerText);$(this).closest('ul').slideUp();})
+$(document).on('click','#block',function(){$('.section-products-inline').addClass('section-products-block');$('.section-products-inline').removeClass('section-products-inline');});$(document).on('click','#inline',function(){$('.section-products-block').addClass('section-products-inline');$('.section-products-block').removeClass('section-products-block');});

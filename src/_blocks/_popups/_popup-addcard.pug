@@ -1,9 +1,9 @@
 .modal-window
     .modal-add-product
-        input.modal-state-add-product#modal-add-product(type="checkbox")
+        input.modal-state-add-product#modal-add-product(type="checkbox" checked)
         .modal-fade-screen
             .modal-inner
-                .modal-close
+                .modal-close.js-modal-close
                 p.modal__heading Вы добавили в корзину
                 span.modal__photo
                     img.photo(src="/img/product/product-photo-analog.png")
@@ -24,5 +24,5 @@
                         span.mark_accent-color 2 468
                         |грн.
                 .modal__buttons.buttons
-                    a.buttons__link.buttons__link_left(href="#") Продолжить покупки
+                    a.buttons__link.buttons__link_left.js-modal-close(href="#") Продолжить покупки
                     a.buttons__link.buttons__link_right(href="#") Оформить заказ
