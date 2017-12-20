@@ -1,0 +1,25 @@
+.container
+    margin: 0 auto
+    padding: 0 15px
+    width: 100%
+    min-width: $xs
+
++media-breakpoint-up(breakpoints(xl))
+    .container
+        max-width: $xl - 30px
+
++media-breakpoint-between(breakpoints(lg), breakpoints(xl))
+    .container
+        max-width: $lg - 32px
+
++media-breakpoint-between(breakpoints(md), breakpoints(lg))
+    .container 
+        max-width: $md - 30px
+
++media-breakpoint-between(breakpoints(sm), breakpoints(md))
+    .container 
+        max-width: $sm - 36px
+
++media-breakpoint-down(breakpoints(sm))
+    .container 
+        max-width: 100%

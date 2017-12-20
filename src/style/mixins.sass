@@ -2,14 +2,39 @@
     width: $width
     height: $height
 
-@mixin transition($prop: all, $delay: 0.5s, $timing: ease)
-    transition: $prop $delay $timing
+@mixin transition($prop: all, $duration: 300ms, $timing: ease)
+    transition: $prop $duration $timing
 
-@mixin clearfix()
-    &::after
-        clear: both
-        content: ""
-        display: table
+@mixin alignment($ai: center, $jc: center)
+    display: flex
+
+    @if $ai == 'start'
+        align-items: flex-start
+
+    @if $ai == 'center'
+        align-items: center
+    
+    @if $ai == 'end'
+        align-items: flex-end
+
+    @if $jc == 'start'
+        justify-content: flex-start
+        
+    @if $jc == 'center'
+        justify-content: center
+
+    @if $jc == 'between'
+        justify-content: space-between
+    
+    @if $jc == 'around'
+        justify-content: space-around
+
+    @if $jc == 'evenly'
+        justify-content: space-evenly
+
+    @if $jc == 'end'
+        justify-content: flex-end
+
 
 @mixin fonts($font)
     @if $font == 'rg'

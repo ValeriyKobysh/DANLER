@@ -1,0 +1,100 @@
+.basket
+
++media-breakpoint-down(breakpoints(lg))
+    .basket
+        position: absolute
+        top: calc(100% + 20px)
+        left: calc(50% - 165px)
+        background-color: bg-color(main-light)
+        border: 1px solid bg-color(accent)
+        width: $xs - 30px!important
+        border-radius: 5px
+        font-size: rem(14px)
+        line-height: rem(20px)
+
+        &:before
+            content: ''
+            display: flex
+            +size(20px)
+            background-color: bg-color(main-light)
+            transform: rotate(45deg)
+            position: absolute
+            top: -11.5px
+            left: 50%
+            border-top: 1px solid bg-color(accent)
+            border-left: 1px solid bg-color(accent)
+
+        &__item
+            padding: 15px
+            position: relative
+
+            &_submit
+                padding: 0
+
+            &_total:before
+                content: ''
+                display: flex
+                width: calc(100% - 30px)
+                height: 1px
+                position: absolute
+                top: 0
+                left: 15px
+                background-color: bg-color(accent)
+
+        &__info-wrap
+            display: flex
+
+        &__image
+            flex-shrink: 0
+            +size(120px, 90px)
+            margin-right: 15px
+
+            img
+                +size(100%)
+
+        &__title
+            font-size: rem(14px)
+            line-height: rem(20px)
+            color: text-color(light)
+        
+        &__price-wrap
+            +alignment($jc: between)
+            padding-top: 15px
+
+        &__btn
+            +size(25px)
+            border: 1px solid bg-color(green)
+            border-radius: 5px
+            background-color: transparent
+            outline: none
+            position: relative
+
+            &:before, &:after
+                display: flex
+                +size(50%, 2px)
+                background-color: bg-color(green)
+                position: absolute
+                top: 50%
+                left: 25%
+
+            &_plus
+                margin-right: 15px
+            
+                &:before, &:after
+                    content: ''
+
+                &:after
+                    transform: rotate(90deg)
+
+            &_minus:before
+                content: ''
+
+        &__submit
+            text-transform: uppercase
+            background-color: bg-color(accent)
+            border-radius: 5px
+            +alignment()
+            +size(100%, 45px)
+            color: text-color(dark)
+            font-weight: 700
+            font-size: rem(16px)

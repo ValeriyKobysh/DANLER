@@ -1,0 +1,14 @@
+- 
+    var menu = [
+        { title: 'Главная', link: 'index.html' },
+        { title: 'Доставка и оплата', link: 'delivery.html' },
+        { title: 'Упаковка', link: 'packaging.html' },
+        { title: 'Статьи', link: 'articles.html' },
+        { title: 'Контакты', link: 'contact-info.html' },
+        { title: 'Отзывы', link: 'reviews.html' }
+    ];
+
+ul.menu.list
+    each m in menu
+        li.menu__item
+            a.menu__link.link(href=m.link) #{m.title}

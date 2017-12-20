@@ -1,0 +1,197 @@
+@import '../../style/default.sass'
+@import '../../components/header/header.sass'
+@import '../../components/basket/basket.sass'
+@import '../../components/dialog/dialog.sass'
+
+.card
+    
+    &__container, &__info
+        display: flex
+
+    &__content
+        width: 100%
+        padding: 15px
+        background-color: bg-color(white)
+        border: 1px solid bg-color(grey-light)
+
+    &__carousel
+        flex-grow: 2
+        margin-right: 30px
+        flex-shrink: 0
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        align-content: flex-start
+
+    &__info
+
+        &-item
+            width: calc(100% / 5 - 10px)
+            cursor: pointer
+
+            &:first-child
+                +size(100%, auto)
+                margin-bottom: 10px
+
+            img
+                +size(100%)
+
+    &__heading
+        font-size: rem(20px)
+        line-height: rem(26px)
+        color: text-color(dark)
+        font-weight: 400
+        overflow: hidden
+
+    &__product
+        position: relative
+
+        &-items
+            margin-bottom: 25px
+
+        &-item
+            color: text-color(dark)
+            +alignment($jc: between)
+            border-bottom: 1px solid bg-color(accent)
+            padding-bottom: 10px
+            margin-bottom: 10px
+
+        &-value.true
+            color: text-color(access)
+
+        &-value.false
+            color: text-color(error)
+
+    &__btns
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        position: relative
+
+    &__buy, &__callback
+        align-items: center
+        justify-content: center
+
+    &__buy
+        color: text-color(dark)
+        margin-bottom: 15px
+        width: 100%
+
+        img
+            margin-right: 10px
+
+    &__callback
+        width: calc(50% - 15px)
+        color: text-color(hover)
+        font-size: rem(16px)
+
+        &.active
+            background-color: bg-color(main-light)
+
+    &__phones-wrap
+        position: relative
+
+    &__phones
+        position: absolute
+        top: calc(100% + 15px)
+        left: 0
+        width: 100%
+        background-color: bg-color(main-light)
+        border-radius: 5px
+        padding: 15px
+
+        &:before
+            content: ''
+            display: flex
+            +size(20px)
+            position: absolute
+            top: -10px
+            transform: rotate(45deg)
+            right: 30px
+            background-color: bg-color(main-light)
+
+    &__phone
+        margin-bottom: 15px
+
+        &:last-child
+            margin-bottom: 0
+
+        *
+            color: text-color(light)
+            +transition()
+
+        &:hover *, &:active *
+            color: text-color(hover)
+
+
+.sidebar
+    height: 500px
+    background-color: bg-color(accent)
+
++media-breakpoint-up(breakpoints(xl))
+    .card
+
+    .sidebar
+        width: 391px
+        margin-right: 30px
+
++media-breakpoint-up(breakpoints(md))
+    .card
+
+        &__heading
+            font-size: rem(20px)
+            line-height: rem(26px)
+            height: 52px
+
++media-breakpoint-up(breakpoints(sm))
+    .card
+
+        &__heading
+            margin-bottom: 20px
+
+        &__carousel, &__product
+            width: calc(50% - 15px)
+
++media-breakpoint-between(breakpoints(lg), breakpoints(xl))
+    .card
+
+    .sidebar
+        width: 366px
+        margin-right: 30px
+
+
++media-breakpoint-down(breakpoints(lg))
+    .sidebar
+        display: none
+
+    .card
+
+        &__content
+            border-radius: 5px
+
++media-breakpoint-down(breakpoints(md))
+    .card
+
+        &__heading
+            font-size: rem(16px)
+            line-height: rem(20px)
+            height: 60px
+
+        &__product
+
+            &-items
+                font-size: rem(14px)
+
++media-breakpoint-down(breakpoints(sm))
+    .card
+
+        &__info
+            flex-wrap: wrap
+
+        &__carousel, &__product
+            width: 100%
+
+        &__carousel
+            margin-bottom: 10px
+
+

@@ -1,0 +1,64 @@
+// ###Default properties###
+// $baseff: 'Open Sans', sans-serif!default;
+// $baseff: 'Ubuntu', sans-serif!default;
+$baseff: 'Play', sans-serif!default;
+$basefz: 16px!default;
+
+// ### COLORS ###
+    $white-color: #ffffff;
+    $black-color: black;
+    $dark-color: #292929;
+    $yellow-color: #FFFF00;
+    $grey-dark-color: #676767;
+    $grey-light-color: #CCCCCC;
+    $green-color: #3DF59F;
+    $red-color: #FF5722;
+
+// ###BREAKPOINTS###
+    $xl: 1310px;
+    $lg: 992px;
+    $md: 798px;
+    $sm: 576px;
+    $xs: 360px;
+
+$breakpoints: (
+    xl: $xl,
+    lg: $lg,
+    md: $md,
+    sm: $sm,
+    xs: $xs
+);
+
+$ui-color: (
+    success: $green-color,
+    error: $red-color
+);
+
+$text-color: (
+    light: $white-color,
+    medium: $grey-dark-color,
+    dark: $dark-color,
+    hover: $yellow-color,
+    access: $green-color,
+    error: $red-color
+);
+
+$bg-color: (
+    white: $white-color,
+    main: $dark-color,
+    main-dark: darken($dark-color, 4%),
+    main-light: lighten($dark-color, 4%),
+    accent: $yellow-color,
+    accent-light: lighten($yellow-color, 4%),
+    green: $green-color,
+    red:$red-color,
+    grey-dark: $grey-dark-color,
+    grey-dark-light: lighten($grey-dark-color, 4%),
+    grey-light: $grey-light-color
+    // accent-light: adjust-color($yellow-color, ),
+    // accent-dark: 
+);
+
+
+
+

@@ -1,44 +1,44 @@
 mixin phoneItem()
-    li.phone-item
-        span.icon-item.phone-icon
-            i.icon-phone
-        a.phone-link(href="callto: +380937008000") +38(093) 700 - 8000
+    li.header__phone
+        img.header__icon(src=require('../../assets/image/icons/phone.svg'), alt="", height="22", srcset="")
+        a.header__phone-link.link(href="tel: +380937008000") +38(093)700-80-00
 
-header.header-page
-        .header-page__top
-            .container
-                .contact-info.wrapper-phone
-                    ul.phone-list
+header.header#header
+        .header__top
+            .container.header__container
+                .header__phone-wrap
+                    button.header__btn-phone(@click="showPhones")
+                        img.header__btn-icon(src=require('../../assets/image/icons/phone.svg'), alt="" height="30")
+
+                    ul.header__phones(v-bind:class="{show: phoneList}")
                         - for (var x = 0; x < 3; x++)
                             +phoneItem()
-                    .show-all-phone
-                        span.icon-item.phone-icon
-                            i.icon-phone
-                        span.show-all-phone-text +38 (093) ...
-                        a.show-all-phone-link(href="#") показать всё
-                    .basket
-                        span.icon-basket
-                        span.count (0)
-                    ul.location-list
-                        li.location-item
-                            span.icon-item.location-icon
-                                i.icon-location
-                            span.location-text г. Чернигов, ул. Инструментальная,7
-        .container
-            .header-page__bot
-                a.mobile-menu(href="#")
-                    i.mobile-menu-pic.icon-mobile-menu-open
-                .header-page__logo
-                    a(href="#")
-                        img(src="img/logo.svg", alt="")
-                        //- span.header-page__logo-an-color Dan
-                        //- span.header-page__logo-wh-color Ler
-                        span.header-page__logo-text Разборка микроавтобусов
-                .header-page__navigation
-                    nav.top-navigation
-                        //- include ../_menu-list/_menu-list
-                .header-page-call-back
-                    button.call-back-link.js-callback-trigger
-                        span.call-back-icon
-                            i.icon-item.icon-phone
-                        span.call-back-text Заказать звонок
+
+                .header__basket-wrap
+                    a.header__btn-basket(@click="showBaskett")
+                        img.header__btn-icon.header__btn-icon_basket(src=require('../../assets/image/icons/store.svg'), alt="" height="30")
+                        | (12)
+
+                    basket.header__basket(v-bind:class="{show: basketList}")
+                    
+                .header__location-wrap
+                    button.header__btn-location(@click="showLocation")
+                        img.header__btn-icon(src=require('../../assets/image/icons/location.svg'), alt="" height="30")
+
+                    ul.header__locations.list(v-bind:class="{show: locationList}")
+                        li.header__location
+                            img.header__icon(src=require('../../assets/image/icons/location.svg'), alt="" height="22")
+                            | г. Чернигов, ул. Инструментальная,7
+        //- .header__bot
+            .container.header__container
+                .header__logo
+                    a.header__logo.link(href="/")
+                        img(src=require('../../assets/image/logo.svg'), alt="")
+                        span Разборка микроавтобусов
+
+                nav.header__nav
+                        include ../menu/menu
+
+                a.header__callback(@click="showForm")
+                    img.header__icon(src=require('../../assets/image/icons/phone.svg'), alt="", height="22", srcset="")
+                    | Заказать звонок

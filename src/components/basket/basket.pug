@@ -1,0 +1,30 @@
+.basket#basket
+    ul.basket__list(v-if="show")
+        li.basket__item(v-if="countItems == 0") 
+            span.basket__empty Ваша корзина пуста
+
+        li.basket__item(v-else v-for="(item, index) in items" :key="index")
+            //- button.basket__delete(@click="deleteRecord(index)")
+
+            .basket__info-wrap
+                span.basket__image
+                    img(:src="item.image")
+
+                a.basket__title.link(:href="item.url") {{item.title}} Блок двигателя в сборе Mercedes Sprinter 2.9 tdi
+
+            .basket__price-wrap
+                span.basket__price
+                    span.mark Цена:
+                    | &nbsp;{{delimiter(item.price)}} грн. х {{item.count}}
+
+                .basket__btns
+                    button.basket__btn.basket__btn_plus(@click="increment(index)")
+
+                    button.basket__btn.basket__btn_minus(@click="decrement(index)")
+
+        li.basket__item(v-if="countItems != 0")
+            span.basket__total Итого:
+            span.basket__total {{totalPrice}} грн.
+
+        li.basket__item(v-if="countItems != 0")
+            a.basket__submit.link(href="/order/") Оформить заказ

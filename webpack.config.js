@@ -15,7 +15,7 @@ const PATH = {
 module.exports = {
     entry: {
         index: './src/view/index/index.js',
-        // card: './src/view/card/card.js'
+        card: './src/view/card/card.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -29,20 +29,25 @@ module.exports = {
                 template: PATH.src + '/view/index/index.pug'
             }
         ),
-        // new HtmlWebpackPlugin(
-        //     {
-        //         filename: 'card.html',
-        //         chunks: ['card', 'common'],
-        //         template: PATH.src + '/view/card/card.pug'
-        //     }
-        // ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'card.html',
+                chunks: ['card', 'common'],
+                template: PATH.src + '/view/card/card.pug'
+            }
+        ),
         new CleanWebpackPlugin('dist'),
         new ExtractTextPlugin('./css/[name].css'),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common'
         }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        }),
         new OptimizeCssAssetsPlugin({
-            assetNameRegExp: /\.optimize\.css$/g,
+            assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano'),
             cssProcessorOptions: { discardComments: {removeAll: true } },
             canPrint: true
@@ -68,6 +73,14 @@ module.exports = {
                 })
             },
             {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    publicPath: '../',
+                    fallback: 'style-loader',
+                    use: 'css-loader!autoprefixer-loader!sass-loader'
+                })
+            },
+            {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
@@ -83,5 +96,10 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    resolve: {
+        alias: {
+          'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' для webpack 1
+        }
+      }
 }

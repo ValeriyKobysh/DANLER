@@ -1,120 +1,194 @@
-.header-page
-    height: 120px
+.header
+
+    &__container
+        +alignment($jc: end)
+        height: 100%
 
     &__top
-        background-color: $headFooColor
-        height: 40px
+        background-color: bg-color(main-light)
         display: flex
         align-items: center
+
+    &__basket
+        display: none
+
+    &__phones, &__locations
+        +alignment(center, start)
+
+    &__phone, &__location
+        display: flex
+        color: text-color(light)
+        font-size: rem(16px)
+        line-height: rem(22px)
+
+    &__phone-link
+        color: text-color(light)
+        +transition(color)
+
+        &:hover, &:active
+            color: text-color(hover)
+
+    &__icon
+        height: 22px
+        margin-right: 10px
 
     &__bot
-        height: 80px
+        padding: 15px 0
+
+    &__nav
+        flex-grow: 1
         display: flex
-        justify-content: space-between
         align-items: center
+        padding: 0 15px
 
-        .top-navigation
+        .menu
+            +alignment(center, around)
+            flex-grow: 1
 
-            .menu
+            &__item
 
-                &-list
-                    display: flex
-                    align-items: center
-                    justify-content: space-between
+            &__link
+                font-size: rem(20px)
+                position: relative
+                display: block
+                color: text-color(light)
+                +transition(color)
 
-                &-item
+                &:hover, &:active
+                    color: text-color(hover)
 
-                    &-link
-                        color: $white
-                        font-size: rem(20px)
-                        position: relative
-                        display: block
-                        // padding: 10px 17px
-                        
-                        &:after, &:before
-                            content: ''
-                            position: absolute
-                            left: 0
-                            background: $hoverLink
-                            transition: transform 0.1s
-                            transition-timing-function: cubic-bezier(1, 0.68, 0.16, 0.9)
-                            /* top and bottom line */
-                            +size(100% 1.5px)
-                            transform: scale3d(0, 1, 1)
-                        /* top line */
-                        &:before
-                            top: 0
-                            transform-origin: 0 50%
-                            /* Delays (first reverse, then current) */
-                            transition-delay: 0.1s
-                        /* bottom line */
-                        &:after
-                            bottom: 0
-                            transform-origin: 100% 50%
-                            /* Delays (first reverse, then current) */
-                            transition-delay: 0.3s
-        .call-back
-            &-link
-                background-color: $darkGrey
-                border: 0
-                border-radius: 10px
-                transition: all 0.5s ease
-                cursor: pointer
-                display: flex
-                justify-content: center
-                align-items: center
-                outline: none
-                &:hover
-                    background-color: $bodyColor
-            &-text
-                color: $white
-    .mobile-menu
-        margin-left: 1px
-        +size(40px)
-        position: relative
-        .mobile-menu-pic
-            position: absolute
-            top: -9px
-            left: 0
-            display: block
-            +size(40px)
-            font-size: rem(40px)
-            &:before
-                margin: 0
     &__logo
-        text-align: center
+        +alignment()
+        flex-direction: column
         text-transform: uppercase
         font-size: rem(12px)
+        color: text-color(light)
 
-        & img
-            height: 70%
+        img
+            +size(245px, 70px)
+            margin-bottom: 5px
 
-        &-text
-            display: block
-            
-    &__navigation
-        flex-grow: 1
-        padding: 0 15px
-    &-call-back
-.contact-info
-    display: flex
-    position: relative
-.phone-list, .show-all-phone, .location-list
-    float: left
-.phone-list
-    display: none
+    &__callback
+        +alignment()
+        +size(210px, 45px)
+        background-color: bg-color(grey-dark)
+        border: 0
+        border-radius: 5px
+        font-weight: 500
+        color: text-color(light)
+        font-size: rem(14px)
+        cursor: pointer
+        text-transform: uppercase
+        +transition()
 
-.phone-link, .location-text, .show-all-phone-link, .show-all-phone-text
-    color: $white
-    font-weight: 400
-    vertical-align: middle
-.icon-item
-    font-size: rem(24px)
-    vertical-align: middle
-    color: $hoverLink
-.show-all-phone
-    &-link
-        line-height: 33px
-        font-weight: 600
-        margin-left: 5px
-        border-bottom: 1px solid $hoverLink
+        &:hover, &:active
+            background-color: bg-color(grey-dark-light)
+
++media-breakpoint-up(breakpoints(lg))
+    .header
+
+        &__top
+            height: 40px
+
+        &__btn-phone, &__btn-location, &__btn-basket
+            display: none
+
+        &__phones, &__locations
+            height: 100%
+
+        &__locations
+            margin-left: 40px
+
+        &__phone, &__location
+            margin-right: 25px
+            align-items: center
+
+            &:last-child
+                margin-right: 0
+
++media-breakpoint-between(breakpoints(md), breakpoints(lg))
+    .header 
+
+        &__phone-wrap, &__location-wrap
+            position: relative
+
++media-breakpoint-down(breakpoints(lg))
+    .header
+
+        &__top
+            height: 60px
+
+        &__container
+            position: relative
+
+        &__phone-wrap, &__location-wrap
+            width: 50%
+            display: flex
+
+        &__phone-wrap
+            justify-content: flex-start
+
+        &__location-wrap
+            justify-content: flex-end
+
+        &__btn-phone, &__btn-location, &__btn-basket
+            border: 0
+            outline: none
+            background-color: transparent
+            cursor: pointer
+            +transition()
+            outline: none
+
+            &:active
+                background-color: bg-color(main-dark)
+
+        &__btn-phone, &__btn-location
+            +size(60px)
+
+        &__btn-icon_basket
+            margin-right: 10px
+
+        &__btn-basket
+            +size(150px, 60px)
+            color: text-color(light)
+            font-family: $baseff
+            font-size: rem(16px)
+            +alignment()
+
+        &__phones, &__locations, &__basket
+            display: none
+
+            &.show
+                display: flex
+                flex-direction: column
+                position: absolute
+                top: calc(100% + 20px)
+                width: calc(100% - 30px)
+                background-color: bg-color(main-light)
+                border-radius: 5px
+                border: 1px solid bg-color(accent)
+
+                &:before
+                    content: ''
+                    display: flex
+                    +size(20px)
+                    background-color: bg-color(main-light)
+                    transform: rotate(45deg)
+                    position: absolute
+                    top: -11px
+                    border-top: 1px solid bg-color(accent)
+                    border-left: 1px solid bg-color(accent)
+
+        &__phones.show:before
+            left: 20px
+
+        &__locations.show:before
+            right: 20px
+
+        &__phone, &__location
+            padding: 10px 30px
+            width: 100%
+            box-sizing: border-box
+
+        &__icon
+            display: none

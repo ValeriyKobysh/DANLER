@@ -1,8 +1,7 @@
-// @import "../bower_components/neat/core/_neat"
-@import "_variables"
-@import "_functions"
-@import "_mixins"
-@import "_fonts.scss"
+@import "variables"
+@import "functions"
+@import "mixins"
+@import "fonts.scss"
 
 *
     margin: 0
@@ -11,9 +10,9 @@
 
 ul
     list-style-type: none
-a
+
+.link
     text-decoration: none
-    color: $white
 
 html, body
     height: 100%
@@ -21,19 +20,21 @@ html, body
     font-weight: 400
     font-size: $basefz
     min-height: 100%
-    background-color: $bodyColor
-    color: $white
+    background-color: bg-color(main)
+    color: text-color(light)
 
 body
     display: flex
     flex-direction: column
+    min-width: $xs
+    
     & > *
         flex-shrink: 0
         min-width: $xs
+        box-sizing: border-box
 
-@import "../libs/fancybox/jquery.fancybox.min.scss"
-// @import "../libs/owl-carousel-js/owl.theme.default.min.scss"
-@import "../libs/owl-carousel-js/owl.carousel.scss"
-
-@import "font-awesome.scss"
-@import "font-icons.scss"
+@import './container.sass'
+@import './btn.sass'
+@import './field.sass'
+@import './error.sass'
+@import './content.sass'

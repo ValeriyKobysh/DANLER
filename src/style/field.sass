@@ -1,14 +1,15 @@
 .field
     height: 45px
-    border: 1px solid $darkGrey 
+    border: 1px solid bg-color(grey-dark)
     border-radius: 5px
     padding: 0 20px
     box-sizing: border-box
-    color: $bodyColor
+    color: text-color(dark)
     outline: none
     font-size: rem(16px)
     font-family: $baseff
+    +transition(border-color)
 
     &:focus
-        border-color: $bodyColor
+        border-color: bg-color(main)
         
