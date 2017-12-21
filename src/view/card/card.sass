@@ -2,6 +2,7 @@
 @import '../../components/header/header.sass'
 @import '../../components/basket/basket.sass'
 @import '../../components/dialog/dialog.sass'
+@import '../../components/footer/footer.sass'
 
 .card
     
@@ -205,28 +206,28 @@
             fill: bg-color(white)
 
         &_fb
-            background-color: #3b5998
+            background-color: map-get($social-color, facebook)
 
             &:hover
-                background-color: lighten(#3b5998, 10%)
+                background-color: lighten(map-get($social-color, facebook), 10%)
 
         &_tw
-            background-color: #1dcaff
+            background-color: map-get($social-color, twitter)
 
             &:hover
-                background-color: lighten(#1dcaff, 10%)
+                background-color: lighten(map-get($social-color, twitter), 10%)
 
         &_vk
-            background-color: #45668e
+            background-color: map-get($social-color, vk)
 
             &:hover
-                background-color: lighten(#45668e, 10%)
+                background-color: lighten(map-get($social-color, vk), 10%)
 
         &_gp
-            background-color: #d34836
+            background-color: map-get($social-color, google-plus)
 
             &:hover
-                background-color: lighten(#d34836, 10%)
+                background-color: lighten(map-get($social-color, google-plus), 10%)
 
     &__analog
 

@@ -1,0 +1,128 @@
+.footer
+    background-color: bg-color(main-light)
+
+    &__container
+        display: flex
+        align-items: center
+        height: 100%
+
+    &__copyright
+        width: calc(25% - 25px)
+        flex-shrink: 0
+        flex-grow: 1
+        font-size: rem(14px)
+        line-height: rem(20px)
+
+    &__nav
+        flex-grow: 2
+    
+        &-list
+            +alignment($jc: between)
+
+        &-link
+            color: text-color(light)
+            font-size: rem(14px)
+            +transition()
+
+            &:hover, &:active
+                color: text-color(hover)
+
+    &__social
+        width: calc(25% - 30px)
+        flex-shrink: 0
+
+        &-list
+            +alignment($jc: end)
+
+        &-link
+            +alignment()
+            +size(45px)
+            border-radius: 5px
+            +transition()
+
+            svg
+                height: 50%
+                +transition()
+
+            &_vk
+                border: 1px solid map-get($social-color, vk)
+
+                &:hover, &:active
+                    border: 1px solid lighten(map-get($social-color, vk), 10%)
+
+                    svg
+                        fill: lighten(map-get($social-color, vk), 10%)
+
+                svg
+                    fill: map-get($social-color, vk)
+
+            &_gp
+                border: 1px solid map-get($social-color, google-plus)
+
+                &:hover, &:active
+                    border: 1px solid lighten(map-get($social-color, google-plus), 10%)
+
+                    svg
+                        fill: lighten(map-get($social-color, google-plus), 10%)
+
+                svg
+                    fill: map-get($social-color, google-plus)
+
+            &_fb
+                border: 1px solid map-get($social-color, facebook)
+
+                &:hover, &:active
+                    border: 1px solid lighten(map-get($social-color, facebook), 10%)
+
+                    svg
+                        fill: lighten(map-get($social-color, facebook), 10%)
+
+                svg
+                    fill: map-get($social-color, facebook)
+
++media-breakpoint-up(breakpoints(lg))
+    .footer
+        height: 125px
+
++media-breakpoint-up(breakpoints(md))
+    .footer
+
+        &__social
+
+            &-item
+                margin-right: 15px
+
+                &:last-child
+                    margin-right: 0
+
++media-breakpoint-down(breakpoints(lg))
+    .footer
+        padding: 30px 0
+
+        &__nav
+
+            &-list
+                flex-direction: column
+
+            &-item
+                margin-bottom: 15px
+
+                &:last-child
+                    margin-bottom: 0
+
++media-breakpoint-down(breakpoints(md))
+    .footer
+        padding: 30px 0
+
+        &__social
+
+            &-list
+                flex-direction: column
+
+            &-item
+                margin-bottom: 15px
+
+                &:last-child
+                    margin-bottom: 0
+
+
