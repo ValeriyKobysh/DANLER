@@ -11,9 +11,11 @@
 
     &__basket
         display: none
+        z-index: 100
 
     &__phones, &__locations
         +alignment(center, start)
+        z-index: 100
 
     &__phone, &__location
         display: flex
@@ -64,25 +66,23 @@
         font-size: rem(12px)
         color: text-color(light)
 
-        img
-            +size(245px, 70px)
-            margin-bottom: 5px
-
     &__callback
         +alignment()
-        +size(210px, 45px)
-        background-color: bg-color(grey-dark)
-        border: 0
-        border-radius: 5px
-        font-weight: 500
         color: text-color(light)
         font-size: rem(14px)
-        cursor: pointer
-        text-transform: uppercase
         +transition()
 
-        &:hover, &:active
-            background-color: bg-color(grey-dark-light)
++media-breakpoint-up(breakpoints(xl))
+    .header
+
+        &__logo
+
+            img
+                +size(245px, 70px)
+                margin-bottom: 5px
+
+        &__callback
+            width: 210px
 
 +media-breakpoint-up(breakpoints(lg))
     .header
@@ -90,7 +90,7 @@
         &__top
             height: 40px
 
-        &__btn-phone, &__btn-location, &__btn-basket
+        &__btn-phone, &__btn-location, &__btn-basket, &__btn-mobile
             display: none
 
         &__phones, &__locations
@@ -105,6 +105,23 @@
 
             &:last-child
                 margin-right: 0
+
++media-breakpoint-between(breakpoints(lg), breakpoints(xl))
+    .header
+
+        &__nav
+
+            .menu__link
+                font-size: rem(16px)
+
+        &__logo
+
+            img
+                +size(150px, auto)
+                margin-bottom: 5px
+
+        &__callback
+            width: 180px
 
 +media-breakpoint-between(breakpoints(md), breakpoints(lg))
     .header 
@@ -131,7 +148,7 @@
         &__location-wrap
             justify-content: flex-end
 
-        &__btn-phone, &__btn-location, &__btn-basket
+        &__btn-phone, &__btn-location, &__btn-basket, &__btn-mobile
             border: 0
             outline: none
             background-color: transparent
@@ -192,3 +209,38 @@
 
         &__icon
             display: none
+
+        &__nav
+            display: none
+
+        &__logo
+            flex-grow: 1
+
+            img
+                +size(150px,auto)
+                margin-bottom: 5px
+
+        &__callback-wrap
+            position: relative
+
+        &__callback-dialog .dialog__container.callback:before
+            left: auto
+            right: 15px
+
+        &__callback
+            width: 45px
+
+            img
+                display: block
+                margin: 0
+
+            span
+                display: none
+
+        &__btn-mobile
+            +alignment()
+            width: 60px
+            height: 60px
+
+        &__mobile-wrap
+            position: relative

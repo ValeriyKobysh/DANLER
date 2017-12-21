@@ -15,7 +15,7 @@ header.header#header
                             +phoneItem()
 
                 .header__basket-wrap
-                    a.header__btn-basket(@click="showBaskett")
+                    a.header__btn-basket(@click="showBasket")
                         img.header__btn-icon.header__btn-icon_basket(src=require('../../assets/image/icons/store.svg'), alt="" height="30")
                         | (12)
 
@@ -29,8 +29,14 @@ header.header#header
                         li.header__location
                             img.header__icon(src=require('../../assets/image/icons/location.svg'), alt="" height="22")
                             | г. Чернигов, ул. Инструментальная,7
-        //- .header__bot
+        .header__bot
             .container.header__container
+                .header__mobile-wrap
+                    a.header__btn-mobile(@click="showMobile")
+                        img.header__btn-icon(src=require('../../assets/image/icons/mobile.svg'), alt="" height="30")
+
+                    mobile-component(:data="mobileMenu" v-if="mobile")
+
                 .header__logo
                     a.header__logo.link(href="/")
                         img(src=require('../../assets/image/logo.svg'), alt="")
@@ -39,6 +45,12 @@ header.header#header
                 nav.header__nav
                         include ../menu/menu
 
-                a.header__callback(@click="showForm")
-                    img.header__icon(src=require('../../assets/image/icons/phone.svg'), alt="", height="22", srcset="")
-                    | Заказать звонок
+                .header__callback-wrap
+                    a.header__callback.btn.btn_dark.link(@click="showForm")
+                        img.header__icon(src=require('../../assets/image/icons/phone.svg'), alt="", height="22", srcset="")
+                        span Заказать звонок
+
+                    callback-component.header__callback-dialog(
+                        v-if="callback"
+                        @close="showForm"
+                        )

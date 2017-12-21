@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Главная</title>
+  <link href="./css/index.css" rel="stylesheet"></head>
+  <body>
+    <header class="header" id="header">
+      <div class="header__top">
+        <div class="container header__container">
+          <div class="header__phone-wrap">
+            <button class="header__btn-phone" @click="showPhones"><img class="header__btn-icon" src="image/phone.svg" alt="" height="30"></button>
+            <ul class="header__phones" v-bind:class="{show: phoneList}">
+                  <li class="header__phone"><img class="header__icon" src="image/phone.svg" alt="" height="22" srcset=""><a class="header__phone-link link" href="tel: +380937008000">+38(093)700-80-00</a></li>
+                  <li class="header__phone"><img class="header__icon" src="image/phone.svg" alt="" height="22" srcset=""><a class="header__phone-link link" href="tel: +380937008000">+38(093)700-80-00</a></li>
+                  <li class="header__phone"><img class="header__icon" src="image/phone.svg" alt="" height="22" srcset=""><a class="header__phone-link link" href="tel: +380937008000">+38(093)700-80-00</a></li>
+            </ul>
+          </div>
+          <div class="header__basket-wrap"><a class="header__btn-basket" @click="showBasket"><img class="header__btn-icon header__btn-icon_basket" src="image/store.svg" alt="" height="30">(12)</a>
+            <basket class="header__basket" v-bind:class="{show: basketList}"></basket>
+          </div>
+          <div class="header__location-wrap">
+            <button class="header__btn-location" @click="showLocation"><img class="header__btn-icon" src="image/location.svg" alt="" height="30"></button>
+            <ul class="header__locations list" v-bind:class="{show: locationList}">
+              <li class="header__location"><img class="header__icon" src="image/location.svg" alt="" height="22">г. Чернигов, ул. Инструментальная,7</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header__bot">
+        <div class="container header__container">
+          <div class="header__mobile-wrap"><a class="header__btn-mobile" @click="showMobile"><img class="header__btn-icon" src="image/mobile.svg" alt="" height="30"></a>
+            <mobile-component :data="mobileMenu" v-if="mobile"></mobile-component>
+          </div>
+          <div class="header__logo"><a class="header__logo link" href="/"><img src="image/logo.svg" alt=""><span>Разборка микроавтобусов</span></a></div>
+          <nav class="header__nav">
+<ul class="menu list">
+  <li class="menu__item"><a class="menu__link link" href="index.html">Главная</a></li>
+  <li class="menu__item"><a class="menu__link link" href="delivery.html">Доставка и оплата</a></li>
+  <li class="menu__item"><a class="menu__link link" href="packaging.html">Поступления</a></li>
+  <li class="menu__item"><a class="menu__link link" href="articles.html">Статьи</a></li>
+  <li class="menu__item"><a class="menu__link link" href="contact-info.html">Контакты</a></li>
+  <li class="menu__item"><a class="menu__link link" href="reviews.html">Отзывы</a></li>
+</ul>
+          </nav>
+          <div class="header__callback-wrap"><a class="header__callback btn btn_dark link" @click="showForm"><img class="header__icon" src="image/phone.svg" alt="" height="22" srcset=""><span>Заказать звонок</span></a>
+            <callback-component class="header__callback-dialog" v-if="callback" @close="showForm"></callback-component>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>mySSS</section>
+<footer class="footer">
+  <div class="footer__container container">
+    <div class="footer__copyright">Razborka-avto.com DanLer © 2016</div>
+    <nav class="footer__nav">
+      <ul class="footer__nav-list list">
+        <li class="footer__nav-item"> <a class="footer__nav-link link" href="index.html">Главная</a></li>
+        <li class="footer__nav-item"> <a class="footer__nav-link link" href="delivery.html">Доставка и оплата</a></li>
+        <li class="footer__nav-item"> <a class="footer__nav-link link" href="package.html">Упаковка</a></li>
+        <li class="footer__nav-item"> <a class="footer__nav-link link" href="articles.html">Статьи</a></li>
+        <li class="footer__nav-item"> <a class="footer__nav-link link" href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="footer__social">
+      <ul class="footer__social-list list">
+        <li class="footer__social-item"><a class="footer__social-link footer__social-link_fb" href="https://www.facebook.com/razborkaavto/" target="_blank" rel="nofollow">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" viewBox="0 0 96.124 96.123" xml:space="preserve">
+              <path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803 c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654 c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246 c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"></path>
+            </svg></a></li>
+        <li class="footer__social-item"><a class="footer__social-link footer__social-link_gp" href="https://plus.google.com/100722825263243149036" target="_blank" rel="nofollow">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" viewBox="0 0 315 315" xml:space="preserve">
+              <path d="M307.5,136.892h-19.791V117.1c0-4.143-3.357-7.5-7.5-7.5h-26.717c-4.143,0-7.5,3.357-7.5,7.5v19.792 h-19.791c-4.143,0-7.5,3.357-7.5,7.5v26.717c0,4.143,3.357,7.5,7.5,7.5h19.791v19.792c0,4.142,3.357,7.5,7.5,7.5h26.717 c4.143,0,7.5-3.358,7.5-7.5v-19.792H307.5c4.143,0,7.5-3.357,7.5-7.5v-26.717C315,140.249,311.643,136.892,307.5,136.892z"></path>
+              <path d="M101.906,104.16c9.088,0,17.823,2.45,25.274,7.087l8.513,5.825c2.967,2.03,6.958,1.671,9.514-0.861 l24.828-24.596c1.589-1.574,2.392-3.774,2.191-6.001c-0.2-2.227-1.384-4.248-3.228-5.513l-14.43-9.896 c-0.294-0.201-0.603-0.382-0.922-0.539l-13.979-6.902c-0.185-0.092-0.374-0.176-0.566-0.252 c-12.042-4.754-24.729-7.165-37.708-7.165c-26.757,0-51.996,10.27-71.068,28.915c-19.367,18.934-30.137,44.681-30.323,72.499 c-0.187,27.824,10.239,53.72,29.355,72.916c18.968,19.049,45.879,29.975,73.834,29.975c27.658,0,53.608-10.739,71.195-29.463 c13.931-14.831,22.48-34.641,24.727-57.288c0.021-0.215,0.034-0.43,0.036-0.645l0.26-20.345c0.006-0.421-0.024-0.841-0.09-1.257 l-1.09-6.953c-0.571-3.649-3.716-6.339-7.409-6.339h-86.672c-4.143,0-7.5,3.358-7.5,7.5v29.982c0,4.142,3.357,7.5,7.5,7.5h44.186 c-2.025,4.439-5.216,9.12-9.251,13.482c-8.801,9.518-21.926,14.977-36.01,14.977c-14.383,0-28.157-5.636-37.79-15.462 c-20.052-20.448-19.822-56.077,0.489-76.245C75.334,109.605,88.505,104.16,101.906,104.16z"></path>
+            </svg></a></li>
+        <li class="footer__social-item"><a class="footer__social-link footer__social-link_vk" href="https://vk.com/razborkabusavto" target="_blank" rel="nofollow">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" viewBox="0 0 304.36 304.36" xml:space="preserve">
+              <path d="M261.945,175.576c10.096,9.857,20.752,19.131,29.807,29.982 c4,4.822,7.787,9.798,10.684,15.394c4.105,7.955,0.387,16.709-6.746,17.184l-44.34-0.02c-11.436,0.949-20.559-3.655-28.23-11.474 c-6.139-6.253-11.824-12.908-17.727-19.372c-2.42-2.642-4.953-5.128-7.979-7.093c-6.053-3.929-11.307-2.726-14.766,3.587 c-3.523,6.421-4.322,13.531-4.668,20.687c-0.475,10.441-3.631,13.186-14.119,13.664c-22.414,1.057-43.686-2.334-63.447-13.641 c-17.422-9.968-30.932-24.04-42.691-39.971C34.828,153.482,17.295,119.395,1.537,84.353C-2.01,76.458,0.584,72.22,9.295,72.07 c14.465-0.281,28.928-0.261,43.41-0.02c5.879,0.086,9.771,3.458,12.041,9.012c7.826,19.243,17.402,37.551,29.422,54.521 c3.201,4.518,6.465,9.036,11.113,12.216c5.142,3.521,9.057,2.354,11.476-3.374c1.535-3.632,2.207-7.544,2.553-11.434 c1.146-13.383,1.297-26.743-0.713-40.079c-1.234-8.323-5.922-13.711-14.227-15.286c-4.238-0.803-3.607-2.38-1.555-4.799 c3.564-4.172,6.916-6.769,13.598-6.769h50.111c7.889,1.557,9.641,5.101,10.721,13.039l0.043,55.663 c-0.086,3.073,1.535,12.192,7.07,14.226c4.43,1.448,7.35-2.096,10.008-4.905c11.998-12.734,20.561-27.783,28.211-43.366 c3.395-6.852,6.314-13.968,9.143-21.078c2.096-5.276,5.385-7.872,11.328-7.757l48.229,0.043c1.43,0,2.877,0.021,4.262,0.258 c8.127,1.385,10.354,4.881,7.844,12.817c-3.955,12.451-11.65,22.827-19.174,33.251c-8.043,11.129-16.645,21.877-24.621,33.072 C252.26,161.544,252.842,166.697,261.945,175.576L261.945,175.576z M261.945,175.576"></path>
+            </svg></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+  <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/index.js"></script></body>
+</html>
