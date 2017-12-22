@@ -6,6 +6,7 @@ import callbackComponent from '../../components/dialog/callback/callback'
 import carouselComponent from '../../components/dialog/carousel/carousel'
 import addToBasket from '../../components/dialog/addToBasket/addToBasket'
 import Sidebar from '../../components/sidebar/sidedar'
+import Search from '../../components/search/search'
 import VueResource from 'vue-resource';
 import VueMask from 'v-mask'
 import { VueMaskDirective } from 'v-mask'

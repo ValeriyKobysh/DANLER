@@ -21,12 +21,16 @@ mixin analogItem()
             span.s-product-analog-link-text Подробнее
 
 block content
-    //- include ../../components/basket/basket
+    
+    include ../../components/search/search
+
     section.card
         .card__container.container.content
             include ../../components/sidebar/sidebar
 
             main.card__content#card
+                include ../../components/breadcrumbs/breadcrumbs
+                
                 .card__info
                     ul.card__carousel
                             - for (i = 0; i < 6; i++)

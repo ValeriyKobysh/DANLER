@@ -1,38 +1,40 @@
-.breadcrumps
+.breadcrumbs
     margin-bottom: 26px
     padding-left: 20px
+    display: flex
+    align-items: center
 
-    &-list
+    &__list
         display: flex
         flex-wrap: wrap
         width: 85%
         vertical-align: top
 
-    &-item
-        display: inline-block
+    &__item
+        display: inline-flex
 
         &:last-child
 
-            .breadcrumps-link:after
+            .breadcrumbs__link:after
                 content: ""
 
-    &-link
-        color: lighten($black, 40.5%)
+    &__link
+        color: text-color(medium)
         font-size: rem(12px)
 
         &:after
             content: '/'
-            color: $black
+            color: text-color(dark)
             margin-right: 5px
             margin-left: 5px
 
         &:hover
-            color: $black
+            color: text-color(dark)
 
-    &-home
+    &__home
         font-size: 0
-        display: inline-block
-        vertical-align: top
+        display: inline-flex
+        align-self: flex-start
         margin-right: 7px
 
         svg

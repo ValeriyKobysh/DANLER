@@ -52,6 +52,59 @@
         </div>
       </div>
     </header>
+    <section class="search" id="search">
+      <div class="search__container container">
+        <div class="search__content">
+          <div class="search__heading">Каталог</div>
+          <form class="search__form" actiion="/search" method="get">
+            <div class="search__drop">
+              <div class="search__drop-header" @click="showDrop">{{title}}</div>
+              <ul class="search__drop-list list" v-if="drop">
+                    <li class="search__drop-item">
+                      <label>Mercedes Sprinter
+                        <input type="radio" form id="mercedes-sprinter" name="search" value="Mercedes Sprinter" @change="changeTitle($event)">
+                      </label>
+                    </li>
+                    <li class="search__drop-item">
+                      <label>Mercedes Vito
+                        <input type="radio" form id="mercedes-vito" name="search" value="Mercedes Vito" @change="changeTitle($event)">
+                      </label>
+                    </li>
+                    <li class="search__drop-item">
+                      <label>Opel Vivaro
+                        <input type="radio" form id="opel-vivaro" name="search" value="Opel Vivaro" @change="changeTitle($event)">
+                      </label>
+                    </li>
+                    <li class="search__drop-item">
+                      <label>Renault Trafic
+                        <input type="radio" form id="renault-trafic" name="search" value="Renault Trafic" @change="changeTitle($event)">
+                      </label>
+                    </li>
+                    <li class="search__drop-item">
+                      <label>Volkswagen LT
+                        <input type="radio" form id="volkswagen-lt" name="search" value="Volkswagen LT" @change="changeTitle($event)">
+                      </label>
+                    </li>
+                    <li class="search__drop-item">
+                      <label>Volkswagen T4
+                        <input type="radio" form id="volkswagen-t4" name="search" value="Volkswagen T4" @change="changeTitle($event)">
+                      </label>
+                    </li>
+              </ul>
+            </div>
+            <input class="search__input" type="text" form="search-form" name="field" placeholder="Введите название">
+            <button class="search__submit" type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 339.921 339.921" xml:space="preserve">
+                <path d="M335.165,292.071l-81.385-84.077c-5.836-6.032-13.13-8.447-16.29-5.363c-3.171,3.062-10.47,0.653-16.306-5.379l-1.164-1.207c36.425-47.907,32.89-116.499-10.851-160.24c-47.739-47.739-125.142-47.739-172.875,0c-47.739,47.739-47.739,125.131,0,172.87c44.486,44.492,114.699,47.472,162.704,9.045l0.511,0.533c5.825,6.032,7.995,13.402,4.814,16.469c-3.166,3.068-1.012,10.443,4.83,16.464l81.341,84.11c5.836,6.016,15.452,6.195,21.49,0.354l22.828-22.088C340.827,307.735,340.99,298.125,335.165,292.071z M182.306,181.81c-32.852,32.857-86.312,32.857-119.159,0.011c-32.852-32.852-32.847-86.318,0-119.164c32.847-32.852,86.307-32.847,119.148,0.005C215.152,95.509,215.152,148.964,182.306,181.81z"></path>
+              </svg>
+            </button>
+          </form>
+          <div class="search__basket"><a class="search__btn-basket link" @click="showBasket" href="javascript:;"><img class="search__btn-icon" src="image/store-dark.svg" alt="" height="30">(12)</a>
+            <basket-component v-if="basket"></basket-component>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="card">
       <div class="card__container container content">
 <aside class="sidebar" id="sidebar">
@@ -70,7 +123,7 @@
     </ul>
   </div>
   <div class="sidebar__social">
-    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Frazborkaavto%2F&amp;tabs=timeline&amp;width=500&amp;height=500&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId=508620022870463" width="348" height="500" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Frazborkaavto%2F&amp;tabs=timeline&amp;width=350&amp;height=500&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId=508620022870463" width="350" height="500" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
   </div>
   <div class="sidebar__banners">
     <div class="sidebar__banner sidebar__banner_f"><span class="sidebar__banner-icon"><img src="image/banners-1.png" alt=""></span>
@@ -83,6 +136,17 @@
   </div>
 </aside>
         <main class="card__content" id="card">
+<div class="breadcrumbs"><a class="breadcrumbs__home" href="#">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 611.997 611.998" xml:space="preserve">
+      <path d="M511.114,300.251c-9.94,0-17.638,7.663-17.638,17.651v241.105H368.401v-98.453c0-9.236-7.697-17.31-17.002-17.31h-90.435 c-9.948,0-17.96,8.073-17.96,17.31v98.453h-124.76v-233.1c0-9.306-7.69-17.036-17.638-17.036c-9.298,0-16.995,7.73-16.995,17.036 v250.752c0,9.305,7.697,17.036,16.995,17.036h160.358c9.298,0,16.995-7.731,16.995-17.036v-98.454h55.801v98.454 c0,9.305,7.697,17.036,17.639,17.036h159.715c9.299,0,16.995-7.731,16.995-17.036V317.903 C528.109,307.915,520.413,300.251,511.114,300.251z"></path>
+      <path d="M607.003,314.003L467.819,174.225V78.919c0-9.921-8.019-17.583-17.96-17.583c-9.305,0-17.001,7.663-17.001,17.583v60.345 L318.046,23.774c-3.518-3.558-7.697-5.474-11.864-5.474c-4.81,0-8.983,1.984-12.507,5.474L5.361,312.087 c-6.917,6.91-7.375,17.994,0,24.357c6.411,7.389,17.454,6.91,24.371,0l276.45-275.793l275.807,278.393 c2.873,2.874,7.054,4.516,12.507,4.516c4.81,0,8.976-1.642,12.507-4.516C613.42,332.613,613.899,320.982,607.003,314.003z"></path>
+    </svg></a>
+  <ul class="breadcrumbs__list">
+    <li class="breadcrumbs__item"><a class="breadcrumbs__link link" href="javascript:;">Статьи</a></li>
+    <li class="breadcrumbs__item"><a class="breadcrumbs__link link" href="javascript:;">Разборка Мерседес Спринтер</a></li>
+    <li class="breadcrumbs__item"><a class="breadcrumbs__link link" href="javascript:;">Разборка Мерседес Спринтер</a></li>
+  </ul>
+</div>
           <div class="card__info">
             <ul class="card__carousel">
               <li class="card__info-item"><img src="image/product-photo.png" @click="showCarouselDialog"></li>
