@@ -4,7 +4,7 @@ import mixin from '../../mixins/mixins';
 Vue.component('basket', {
     template: 
     `<div class="basket">
-        <ul class="basket__list">
+        <ul class="basket__list list">
             <li class="basket__item" v-if="countItems == 0"><span class="basket__empty">Ваша корзина пуста</span></li>
             <li class="basket__item" v-else v-for="(item, index) in items" :key="index">
                 <div class="basket__info-wrap">

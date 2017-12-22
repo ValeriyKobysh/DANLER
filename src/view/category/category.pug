@@ -1,22 +1,63 @@
-extends ../_templates/_products-template
-mixin catalog()
-    li.s-categories__item
-        a.s-categories__link(href="#")
-            span.s-categories__image
-                img(src="img/category/engines.png")
-            span.s-categories__text Двигатель. Детали двигателя
-                span.s-categories__count  (20)
-block suctom_css
+extends ../index
 
-block title
-    title Категории
-block main_content
-    section.section.section_path.s-categories
-        include ../_blocks/_breadcrumps/_breadcrumps
-        h1.section__heading Контакты
-        ul.s-categories__list
-            - for (var i = 0; i < 12; i++)
-                +catalog()
-        .text-block
-            p.text-block-heading Разборка микроавтобусов DanLer
-            p.text-block-text Разборка авто Danler - это разборка Европейских микроавтобусов на оригинальные запчасти. Мы работаем на рынке автозапчастей с 2000 года и можем предложить Вам широкий ассортимент оригинальных б/у запчастей на: Mercedes Sprinter с 1996 по 2006 г.в. 2.3 sdi, 2.9 tdi, 2.2 cdi, 2.7 cdi, Mercedes Vito 638, 639с 1999 по 2006 г.в. 2.2 cdi Volkswagen LT 28, LT 35, LT 46 с 1996 по 2006 г.в. 2.5 tdi, 2.8 tdi 2.8 cdi, Volkswagen Transporter T4 с 1996 по 2003 г.в. 1.9 tdi, 2.5 tdi Reno Trafic с 2001 по 2014 г.в.  1.9 dci, 2.5 dci, Opel Vivaro 1.9 dci, 2.5 dci с 2001 по 2014 г.в. 1.9 dci. 2.5 dci.
+block variables
+    - var title = 'Карта товара'
+
+mixin catalog()
+    li.category__item
+        a.category__link.link(href="javascript:;")
+            span.category__image
+                img(src=require("../../assets/image/category/engines.png"))
+            span Двигатель. Детали двигателя
+                span.category__count  (20)
+
+block content
+
+    include ../../components/search/search
+
+    section.category
+        .category__container.container.content
+            include ../../components/sidebar/sidebar
+
+            main.category__content
+                include ../../components/breadcrumbs/breadcrumbs
+
+                h1.category__heading Разборка Mercedes Sprinter (1996-2006)
+
+                ul.category__list.list
+                    - for (var i = 0; i < 12; i++)
+                        +catalog()
+
+                .text-block
+                    <h2>Разборка Mercedes Sprinter в Украине с нами &ndash; это надежная покупка б/у запчастей с поддержанных микроавтобусов</h2>
+
+                    <p>&nbsp;Модели Mercedes Sprinter &ndash; относятся к малотоннажному типу микроавтобусов, а разборка &nbsp;является необходимостью для авто владельцев нуждающихся в ремонте, так как оригинальность покупаемых б/у запчастей &ndash; залог успешной эксплуатации.</p>
+
+                    <p>С момента разработки первой модели, инженеры Mercedes до сих пор соблюдают выделяющийся стиль, который стал эталоном в среде микроавтобусов. Узнаваемость дизайна и универсальность &ndash; визитная карточка этой модели.</p>
+
+                    <p>В сравнении с другими полноразмерными бусами, Sprinter выделяется высокими габаритами при малой нагрузке на пол и имеет высокий показатель маневренности в городской среде, благодаря удачной конструкции. &nbsp;</p>
+
+                    <h2>Особенности нашего каталога запчастей:</h2>
+
+                    <ul>
+                        <li>Все детали разбиты на категории и реализован удобный поиск, позволяющий минимизировать время на поиск</li>
+                        <li>Все фотографии &laquo;живые&raquo;, делались лично нами</li>
+                        <li>Вне зависимости какая деталь Вам интересна, у нас Вы ее найдете</li>
+                    </ul>
+
+                    <h3>Преимущества заказа с нашей разборки</h3>
+
+                    <p>Нам важно, что бы каждый клиент нашел интересующую запчасть для своего авто, а главное, остался довольным сотрудничеством с нами. Для этого мы:</p>
+
+                    <ul>
+                        <li>Перед продажей всегда консультируем на правильность выбора детали</li>
+                        <li>Отвечаем на все интересующие вопросы</li>
+                        <li>Со всей серьезности подходим к упаковке доставляемых заказов</li>
+                    </ul>
+
+                    <h3>Запчасти (бу) для микроавтобусов Mercedes Sprinter с разборки</h3>
+
+                    <p>Вне зависимости от типа вашего автомобиля: фургон или минивэн, комплектующие на&nbsp; нашей разборке имеются в широком сегменте, что позволит Вам подобрать абсолютно любую необходимую деталь.</p>
+
+                    <p>Мы специализируемся на разборке более ранних моделей , и предлагаем &nbsp;приобрести запчасти на Mercedes Sprinter до 2006 года выпуска, а именно: 208, 210, 211, 212, 213, 216, 308, 310, 311, 312, 313,316, 408, 410, 411, 412 ,413, 416, 2.2 cdi, 2.7 cdi 2.9 tdi.</p>
+
