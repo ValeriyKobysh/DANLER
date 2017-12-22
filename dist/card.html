@@ -52,10 +52,37 @@
         </div>
       </div>
     </header>
-    <section class="card" id="card">
+    <section class="card">
       <div class="card__container container content">
-        <aside class="sidebar"></aside>
-        <main class="card__content">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar__menu">
+    <ul class="sidebar__list list">
+      <li class="sidebar__item" @click="toggleMenu($event)">Разборка Мерседес Спринтер (1996-2006)
+        <ul class="sidebar__sub-list list">
+          <li class="sidebar__sub-item active"><a class="sidebar__sub-link link" href="javascript:;">Title <span>(1)</span></a></li>
+        </ul>
+      </li>
+      <li class="sidebar__item" @click="toggleMenu($event)">Разборка Мерседес Спринтер (1996-2006)
+        <ul class="sidebar__sub-list list">
+          <li class="sidebar__sub-item"><a class="sidebar__sub-link link" href="javascript:;">Title <span>(1)</span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar__social">
+    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Frazborkaavto%2F&amp;tabs=timeline&amp;width=500&amp;height=500&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId=508620022870463" width="348" height="500" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+  </div>
+  <div class="sidebar__banners">
+    <div class="sidebar__banner sidebar__banner_f"><span class="sidebar__banner-icon"><img src="image/banners-1.png" alt=""></span>
+      <p class="sidebar__banner-heading">Авторазборка - ваш выбор</p>
+      <p class="sidebar__banner-desc">У нас вы можете купить исключительно оригинальные б/у запчасти, по доступной цене!</p>
+    </div>
+    <div class="sidebar__banner sidebar__banner_s"><span class="sidebar__banner-icon"><img src="image/banners-2.png" alt=""></span>
+      <p class="sidebar__banner-heading">Ищите запчасти?</p><span class="sidebar__banner-desc">Устали менять китайские подделки, а новые оригинальные запчасти слишком дорого?</span>
+    </div>
+  </div>
+</aside>
+        <main class="card__content" id="card">
           <div class="card__info">
             <ul class="card__carousel">
               <li class="card__info-item"><img src="image/product-photo.png" @click="showCarouselDialog"></li>

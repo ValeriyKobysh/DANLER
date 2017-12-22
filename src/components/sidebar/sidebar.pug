@@ -1,0 +1,30 @@
+aside.sidebar#sidebar
+    .sidebar__menu
+        ul.sidebar__list.list
+            li.sidebar__item(@click="toggleMenu($event)") Разборка Мерседес Спринтер (1996-2006)
+                ul.sidebar__sub-list.list
+                    li.sidebar__sub-item.active
+                        a.sidebar__sub-link.link(href="javascript:;") Title 
+                            span (1)
+
+            li.sidebar__item(@click="toggleMenu($event)") Разборка Мерседес Спринтер (1996-2006)
+                ul.sidebar__sub-list.list
+                    li.sidebar__sub-item
+                        a.sidebar__sub-link.link(href="javascript:;") Title 
+                            span (1)
+
+    .sidebar__social
+        iframe(src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Frazborkaavto%2F&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=508620022870463" width="348" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true")
+
+    .sidebar__banners
+        .sidebar__banner.sidebar__banner_f
+            span.sidebar__banner-icon
+                img(src=require("../../assets/image/banners/banners-1.png"), alt="")
+            p.sidebar__banner-heading Авторазборка - ваш выбор
+            p.sidebar__banner-desc У нас вы можете купить исключительно оригинальные б/у запчасти, по доступной цене!
+
+        .sidebar__banner.sidebar__banner_s
+            span.sidebar__banner-icon
+                img(src=require("../../assets/image/banners/banners-2.png"), alt="")
+            p.sidebar__banner-heading Ищите запчасти?
+            span.sidebar__banner-desc Устали менять китайские подделки, а новые оригинальные запчасти слишком дорого?

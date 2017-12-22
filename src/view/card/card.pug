@@ -22,11 +22,11 @@ mixin analogItem()
 
 block content
     //- include ../../components/basket/basket
-    section.card#card
+    section.card
         .card__container.container.content
-            aside.sidebar
+            include ../../components/sidebar/sidebar
 
-            main.card__content
+            main.card__content#card
                 .card__info
                     ul.card__carousel
                             - for (i = 0; i < 6; i++)
