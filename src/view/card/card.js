@@ -2,17 +2,17 @@ import './card.sass';
 import header from '../../components/header/header';
 import Vue from '../../../node_modules/vue/dist/vue';
 import Basket from '../../components/basket/basket';
-import callbackComponent from '../../components/dialog/callback/callback'
-import carouselComponent from '../../components/dialog/carousel/carousel'
-import addToBasket from '../../components/dialog/addToBasket/addToBasket'
-import Sidebar from '../../components/sidebar/sidedar'
-import Search from '../../components/search/search'
+import callbackComponent from '../../components/dialog/callback/callback';
+import carouselComponent from '../../components/dialog/carousel/carousel';
+import addToBasket from '../../components/dialog/addToBasket/addToBasket';
+import Sidebar from '../../components/sidebar/sidedar';
+import Search from '../../components/search/search';
+import mixin from '../../mixins/mixins'
 import VueResource from 'vue-resource';
 import VueMask from 'v-mask'
 import { VueMaskDirective } from 'v-mask'
 import SimpleVueValidation from 'simple-vue-validator';
 import { Validator } from 'simple-vue-validator';
-import Assign from 'lodash.assign';
 
 Vue.use(VueResource)
 Vue.use(VueMask);
@@ -21,7 +21,7 @@ Vue.use(SimpleVueValidation);
 
 let card = new Vue({
     el: '#card',
-    mixins: [SimpleVueValidation.mixin],
+    mixins: [SimpleVueValidation.mixin, mixin],
     data: {
         show: '',
         phoneList: false,
@@ -74,25 +74,6 @@ let card = new Vue({
             this.phoneList = false 
             this.carouselDialog = false
             this.callbackDialog = false
-        },
-        addToBasket(event){
-            this.$http.post('/index.php?p1=/cart/', 
-                Assign({ func: "getProduct" }, { prod_id: parseInt(document.querySelector('.card__buy').id) }),
-                { emulateJSON: true })
-            .then(response => {
-                let data = response.body.result.data;
-                this.product.id = data.id;
-                this.product.image = data.photo;
-                this.product.title = data.name;
-                this.product.url = data.url;
-                this.product.price = data.amount;
-                Basket.add(Object.assign(this.product, { count: 1}))
-                this.addToBasketData = Basket.getProduct(this.product.id)
-            }, response => {
-                console.log('false', response);
-            })
-            this.showAddToBasket()
-
         },
         closeDialog(){
             this.show = ''

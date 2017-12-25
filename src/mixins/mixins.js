@@ -24,6 +24,25 @@ const mixin = {
 
             return output;
         },
+        addToBasket(event){
+            this.$http.post('/index.php?p1=/cart/', 
+                Object.assign({ func: "getProduct" }, { prod_id: parseInt(document.querySelector('.card__buy').id) }),
+                { emulateJSON: true })
+            .then(response => {
+                let data = response.body.result.data;
+                this.product.id = data.id;
+                this.product.image = data.photo;
+                this.product.title = data.name;
+                this.product.url = data.url;
+                this.product.price = data.amount;
+                Basket.add(Object.assign(this.product, { count: 1}))
+                this.addToBasketData = Basket.getProduct(this.product.id)
+            }, response => {
+                console.log('false', response);
+            })
+            this.showAddToBasket()
+
+        },
     }
 }
 

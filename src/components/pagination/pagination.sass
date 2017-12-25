@@ -1,0 +1,41 @@
+.pagination
+    margin-bottom: 30px
+
+    &__list
+        +alignment()
+
+    &__item
+        margin-right: 15px
+
+        &:last-child
+            margin-right: 0
+
+        &_prev, &_next
+
+            .pagination__link:after
+                content: ''
+                display: flex
+                +size(10px)
+                border-left: 1px solid bg-color(main-light)
+                border-bottom: 1px solid bg-color(main-light)
+
+        &_prev .pagination__link:after
+            transform: rotate(45deg)
+
+        &_next .pagination__link:after
+            transform: rotate(-135deg)
+
+        &:hover, &.active
+
+            .pagination__link
+                border-color: bg-color(main-light)
+
+
+    &__link
+        color: text-color(dark)
+        +size(45px)
+        font-size: rem(16px)
+        +alignment()
+        border: 1px solid bg-color(grey-light)
+        border-radius:  5px
+        +transition()

@@ -1,4 +1,7 @@
-extends ../_templates/_products-template
+extends ../index
+
+block variables
+    - var title = 'Список товаров'
 
 mixin filterItem(id, title, check)
     li.section-products-filter-item
@@ -8,81 +11,89 @@ mixin countItem(id, title, check)
     li.section-products-count-item
         label(for=id) #{title}
             input(type="radio" id=id name="products-count" checked=check)
-mixin productItem
-    .section-products-item
-        .section-products-item-image
-            img.section-products-image(src="img/slider/slider-1.png")
-        .section-products-item-text
-            span.section-products-text Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)
-            span.section-products-price Цена: 1234 грн.
-            span.section-products-availability В наличии
-            span.section-products-id-product Код товара: 147 258
-        .section-products-item-button
-            a.section-products-link-to-basket.add-to-cart(href="#")
-                span.section-products-link-to-basket-icon.icon-cart-plus
-                span.section-products-link-to-basket-text В корзину
-            a.section-products-link-call-back(href="#")
-                span.section-products-link-icon.icon-phone
-            a.section-products-link-about(href="#")
-                span.section-products-link-about-icon
-                    svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490 490" xml:space="preserve")
-                        polygon(points="222.031,490 267.969,490 267.969,267.969 490,267.969 490,222.031 267.969,222.031 267.969,0 222.031,0 222.031,222.031 0,222.031 0,267.969 222.031,267.969 ")
-                span.section-products-link-about-text Подробнее
+mixin productItem(index)
+    li.products__item
+        a.products__image(href="javascript:;")
+            img(src=require("../../assets/image/slider/slider-1.png"))
 
-block suctom_css
+        .products__info-wrap
+            span.products__title Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)
 
-block title
-    title Список товаров
-block main_content
-    section.section.section_path.section-products
-        include ../_blocks/_breadcrumps/_breadcrumps
-        .section__heading Двигатель. Детали двигателя
-        .section-products-filter
-            .section-products-filter-wrapper-input
-                label.section-products-filter-label Сортировать
-                a.section-products-filter-heading(href="javascript:;")
-                    span.section-products-filter-text(data-name="products-filter") Цена: по возрастанию
-                    i.icon.icon-down-open-big
-                ul.section-products-filter-list
-                    +filterItem("price-up", "Цена: по возрастанию", true)
-                    +filterItem("price-down", "Цена: по убыванию", false)
-                    +filterItem("a-z", "По названию: от А до Я", false)
-                    +filterItem("z-a", "По названию: от Я до А", false)
-                    +filterItem("aval", "По наличию", false)
-            .section-products-count-wrapper-input
-                label.section-products-count-label Показать
-                a.section-products-count-heading(href="javascript:;")
-                    span.section-products-count-text(data-name="products-count") 6
-                    i.icon.icon-down-open-big
-                ul.section-products-count-list
-                    +countItem("six", 6, true)
-                    +countItem("tw", 12, false)
-                    +countItem("tf", 24, false)
-            .section-products-view-wrapper-input
-                ul.section-products-view-list
-                    li.section-products-view-item
-                        input(type="radio" id="block" name="view" )
-                        label.section-products-view-icon.icon-th-large(for="block")
-                            svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 278 278" xml:space="preserve")
-                                rect(x="0" y="0" width="119.054" height="119.054")
-                                rect(x="158.946" y="0" width="119.054" height="119.054")
-                                rect(x="158.946" y="158.946" width="119.054" height="119.054")
-                                rect(x="0" y="158.946" width="119.054" height="119.054")
-                    li.section-products-view-item
-                        input(type="radio" id="inline" name="view" checked)
-                        label.section-products-view-icon.icon-list-bullet(for="inline")
-                            svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve")
-                                rect(x="146.286" y="364.606" width="365.714" height="73.143")
-                                rect(x="146.286" y="220.537" width="365.714" height="73.143")
-                                rect(x="146.286" y="72.035" width="365.714" height="73.143")
-                                rect(y="366.823" width="73.143" height="73.143")
-                                rect(y="220.537" width="73.143" height="73.143")
-                                rect(y="72.035" width="73.143" height="73.143")
-        .section-products-inline
-            .section-products-list
-                - for(i = 0; i < 7; i++)
-                    +productItem()
-        include ../_blocks/_pagination/_pagination
-    include ../_blocks/_popups/_popup-addcard
-block custom_scripts
-    script(src="js/products_page.js")
+            span.products__price Цена: 1234 грн.
+
+            span.products__availability.products__availability_true В наличии
+
+        .products__btn-wrap
+            a.products__btn-card.btn.btn_accent.link(
+                href="javascript:;" 
+                @click="addToBasket()"
+                id="455")
+                img(src=require("../../assets/image/icons/add-to-card.svg"))
+                | В корзину
+
+            a.products__btn-callback.btn.btn_dark.link(href="javascript:;" @click="showCallback(" + index + ")")
+                img(src=require("../../assets/image/icons/phone.svg"))
+
+            callback-component(v-if="callback[" + index + "]" @close="showCallback(" + index + ")")
+
+            a.products__btn-about.btn.btn_dark.link(href="card.html") Подробнее
+
+block content
+
+    include ../../components/search/search
+
+    section.products
+        .products__container.container.content
+            include ../../components/sidebar/sidebar
+
+            main.products__content#products
+                include ../../components/breadcrumbs/breadcrumbs
+
+                h2.products__heading Двигатель и детали двигателя Mercedes Sprinter
+
+                .products__filters
+                    .products__filter
+                        .products__filter-title Сортировать
+
+                        .products__filter-header.products__filter-header_sort(@click="showSortList" :class="{ active: sortDisplay }") {{sortTitle}}
+                        
+                            ul.products__filter-body.list(v-if="sortDisplay")
+                                li.products__filter-item(v-for="(item, n) in sort" :key="n" @click="goTo('sort', n)") {{item.value}}
+                        
+
+                    .products__filter
+                        .products__filter-title Показать
+
+                        .products__filter-header.products__filter-header_count(@click="showCountList" :class="{ active : countDisplay }") {{countTitle}}
+
+                            ul.products__filter-body.list(v-if="countDisplay")
+                                li.products__filter-item(v-for="(item, n) in count" :key="n" @click="goTo('count', n)") {{item.value}}
+
+                    .products__filter.products__filter_grid
+                        a.products__grid(href="javascript:;" :class="{ active: !grid }" @click="changeGrid")
+                            svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" height="25")
+                                rect(width="237.268" height="237.268")
+                                rect(x="274.732" width="237.268" height="237.268")
+                                rect(y="274.732" width="237.268" height="237.268")
+                                rect(x="274.732" y="274.732" width="237.268" height="237.268")
+
+                        a.products__grid(href="javascript:;" :class="{ active: grid }" @click="changeGrid")
+                            svg(viewBox="0 0 231 231" xmlns:xlink="http://www.w3.org/1999/xlink" height="25")
+                                rect(width="181" x="50" y="164.5" height="33")
+                                rect(width="181" x="50" y="99.5" height="33")
+                                rect(width="181" x="50" y="32.5" height="33")
+                                rect(width="33" y="165.5" height="33")
+                                rect(width="33" y="99.5" height="33")
+                                rect(width="33" y="32.5" height="33")
+
+                ul.products__list.list(:class="{ block: !grid, inline: grid }")
+                    - for(i = 0; i < 7; i++)
+                        +productItem(i)
+
+                //- callback-component(v-if="callback" @close="showCallback")
+                add-to-basket-component(
+                    v-if="addToBasket" 
+                    :data="addToBasketData"
+                    @close="showAddToBasket")
+
+                include ../../components/pagination/pagination

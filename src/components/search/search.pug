@@ -8,17 +8,28 @@ section.search#search
         .search__content
             .search__heading Каталог
 
-            form.search__form(actiion="/search" method="get")
+            form.search__form(:action="[ action ? '/search' : '/articles' ]" method="get" name="search-form")
                 .search__drop
                     .search__drop-header(@click="showDrop") {{title}}
 
                     ul.search__drop-list.list(v-if="drop")
-                        +dropMenu("mercedes-sprinter", "Mercedes Sprinter")
-                        +dropMenu("mercedes-vito", "Mercedes Vito")
-                        +dropMenu("opel-vivaro", "Opel Vivaro")
-                        +dropMenu("renault-trafic", "Renault Trafic")
-                        +dropMenu("volkswagen-lt", "Volkswagen LT")
-                        +dropMenu("volkswagen-t4", "Volkswagen T4")
+                        li.search__drop-item(v-if="firstLvl" @click="select('model', $event)") Поиск по моделям
+
+                        li(v-if="typeSearch == 'model'")
+                            ul.list
+                                li.search__drop-item.li.search__drop-item_back(@click="backSelect()") Назад
+                                +dropMenu("mercedes-sprinter", "Mercedes Sprinter")
+                                +dropMenu("mercedes-vito", "Mercedes Vito")
+                                +dropMenu("opel-vivaro", "Opel Vivaro")
+                                +dropMenu("renault-trafic", "Renault Trafic")
+                                +dropMenu("volkswagen-lt", "Volkswagen LT")
+                                +dropMenu("volkswagen-t4", "Volkswagen T4")
+
+                        li.search__drop-item(v-if="firstLvl" @click="select('article', $event)") Поиск по статьям
+
+                        li(v-if="typeSearch == 'article'")
+                            ul.list
+                                li.search__drop-item.li.search__drop-item_back(@click="backSelect()") Назад
 
                 input.search__input(type="text" form="search-form" name="field" placeholder="Введите название")
 

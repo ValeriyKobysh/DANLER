@@ -1,0 +1,326 @@
+@import '../../style/default.sass'
+@import '../../components/header/header.sass'
+@import '../../components/basket/basket.sass'
+@import '../../components/dialog/dialog.sass'
+@import '../../components/search/search.sass'
+@import '../../components/sidebar/sidebar.sass'
+@import '../../components/breadcrumbs/breadcrumbs.sass'
+@import '../../components/pagination/pagination.sass'
+@import '../../components/footer/footer.sass'
+
+.products
+
+    &__container
+        display: flex
+
+    &__content
+        width: 100%
+        padding: 15px
+        background-color: bg-color(white)
+        border: 1px solid bg-color(grey-light)
+        margin-bottom: 40px
+
+    &__heading
+        font-size: rem(24px)
+        text-align: center
+        color: text-color(dark)
+        font-weight: 700
+        margin-bottom: 30px
+
+    &__filters
+        display: flex
+        margin-bottom: 30px
+
+    &__filter
+        display: flex
+        
+        &-header
+            position: relative
+            height: 45px
+            border: 1px solid bg-color(main-light)
+            border-radius: 5px
+            padding: 0 15px
+            +alignment($jc: between)
+            cursor: pointer
+            
+            &:after
+                content: ''
+                display: flex
+                +size(10px)
+                border-right: 1px solid bg-color(main-light)
+                border-bottom: 1px solid bg-color(main-light)
+                transform: rotate(45deg)
+                flex-shrink: 0
+
+            &_sort
+                width: 245px
+
+            &_count
+                width: 100px
+
+            &.active
+                border-radius: 5px 5px 0 0
+
+        &-body
+            position: absolute
+            width: calc(100% + 2px)
+            top: 100%
+            right: -1px
+            border-radius: 0 0 5px 5px
+            border: 1px solid bg-color(main-light)
+            padding: 10px 0
+            z-index: 10
+            background-color: bg-color(white)
+
+        &-item
+            padding: 5px 15px
+            +transition()
+
+            &:hover, &:active
+                font-weight: 700
+
+    &__grid
+        +alignment()
+        +size(45px)
+        fill: bg-color(grey-light)
+        +transition()
+        border: 1px solid bg-color(grey-light)
+        border-radius: 5px
+        margin-right: 15px
+
+        &:active, &:hover, &.active
+            fill: bg-color(main-light)
+            border-color: bg-color(main-light)
+
+        &:last-child
+            margin-right: 0
+
+        svg
+            height: 50%
+
+    &__list
+        margin-bottom: 15px
+
+        &.block
+            display: flex
+            flex-wrap: wrap
+
+            .products
+
+                &__image
+                    width: 100%
+                    margin-bottom: 10px
+                    display: block
+
+                &__info-wrap
+                    margin-bottom: 15px
+
+        &.inline
+
+            .products
+
+                &__item
+                    display: flex
+
+                &__price, &__availability
+                    align-self: flex-end
+
+                &__btn-wrap
+                    align-content: flex-end
+                    min-width: 200px
+
+
+    &__item
+        padding: 15px
+        border: 1px solid bg-color(main-light)
+        border-radius: 5px 
+        margin-bottom: 15px
+        +transition()
+
+        &:hover
+            border-color: bg-color(accent)
+
+    &__image img
+        +size(100%)
+
+    &__info-wrap
+        font-size: rem(14px)
+        line-height: rem(20px)
+        display: flex
+        flex-wrap: wrap
+
+    &__title
+        width: 100%
+        margin-bottom: 10px
+
+    &__availability
+        margin-left: auto
+
+        &_true
+            color: text-color(access)
+
+        &_false
+            color: text-color(error)
+    
+    &__btn-wrap
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        position: relative
+
+    &__btn-card, &__btn-callback, &__btn-about
+        align-items: center
+        justify-content: center
+        color: text-color(light)
+
+        img
+            height: 22px
+
+    &__btn-card
+        margin-bottom: 15px
+        width: 100%
+        color: text-color(dark)
+
+    &__btn-card img
+        margin-right: 10px
+
+    &__btn-callback, &__btn-about
+        width: calc(100% / 2 - 7.5px)
+
+    &__btn-about
+        font-size: rem(14px)
+
+
++media-breakpoint-up(breakpoints(xl))
+    .products
+
+        &__filter
+            align-items: center
+
+            &-title
+                margin-right: 15px
+
+        &__list
+
+            &.block
+
+                .products
+                    
+                    &__item
+                        width: calc(100% / 3 - 15px)
+
+                        &:nth-child(2n), &:nth-child(4n+1)
+                            margin-right: calc(45px / 2)
+
+                        &:nth-child(3n)
+                            margin-right: 0
+
+            &.inline
+
+                .products
+
+                    &__image, &__info-wrap, &__btn-wrap
+                        width: calc(100% / 3)
+
+                    &__info-wrap
+                        border-right: 1px solid bg-color(main-light)
+                        margin-right: 15px
+                        padding: 0 15px
+
++media-breakpoint-up(breakpoints(md))
+    .products
+
+        &__filters
+            justify-content: space-between
+
+        &__filter
+            margin-right: 30px
+
+            &:last-child
+                margin-right: 0
+
++media-breakpoint-between(breakpoints(md), breakpoints(xl))
+    .products
+
+        &__list
+
+            &.block
+
+                .products
+                    
+                    &__item
+                        width: calc(100% / 2 - 15px)
+
+                        &:nth-child(odd)
+                            margin-right: 30px
+
+            &.inline
+
+                .products
+
+                    &__item
+                        flex-wrap: wrap
+
+                    &__image, &__info-wrap, &__btn-wrap
+                        width: calc(100% / 2)
+
+                    &__image, &__info-wrap
+                        margin-bottom: 15px
+
+                    &__info-wrap, &__btn-wrap
+                        padding-left: 15px
+
+                    &__btn-wrap
+                        margin-left: auto
+
++media-breakpoint-down(breakpoints(xl))
+    .products
+
+        &__filter
+            flex-direction: column
+
+            &_grid
+                flex-direction: row
+                align-items: flex-end
+
+            &-title
+                margin-bottom: 15px
+
++media-breakpoint-down(breakpoints(md))
+    .products
+
+        &__filters
+            flex-wrap: wrap
+
+        &__filter
+            margin-bottom: 15px
+
+            &:first-child
+                width: 100%
+
+            &:nth-child(2)
+                width: 50%
+            
+        &__filter_grid
+            width: 50%
+
++media-breakpoint-down(breakpoints(md))
+    .products
+
+        &__list
+
+            &.inline
+
+                .products
+
+                    &__item
+                        flex-direction: column
+
+                    &__image, &__info-wrap, &__btn-wrap
+                        width: 100%
+
+                    &__image
+                        margin-bottom: 10px
+
+                    &__info-wrap
+                        margin-bottom: 15px

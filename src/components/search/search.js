@@ -5,8 +5,12 @@ let search = new Vue({
     el: '#search',
     data: {
         drop: false,
-        basket: false,
-        title: 'Все модели'
+        basket: false, 
+        defaultTitle: 'Поиск...',
+        title: 'Поиск...',
+        firstLvl: true,
+        typeSearch: '',
+        action: true
     },
     methods: {
         showDrop(){
@@ -18,6 +22,18 @@ let search = new Vue({
         },
         showBasket(){
             this.basket = !this.basket
+        },
+        select(type, event){
+            this.typeSearch = type;
+            this.firstLvl = false;
+            this.title = event.target.textContent
+            if(type == 'article') this.action = false
+        },
+        backSelect(){
+            this.typeSearch = '';
+            this.firstLvl = true;
+            this.title = this.defaultTitle;
+            this.action = true;
         }
     },
     components: {
