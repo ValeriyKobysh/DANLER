@@ -19,7 +19,8 @@ module.exports = {
         category: './src/view/category/category.js',
         products: './src/view/products/products.js',
         articles: './src/view/articles/articles.js',
-        article: './src/view/article/article.js'
+        article: './src/view/article/article.js',
+        contacts: './src/view/contacts/contacts.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -66,6 +67,13 @@ module.exports = {
                 filename: 'article.html',
                 chunks: ['article', 'common'],
                 template: PATH.src + '/view/article/article.pug'
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'contacts.html',
+                chunks: ['contacts', 'common'],
+                template: PATH.src + '/view/contacts/contacts.pug'
             }
         ),
         new CleanWebpackPlugin('dist'),

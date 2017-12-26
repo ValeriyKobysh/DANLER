@@ -3,6 +3,7 @@ import header from '../../components/header/header';
 import Basket from '../../components/basket/basket';
 import callbackComponent from '../../components/dialog/callback/callback';
 import addToBasketComponent from '../../components/dialog/addToBasket/addToBasket';
+import socialComponent from '../../components/social/social'
 import Sidebar from '../../components/sidebar/sidedar';
 import Search from '../../components/search/search';
 import mixin from '../../mixins/mixins'
@@ -73,11 +74,10 @@ let products = new Vue({
         },
         changeGrid(){ this.grid = !this.grid },
         showCallback(i){ this.$set(this.callback, i, !this.callback[i]) },
-            // this.callback[i] = !this.callback[i]; 
         showAddToBasket() { this.addToBasket = !this.addToBasket }
     },
     components: {
-        callbackComponent, addToBasketComponent
+        callbackComponent, addToBasketComponent, socialComponent
     },
     mounted(){
         const search = window.location.search;

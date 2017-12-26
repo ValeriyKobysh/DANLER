@@ -4,6 +4,7 @@ import Vue from '../../../node_modules/vue/dist/vue';
 import Basket from '../../components/basket/basket';
 import callbackComponent from '../../components/dialog/callback/callback';
 import carouselComponent from '../../components/dialog/carousel/carousel';
+import socialComponent from '../../components/social/social';
 import addToBasket from '../../components/dialog/addToBasket/addToBasket';
 import Sidebar from '../../components/sidebar/sidedar';
 import Search from '../../components/search/search';
@@ -47,7 +48,7 @@ let card = new Vue({
         }
     },
     components: {
-        callbackComponent, carouselComponent, addToBasket
+        callbackComponent, carouselComponent, addToBasket, socialComponent
     },
     methods: {
         showPhoneList(){ 

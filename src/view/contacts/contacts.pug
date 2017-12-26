@@ -1,48 +1,48 @@
-extends ../_templates/_text-page-templete
-block title
-    title Контакты
-block main_content
-    - var pageName = "contact"
-    .section-content__container
-        section.section.section_full.s-contact
-            h1.section__heading Контакты
-            .google-maps__container
-                img(src="img/google-maps.png", alt="")
-            .our-contacts
-                span.heading__columns Наши контакты
-                .our-contacts__block
-                    p.our-contacts__heading Адрес
-                    p Украина, г. Чернигов, ул. Инструментальная,7
-                .our-contacts__block
-                    p.our-contacts__heading Контактные телефоны
-                    p +38 (093) 700 - 8000
-                    p +38 (097) 700 - 8070
-                    p +38 (099) 270 - 1500
-                .our-contacts__block
-                    p.our-contacts__heading Время работы
-                    p Пн-Пт: 09:00 - 17:00
-                    p Сб: 10:00 - 14:00
-                    p Восресенье: Выходной
-                .our-contacts__block
-                    p.our-contacts__heading Юридические данные
-                    p Иващенко Дмитрий Владимирович
-                    p НОМЕР СВИДЕТЕЛЬСТВА ГОСУДАРСТВЕННОЙ РЕГИСТРАЦИИ: 20640000000025554
-                    a.our-contacts__link(href="img/contact/contact-1.jpg")
-                        img.our-contacts__image(src="img/contact/contact-1.jpg", alt="")
-                    a.our-contacts__link(href="img/contact/contact-2.jpg")
-                        img.our-contacts__image(src="img/contact/contact-2.jpg", alt="")
-            form#contact-form.contact-form
-                span.heading__columns Обратная связь
-                .contact-form-row
-                    input#field-name.contact-form-field(type="text" placeholder="Ваше имя" name="name" form="contact-form")
-                    label.contact-form-label.error-label(for="field-name")
-                .contact-form-row
-                    input#field-phone.contact-form-field(type="tel" placeholder="Ваш телефон" name="phone" form="contact-form")
-                    label.contact-form-label.error-label(for="field-phone")
-                .contact-form-row
-                    input#field-email.contact-form-field.error-input(type="email" placeholder="Ваш e-mail" name="email" form="contact-form")
-                    label.contact-form-label.error-label(for="field-email") Text errorText errorText errorText errorText errorText errorText errorText errorText
-                textarea.contact-form-text(name="text" form="contact-form" placeholder="Задайте Ваш вопрос")
-                button.contact-form-button(type="submit") Отправить
+//- extends ../_templates/_text-page-templete
+//- block title
+//-     title Контакты
+//- block main_content
+//-     - var pageName = "contact"
+//-     .section-content__container
+//-         section.section.section_full.s-contact
+//-             h1.section__heading Контакты
+//-             .google-maps__container
+//-                 img(src="img/google-maps.png", alt="")
+//-             .our-contacts
+//-                 span.heading__columns Наши контакты
+//-                 .our-contacts__block
+//-                     p.our-contacts__heading Адрес
+//-                     p Украина, г. Чернигов, ул. Инструментальная,7
+//-                 .our-contacts__block
+//-                     p.our-contacts__heading Контактные телефоны
+//-                     p +38 (093) 700 - 8000
+//-                     p +38 (097) 700 - 8070
+//-                     p +38 (099) 270 - 1500
+//-                 .our-contacts__block
+//-                     p.our-contacts__heading Время работы
+//-                     p Пн-Пт: 09:00 - 17:00
+//-                     p Сб: 10:00 - 14:00
+//-                     p Восресенье: Выходной
+//-                 .our-contacts__block
+//-                     p.our-contacts__heading Юридические данные
+//-                     p Иващенко Дмитрий Владимирович
+//-                     p НОМЕР СВИДЕТЕЛЬСТВА ГОСУДАРСТВЕННОЙ РЕГИСТРАЦИИ: 20640000000025554
+//-                     a.our-contacts__link(href="img/contact/contact-1.jpg")
+//-                         img.our-contacts__image(src="img/contact/contact-1.jpg", alt="")
+//-                     a.our-contacts__link(href="img/contact/contact-2.jpg")
+//-                         img.our-contacts__image(src="img/contact/contact-2.jpg", alt="")
+//-             form#contact-form.contact-form
+//-                 span.heading__columns Обратная связь
+//-                 .contact-form-row
+//-                     input#field-name.contact-form-field(type="text" placeholder="Ваше имя" name="name" form="contact-form")
+//-                     label.contact-form-label.error-label(for="field-name")
+//-                 .contact-form-row
+//-                     input#field-phone.contact-form-field(type="tel" placeholder="Ваш телефон" name="phone" form="contact-form")
+//-                     label.contact-form-label.error-label(for="field-phone")
+//-                 .contact-form-row
+//-                     input#field-email.contact-form-field.error-input(type="email" placeholder="Ваш e-mail" name="email" form="contact-form")
+//-                     label.contact-form-label.error-label(for="field-email") Text errorText errorText errorText errorText errorText errorText errorText errorText
+//-                 textarea.contact-form-text(name="text" form="contact-form" placeholder="Задайте Ваш вопрос")
+//-                 button.contact-form-button(type="submit") Отправить
 
-block custom_scripts
+//- block custom_scripts

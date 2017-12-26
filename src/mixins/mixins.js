@@ -43,11 +43,6 @@ const mixin = {
             this.showAddToBasket()
 
         },
-        getLocation(){ return window.location.href; },
-        shareFB(){ return `https://www.facebook.com/sharer.php?u=${this.getLocation()}` },
-        shareGP(){ return `https://plus.google.com/share?url=${this.getLocation()}` },
-        shareTW(){ return `https://twitter.com/intent/tweet?text=${this.getLocation()}` },
-        shareVK(){ return `http://vkontakte.ru/share.php?url=${this.getLocation()}` }
     }
 }
 
