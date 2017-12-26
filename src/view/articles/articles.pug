@@ -1,4 +1,8 @@
-extends ../_templates/_text-page-templete
+extends ../index
+
+block variables
+    - var title = 'Статьи'
+
 mixin articles()
     li.section-article-item
         image.section-article__image(src="img/articles/article-image.png")
@@ -9,12 +13,38 @@ mixin articles()
                 span.section-article-date-text Январь, 17, 2017
             p.section-article-preview Специализированная разборка спринтер (Mercedes Sprinter) от компании Danler – это качественный десятилетний труд профессиональной команды.
             a.section-article-link(href="article.html") Читать дальше
-block title
-    title Список статей
-block main_content
-    section.section.section_full.section-article
-        h1.section__heading Статья
-        ul.section-article-list
-            - for (var i = 0; i < 1; i++)
-                +articles()
-        include ../_blocks/_pagination/_pagination
+
+block content
+    
+    include ../../components/search/search
+
+    section.articles
+        .articles__container.container.content
+
+            main.articles__content
+                h1.articles__heading Статьи
+
+                ul.articles__list.list
+                    - for (var i = 0; i < 5; i++)
+                        li.articles__item
+                            a.articles__image(href="javascript:;")
+                                img(src=require("../../assets/image/articles/article-image.png"))
+
+                            span.articles__title Особенности Mercedes Vito (1996-2003)
+
+                            span.articles__date
+                                img(src=require("../../assets/image/icon-calendar.png"), alt="")
+                                | Январь, 17, 2017
+
+                            p.articles__preview Специализированная разборка спринтер (Mercedes Sprinter) от компании Danler – это качественный десятилетний труд профессиональной команды.
+
+                            a.articles__btn.btn.btn_accent.link(href="article.html") Читать дальше
+            
+
+//- block main_content
+//-     section.section.section_full.section-article
+//-         h1.section__heading Статья
+//-         ul.section-article-list
+//-             - for (var i = 0; i < 1; i++)
+//-                 +articles()
+//-         include ../_blocks/_pagination/_pagination

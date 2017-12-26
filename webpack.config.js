@@ -17,7 +17,8 @@ module.exports = {
         index: './src/view/index/index.js',
         card: './src/view/card/card.js',
         category: './src/view/category/category.js',
-        products: './src/view/products/products.js'
+        products: './src/view/products/products.js',
+        articles: './src/view/articles/articles.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -50,6 +51,13 @@ module.exports = {
                 filename: 'products.html',
                 chunks: ['products', 'common'],
                 template: PATH.src + '/view/products/products.pug'
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'articles.html',
+                chunks: ['articles', 'common'],
+                template: PATH.src + '/view/articles/articles.pug'
             }
         ),
         new CleanWebpackPlugin('dist'),
