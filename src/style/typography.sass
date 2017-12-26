@@ -17,7 +17,18 @@
             margin-right: 10px
             flex-shrink: 0
 
-    img
-        float: left
-        width: 30%
-        margin: 0 30px 15px 0
++media-breakpoint-up(breakpoints(md))
+    .text-block
+
+        img
+            float: left
+            width: 30%
+            margin: 0 30px 15px 0
+
++media-breakpoint-down(breakpoints(md))
+    .text-block
+
+        img
+            width: 100%
+            margin-bottom: 30px
+

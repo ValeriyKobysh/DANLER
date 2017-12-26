@@ -1,0 +1,142 @@
+@import '../../style/default.sass'
+@import '../../components/header/header.sass'
+@import '../../components/basket/basket.sass'
+@import '../../components/dialog/dialog.sass'
+@import '../../components/search/search.sass'
+@import '../../components/breadcrumbs/breadcrumbs.sass'
+@import '../../components/footer/footer.sass'
+
+.contacts
+
+    &__content
+        width: 100%
+        padding: 15px
+        background-color: bg-color(white)
+        border: 1px solid bg-color(grey-light)
+        padding-top: 30px
+
+    &__heading
+        font-size: rem(24px)
+        text-align: center
+        color: text-color(dark)
+        font-weight: 700
+        margin-bottom: 30px
+        width: 100%
+
+    &__photo
+        display: flex
+        flex-wrap: wrap
+        min-height: 300px
+
+    &__link
+        display: inline-flex
+        height: 212px
+        max-width: 50%
+        margin-right: 15px
+
+        &:last-child
+            margin-right: 0
+
+        img
+            height: 100%
+
+    &__info
+        display: flex
+        flex-wrap: wrap
+
+    &__list
+        margin-bottom: 30px
+        width: 100%
+
+    &__item
+        margin-bottom: 10px
+
+    &__title
+        display: flex
+        align-items: center
+        text-transform: uppercase
+        fill: bg-color(accent)
+        margin-bottom: 15px
+        width: 100%
+
+        svg
+            margin-right: 10px
+
+    &__form
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+
+    &__group
+        width: 100%
+        position: relative
+        margin-bottom: 45px
+
+    &__field, &__area
+        width: 100%
+
+    &__btn
+        width: $xs - 30
+        margin: 0 auto
+        align-items: center
+        justify-content: center
+        color: text-color(dark)
+
++media-breakpoint-up(breakpoints(lg))
+    .contacts
+
+        &__docs
+            display: flex
+            justify-content: space-between
+
+        &__map, &__photo
+            width: calc(100% / 2 - 15px)
+            margin-bottom: 30px
+
++media-breakpoint-up(breakpoints(md))
+    .contacts
+
+        &__mail, &__phone, &__atwork, &__address
+            width: 50%
+
+        &__left, &__right
+            width: calc(100% / 2 - 15px)
+            margin-bottom: 30px
+
+        &__right
+
+            .contacts__group, .contacts__area
+                height: 100%
+
+        &__group
+
+            &:last-child
+                margin-bottom: 0
+
++media-breakpoint-down(breakpoints(lg))
+    .contacts
+
+        &__map, &__photo
+            width: 100%
+            margin-bottom: 30px
+
++media-breakpoint-down(breakpoints(md))
+    .contacts
+
+        &__mail, &__phone, &__atwork, &__address
+            width: 100%
+
+        &__left, &__right
+            width: 100%
+
++media-breakpoint-down(breakpoints(sm))
+    .contacts
+    
+        &__link
+            display: flex!important
+            width: 100%
+            max-width: none
+            margin: 0 0 15px 0
+
+            &:last-child
+                margin: 0

@@ -24,7 +24,7 @@ Vue.component('callback', {
                     <span class="error-msg" v-if="validation.hasError('formFields.name')">{{ validation.firstError('formFields.name') }}</span>
                 </div>
                 <div class="dialog__group">
-                    <input class="field dialog__field"type="email" placeholder="Ваш email" v-model="formFields.email" pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/">
+                    <input class="field dialog__field" type="email" placeholder="Ваш email" v-model="formFields.email" pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/">
                     <span class="error-msg" v-if="validation.hasError('formFields.email')">{{ validation.firstError('formFields.email') }}</span>
                 </div>
                 <div class="dialog__group dialog__group_last">
