@@ -1,16 +1,20 @@
-extends ../_templates/_text-page-templete
+extends ../index
+
+block variables
+    - var title = 'Отзывы'
 
 mixin reviewsItem()
-    .reviews-list__item
-        .reviews-list__left
-            span.reviews-list__avatar
+    .reviews__item
+        .reviews__left
+            span.reviews__avatar
                 img(src="http://via.placeholder.com/100x100/2f2f2f", alt="")
-            .reviews-list__wrap
-                span.reviews-list__name Иван Петрович
-                span.reviews-list__date 31.05.2017
-                a.reviews-list__link(href="https://www.facebook.com/") fb.com/id 1234567
-        .reviews-list__right
-            p.reviews-list__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eveniet quae rem dicta, minima doloribus repellendus nobis cum consequatur eos! Nostrum voluptatibus aliquid alias aspernatur quis dicta, harum sed. Nobis quasi commodi repudiandae ab, at nisi tenetur ipsum sed autem. Sed ex est rem iusto voluptatem eaque vitae minus quidem.
+
+            .reviews__wrap
+                span.reviews__name Иван Петрович
+                span.reviews__date 31.05.2017
+                a.reviews__link(href="https://www.facebook.com/") fb.com/id 1234567
+        .reviews__right
+            p.reviews__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eveniet quae rem dicta, minima doloribus repellendus nobis cum consequatur eos! Nostrum voluptatibus aliquid alias aspernatur quis dicta, harum sed. Nobis quasi commodi repudiandae ab, at nisi tenetur ipsum sed autem. Sed ex est rem iusto voluptatem eaque vitae minus quidem.
             //- span.reviews-list__title Фото полученного товара:
             //- ul.reviews-list__img-list
             //-     - for(var l = 0; l < 6; l++)
@@ -19,17 +23,45 @@ mixin reviewsItem()
             //-             span.reviews-list__img-wrap
             //-                 img.reviews-list__img_large(src="http://via.placeholder.com/600x450", alt="")
 
-block main_content
-    .section-content__container
-        .section.section_full.reviews-list
-            h1.section__heading Отзывы
-            a.reviews-list__add(href="add-review.html")
-                span.reviews-list__add-icon
-                    svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28 32" xml:space="preserve")
-                        path(d="M6,28H0v-6L6,28z M28,6L8,26l-6-6L22,0L28,6z")
-                        path(d="M0,32v-2h22v2H0z")
-                span.reviews-list__add-text Добавить отзыв
-            .reviews-list__list
-                - for(var i = 0; i < 4; i++ )
-                    +reviewsItem()
-            include ../_blocks/_pagination/_pagination
+block content
+    
+    include ../../components/search/search
+
+    section.reviews
+        .reviews__container.container.content
+
+            main.reviews__content#reviews
+                include ../../components/breadcrumbs/breadcrumbs
+
+                h1.reviews__heading Отзывы
+
+                .reviews__add-wrap
+
+                    a.reviews__add.btn.btn_accent.link(@click="visabilityForm")
+                        svg.reviews__add-icon(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="25" viewBox="0 0 28 32" xml:space="preserve")
+                            path(d="M6,28H0v-6L6,28z M28,6L8,26l-6-6L22,0L28,6z")
+                            path(d="M0,32v-2h22v2H0z")
+
+                        | Добавить отзыв
+
+                    .reviews__form(v-if="visibleForm")
+                        label.reviews__avatar
+                            img(src="http://via.placeholder.com/100x100/2f2f2f", alt="")
+                            input(type="file")
+                        
+                        .reviews__group
+                            input.reviews__field.field(type="text" placeholder="Ваше имя")
+
+                        .reviews__group
+                            input.reviews__field.field(type="text" placeholder="Ссылка на отзыв")
+
+                        .reviews__group
+                            textarea.reviews__area.textarea(placeholder="Текст отзыва")
+
+                        a.reviews__submit.btn.btn_accent.link(href="javascript:;") Добавить отзыв
+
+                .reviews__list
+                    - for(var i = 0; i < 4; i++ )
+                        +reviewsItem()
+
+                include ../../components/pagination/pagination

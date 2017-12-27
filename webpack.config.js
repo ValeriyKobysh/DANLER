@@ -20,7 +20,9 @@ module.exports = {
         products: './src/view/products/products.js',
         articles: './src/view/articles/articles.js',
         article: './src/view/article/article.js',
-        contacts: './src/view/contacts/contacts.js'
+        contacts: './src/view/contacts/contacts.js',
+        order: './src/view/order/order.js',
+        reviews: './src/view/reviews/reviews.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -74,6 +76,20 @@ module.exports = {
                 filename: 'contacts.html',
                 chunks: ['contacts', 'common'],
                 template: PATH.src + '/view/contacts/contacts.pug'
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'order.html',
+                chunks: ['order', 'common'],
+                template: PATH.src + '/view/order/order.pug'
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {
+                filename: 'reviews.html',
+                chunks: ['reviews', 'common'],
+                template: PATH.src + '/view/reviews/reviews.pug'
             }
         ),
         new CleanWebpackPlugin('dist'),

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Список товаров</title>
-  <link href="./css/products.css" rel="stylesheet"></head>
+    <title>Отзывы</title>
+  <link href="./css/reviews.css" rel="stylesheet"></head>
   <body>
     <header class="header" id="header">
       <div class="header__top">
@@ -118,37 +118,9 @@
           </div>
         </div>
       </section>
-      <section class="products">
-        <div class="products__container container content">
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar__menu">
-    <ul class="sidebar__list list">
-      <li class="sidebar__item" @click="toggleMenu($event)">Разборка Мерседес Спринтер (1996-2006)
-        <ul class="sidebar__sub-list list">
-          <li class="sidebar__sub-item active"><a class="sidebar__sub-link link" href="javascript:;">Title <span>(1)</span></a></li>
-        </ul>
-      </li>
-      <li class="sidebar__item" @click="toggleMenu($event)">Разборка Мерседес Спринтер (1996-2006)
-        <ul class="sidebar__sub-list list">
-          <li class="sidebar__sub-item"><a class="sidebar__sub-link link" href="javascript:;">Title <span>(1)</span></a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div class="sidebar__social">
-    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Frazborkaavto%2F&amp;tabs=timeline&amp;width=350&amp;height=500&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId=508620022870463" width="350" height="500" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-  </div>
-  <div class="sidebar__banners">
-    <div class="sidebar__banner sidebar__banner_f"><span class="sidebar__banner-icon"><img src="image/banners-1.png" alt=""></span>
-      <p class="sidebar__banner-heading">Авторазборка - ваш выбор</p>
-      <p class="sidebar__banner-desc">У нас вы можете купить исключительно оригинальные б/у запчасти, по доступной цене!</p>
-    </div>
-    <div class="sidebar__banner sidebar__banner_s"><span class="sidebar__banner-icon"><img src="image/banners-2.png" alt=""></span>
-      <p class="sidebar__banner-heading">Ищите запчасти?</p><span class="sidebar__banner-desc">Устали менять китайские подделки, а новые оригинальные запчасти слишком дорого?</span>
-    </div>
-  </div>
-</aside>
-          <main class="products__content" id="products">
+      <section class="reviews">
+        <div class="reviews__container container content">
+          <main class="reviews__content" id="reviews">
 <div class="breadcrumbs"><a class="breadcrumbs__home" href="#">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 611.997 611.998" xml:space="preserve">
       <path d="M511.114,300.251c-9.94,0-17.638,7.663-17.638,17.651v241.105H368.401v-98.453c0-9.236-7.697-17.31-17.002-17.31h-90.435 c-9.948,0-17.96,8.073-17.96,17.31v98.453h-124.76v-233.1c0-9.306-7.69-17.036-17.638-17.036c-9.298,0-16.995,7.73-16.995,17.036 v250.752c0,9.305,7.697,17.036,16.995,17.036h160.358c9.298,0,16.995-7.731,16.995-17.036v-98.454h55.801v98.454 c0,9.305,7.697,17.036,17.639,17.036h159.715c9.299,0,16.995-7.731,16.995-17.036V317.903 C528.109,307.915,520.413,300.251,511.114,300.251z"></path>
@@ -160,85 +132,61 @@
     <li class="breadcrumbs__item"><a class="breadcrumbs__link link" href="javascript:;">Разборка Мерседес Спринтер</a></li>
   </ul>
 </div>
-            <h1 class="products__heading">Двигатель и детали двигателя Mercedes Sprinter</h1>
-            <div class="products__filters">
-              <div class="products__filter">
-                <div class="products__filter-title">Сортировать</div>
-                <div class="products__filter-header products__filter-header_sort" @click="showSortList" :class="{ active: sortDisplay }">{{sortTitle}}
-                  <ul class="products__filter-body list" v-if="sortDisplay">
-                    <li class="products__filter-item" v-for="(item, n) in sort" :key="n" @click="goTo('sort', n)">{{item.value}}</li>
-                  </ul>
+            <h1 class="reviews__heading">Отзывы</h1>
+            <div class="reviews__add-wrap"><a class="reviews__add btn btn_accent link" @click="visabilityForm">
+                <svg class="reviews__add-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="25" viewBox="0 0 28 32" xml:space="preserve">
+                  <path d="M6,28H0v-6L6,28z M28,6L8,26l-6-6L22,0L28,6z"></path>
+                  <path d="M0,32v-2h22v2H0z"></path>
+                </svg>Добавить отзыв</a>
+              <div class="reviews__form" v-if="visibleForm">
+                <label class="reviews__avatar"><img src="http://via.placeholder.com/100x100/2f2f2f" alt="">
+                  <input type="file">
+                </label>
+                <div class="reviews__group">
+                  <input class="reviews__field field" type="text" placeholder="Ваше имя">
                 </div>
-              </div>
-              <div class="products__filter">
-                <div class="products__filter-title">Показать</div>
-                <div class="products__filter-header products__filter-header_count" @click="showCountList" :class="{ active : countDisplay }">{{countTitle}}
-                  <ul class="products__filter-body list" v-if="countDisplay">
-                    <li class="products__filter-item" v-for="(item, n) in count" :key="n" @click="goTo('count', n)">{{item.value}}</li>
-                  </ul>
+                <div class="reviews__group">
+                  <input class="reviews__field field" type="text" placeholder="Ссылка на отзыв">
                 </div>
+                <div class="reviews__group">
+                  <textarea class="reviews__area textarea" placeholder="Текст отзыва"></textarea>
+                </div><a class="reviews__submit btn btn_accent link" href="javascript:;">Добавить отзыв</a>
               </div>
-              <div class="products__filter products__filter_grid"><a class="products__grid" href="javascript:;" :class="{ active: !grid }" @click="changeGrid">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" height="25">
-                    <rect width="237.268" height="237.268"></rect>
-                    <rect x="274.732" width="237.268" height="237.268"></rect>
-                    <rect y="274.732" width="237.268" height="237.268"></rect>
-                    <rect x="274.732" y="274.732" width="237.268" height="237.268"></rect>
-                  </svg></a><a class="products__grid" href="javascript:;" :class="{ active: grid }" @click="changeGrid">
-                  <svg viewBox="0 0 231 231" xmlns:xlink="http://www.w3.org/1999/xlink" height="25">
-                    <rect width="181" x="50" y="164.5" height="33"></rect>
-                    <rect width="181" x="50" y="99.5" height="33"></rect>
-                    <rect width="181" x="50" y="32.5" height="33"></rect>
-                    <rect width="33" y="165.5" height="33"></rect>
-                    <rect width="33" y="99.5" height="33"></rect>
-                    <rect width="33" y="32.5" height="33"></rect>
-                  </svg></a></div>
             </div>
-            <ul class="products__list list" :class="{ block: !grid, inline: grid }">
-              <li class="products__item"><a class="products__image" href="javascript:;"><img src="image/slider-1.png"></a>
-                <div class="products__info-wrap"><span class="products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</span><span class="products__price">Цена: 1234 грн.</span><span class="products__availability products__availability_true">В наличии</span></div>
-                <div class="products__btn-wrap"><a class="products__btn-card btn btn_accent link" href="javascript:;" @click="addToBasket()" id="455"><img src="image/add-to-card.svg">В корзину</a><a class="products__btn-callback btn btn_dark link" href="javascript:;" @click="showCallback(0)"><img src="image/phone.svg"></a>
-                  <callback-component v-if="callback[0]" @close="showCallback(0)"></callback-component><a class="products__btn-about btn btn_dark link" href="card.html">Подробнее</a>
+            <div class="reviews__list">
+              <div class="reviews__item">
+                <div class="reviews__left"><span class="reviews__avatar"><img src="http://via.placeholder.com/100x100/2f2f2f" alt=""></span>
+                  <div class="reviews__wrap"><span class="reviews__name">Иван Петрович</span><span class="reviews__date">31.05.2017</span><a class="reviews__link" href="https://www.facebook.com/">fb.com/id 1234567</a></div>
                 </div>
-              </li>
-              <li class="products__item"><a class="products__image" href="javascript:;"><img src="image/slider-1.png"></a>
-                <div class="products__info-wrap"><span class="products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</span><span class="products__price">Цена: 1234 грн.</span><span class="products__availability products__availability_true">В наличии</span></div>
-                <div class="products__btn-wrap"><a class="products__btn-card btn btn_accent link" href="javascript:;" @click="addToBasket()" id="455"><img src="image/add-to-card.svg">В корзину</a><a class="products__btn-callback btn btn_dark link" href="javascript:;" @click="showCallback(1)"><img src="image/phone.svg"></a>
-                  <callback-component v-if="callback[1]" @close="showCallback(1)"></callback-component><a class="products__btn-about btn btn_dark link" href="card.html">Подробнее</a>
+                <div class="reviews__right">
+                  <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eveniet quae rem dicta, minima doloribus repellendus nobis cum consequatur eos! Nostrum voluptatibus aliquid alias aspernatur quis dicta, harum sed. Nobis quasi commodi repudiandae ab, at nisi tenetur ipsum sed autem. Sed ex est rem iusto voluptatem eaque vitae minus quidem.</p>
                 </div>
-              </li>
-              <li class="products__item"><a class="products__image" href="javascript:;"><img src="image/slider-1.png"></a>
-                <div class="products__info-wrap"><span class="products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</span><span class="products__price">Цена: 1234 грн.</span><span class="products__availability products__availability_true">В наличии</span></div>
-                <div class="products__btn-wrap"><a class="products__btn-card btn btn_accent link" href="javascript:;" @click="addToBasket()" id="455"><img src="image/add-to-card.svg">В корзину</a><a class="products__btn-callback btn btn_dark link" href="javascript:;" @click="showCallback(2)"><img src="image/phone.svg"></a>
-                  <callback-component v-if="callback[2]" @close="showCallback(2)"></callback-component><a class="products__btn-about btn btn_dark link" href="card.html">Подробнее</a>
+              </div>
+              <div class="reviews__item">
+                <div class="reviews__left"><span class="reviews__avatar"><img src="http://via.placeholder.com/100x100/2f2f2f" alt=""></span>
+                  <div class="reviews__wrap"><span class="reviews__name">Иван Петрович</span><span class="reviews__date">31.05.2017</span><a class="reviews__link" href="https://www.facebook.com/">fb.com/id 1234567</a></div>
                 </div>
-              </li>
-              <li class="products__item"><a class="products__image" href="javascript:;"><img src="image/slider-1.png"></a>
-                <div class="products__info-wrap"><span class="products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</span><span class="products__price">Цена: 1234 грн.</span><span class="products__availability products__availability_true">В наличии</span></div>
-                <div class="products__btn-wrap"><a class="products__btn-card btn btn_accent link" href="javascript:;" @click="addToBasket()" id="455"><img src="image/add-to-card.svg">В корзину</a><a class="products__btn-callback btn btn_dark link" href="javascript:;" @click="showCallback(3)"><img src="image/phone.svg"></a>
-                  <callback-component v-if="callback[3]" @close="showCallback(3)"></callback-component><a class="products__btn-about btn btn_dark link" href="card.html">Подробнее</a>
+                <div class="reviews__right">
+                  <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eveniet quae rem dicta, minima doloribus repellendus nobis cum consequatur eos! Nostrum voluptatibus aliquid alias aspernatur quis dicta, harum sed. Nobis quasi commodi repudiandae ab, at nisi tenetur ipsum sed autem. Sed ex est rem iusto voluptatem eaque vitae minus quidem.</p>
                 </div>
-              </li>
-              <li class="products__item"><a class="products__image" href="javascript:;"><img src="image/slider-1.png"></a>
-                <div class="products__info-wrap"><span class="products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</span><span class="products__price">Цена: 1234 грн.</span><span class="products__availability products__availability_true">В наличии</span></div>
-                <div class="products__btn-wrap"><a class="products__btn-card btn btn_accent link" href="javascript:;" @click="addToBasket()" id="455"><img src="image/add-to-card.svg">В корзину</a><a class="products__btn-callback btn btn_dark link" href="javascript:;" @click="showCallback(4)"><img src="image/phone.svg"></a>
-                  <callback-component v-if="callback[4]" @close="showCallback(4)"></callback-component><a class="products__btn-about btn btn_dark link" href="card.html">Подробнее</a>
+              </div>
+              <div class="reviews__item">
+                <div class="reviews__left"><span class="reviews__avatar"><img src="http://via.placeholder.com/100x100/2f2f2f" alt=""></span>
+                  <div class="reviews__wrap"><span class="reviews__name">Иван Петрович</span><span class="reviews__date">31.05.2017</span><a class="reviews__link" href="https://www.facebook.com/">fb.com/id 1234567</a></div>
                 </div>
-              </li>
-              <li class="products__item"><a class="products__image" href="javascript:;"><img src="image/slider-1.png"></a>
-                <div class="products__info-wrap"><span class="products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</span><span class="products__price">Цена: 1234 грн.</span><span class="products__availability products__availability_true">В наличии</span></div>
-                <div class="products__btn-wrap"><a class="products__btn-card btn btn_accent link" href="javascript:;" @click="addToBasket()" id="455"><img src="image/add-to-card.svg">В корзину</a><a class="products__btn-callback btn btn_dark link" href="javascript:;" @click="showCallback(5)"><img src="image/phone.svg"></a>
-                  <callback-component v-if="callback[5]" @close="showCallback(5)"></callback-component><a class="products__btn-about btn btn_dark link" href="card.html">Подробнее</a>
+                <div class="reviews__right">
+                  <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eveniet quae rem dicta, minima doloribus repellendus nobis cum consequatur eos! Nostrum voluptatibus aliquid alias aspernatur quis dicta, harum sed. Nobis quasi commodi repudiandae ab, at nisi tenetur ipsum sed autem. Sed ex est rem iusto voluptatem eaque vitae minus quidem.</p>
                 </div>
-              </li>
-              <li class="products__item"><a class="products__image" href="javascript:;"><img src="image/slider-1.png"></a>
-                <div class="products__info-wrap"><span class="products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</span><span class="products__price">Цена: 1234 грн.</span><span class="products__availability products__availability_true">В наличии</span></div>
-                <div class="products__btn-wrap"><a class="products__btn-card btn btn_accent link" href="javascript:;" @click="addToBasket()" id="455"><img src="image/add-to-card.svg">В корзину</a><a class="products__btn-callback btn btn_dark link" href="javascript:;" @click="showCallback(6)"><img src="image/phone.svg"></a>
-                  <callback-component v-if="callback[6]" @close="showCallback(6)"></callback-component><a class="products__btn-about btn btn_dark link" href="card.html">Подробнее</a>
+              </div>
+              <div class="reviews__item">
+                <div class="reviews__left"><span class="reviews__avatar"><img src="http://via.placeholder.com/100x100/2f2f2f" alt=""></span>
+                  <div class="reviews__wrap"><span class="reviews__name">Иван Петрович</span><span class="reviews__date">31.05.2017</span><a class="reviews__link" href="https://www.facebook.com/">fb.com/id 1234567</a></div>
                 </div>
-              </li>
-            </ul>
-            <add-to-basket-component v-if="addToBasket" :data="addToBasketData" @close="showAddToBasket"></add-to-basket-component>
+                <div class="reviews__right">
+                  <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eveniet quae rem dicta, minima doloribus repellendus nobis cum consequatur eos! Nostrum voluptatibus aliquid alias aspernatur quis dicta, harum sed. Nobis quasi commodi repudiandae ab, at nisi tenetur ipsum sed autem. Sed ex est rem iusto voluptatem eaque vitae minus quidem.</p>
+                </div>
+              </div>
+            </div>
 <div class="pagination">
   <ul class="pagination__list list">
     <li class="pagination__item pagination__item_prev"><a class="pagination__link link" href="javascript:;"></a></li>
@@ -248,7 +196,6 @@
     <li class="pagination__item pagination__item_next"><a class="pagination__link link" href="javascript:;"></a></li>
   </ul>
 </div>
-            <social-component></social-component>
           </main>
         </div>
       </section>
@@ -284,5 +231,5 @@
     </div>
   </div>
 </footer>
-  <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/products.js"></script></body>
+  <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/reviews.js"></script></body>
 </html>
