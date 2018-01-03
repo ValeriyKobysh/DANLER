@@ -17,6 +17,16 @@
             margin-right: 10px
             flex-shrink: 0
 
+    ol li
+        display: flex
+        counter-increment: number
+    
+        &:before
+            content: counter(number)"."
+            margin-right: 10px
+            flex-shrink: 0
+
+
 +media-breakpoint-up(breakpoints(md))
     .text-block
 

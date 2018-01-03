@@ -53,7 +53,423 @@
       </div>
     </header>
     <div class="wrapper">
-      <section>mySSS</section>
+      <section class="search" id="search">
+        <div class="search__container container">
+          <div class="search__content">
+            <div class="search__heading">Каталог</div>
+            <form class="search__form" :action="[ action ? '/search' : '/articles' ]" method="get" name="search-form">
+              <div class="search__drop">
+                <div class="search__drop-header" @click="showDrop">{{title}}</div>
+                <ul class="search__drop-list list" v-if="drop">
+                  <li class="search__drop-item" v-if="firstLvl" @click="select('model', $event)">Поиск по моделям</li>
+                  <li v-if="typeSearch == 'model'">
+                    <ul class="list">
+                      <li class="search__drop-item li search__drop-item_back" @click="backSelect()">Назад</li>
+                            <li class="search__drop-item">
+                              <label>Mercedes Sprinter
+                                <input type="radio" form id="mercedes-sprinter" name="search" value="Mercedes Sprinter" @change="changeTitle($event)">
+                              </label>
+                            </li>
+                            <li class="search__drop-item">
+                              <label>Mercedes Vito
+                                <input type="radio" form id="mercedes-vito" name="search" value="Mercedes Vito" @change="changeTitle($event)">
+                              </label>
+                            </li>
+                            <li class="search__drop-item">
+                              <label>Opel Vivaro
+                                <input type="radio" form id="opel-vivaro" name="search" value="Opel Vivaro" @change="changeTitle($event)">
+                              </label>
+                            </li>
+                            <li class="search__drop-item">
+                              <label>Renault Trafic
+                                <input type="radio" form id="renault-trafic" name="search" value="Renault Trafic" @change="changeTitle($event)">
+                              </label>
+                            </li>
+                            <li class="search__drop-item">
+                              <label>Volkswagen LT
+                                <input type="radio" form id="volkswagen-lt" name="search" value="Volkswagen LT" @change="changeTitle($event)">
+                              </label>
+                            </li>
+                            <li class="search__drop-item">
+                              <label>Volkswagen T4
+                                <input type="radio" form id="volkswagen-t4" name="search" value="Volkswagen T4" @change="changeTitle($event)">
+                              </label>
+                            </li>
+                    </ul>
+                  </li>
+                  <li class="search__drop-item" v-if="firstLvl" @click="select('article', $event)">Поиск по статьям</li>
+                  <li v-if="typeSearch == 'article'">
+                    <ul class="list">
+                      <li class="search__drop-item li search__drop-item_back" @click="backSelect()">Назад</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <input class="search__input" type="text" form="search-form" name="field" placeholder="Введите название">
+              <button class="search__submit" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 339.921 339.921" xml:space="preserve">
+                  <path d="M335.165,292.071l-81.385-84.077c-5.836-6.032-13.13-8.447-16.29-5.363c-3.171,3.062-10.47,0.653-16.306-5.379l-1.164-1.207c36.425-47.907,32.89-116.499-10.851-160.24c-47.739-47.739-125.142-47.739-172.875,0c-47.739,47.739-47.739,125.131,0,172.87c44.486,44.492,114.699,47.472,162.704,9.045l0.511,0.533c5.825,6.032,7.995,13.402,4.814,16.469c-3.166,3.068-1.012,10.443,4.83,16.464l81.341,84.11c5.836,6.016,15.452,6.195,21.49,0.354l22.828-22.088C340.827,307.735,340.99,298.125,335.165,292.071z M182.306,181.81c-32.852,32.857-86.312,32.857-119.159,0.011c-32.852-32.852-32.847-86.318,0-119.164c32.847-32.852,86.307-32.847,119.148,0.005C215.152,95.509,215.152,148.964,182.306,181.81z"></path>
+                </svg>
+              </button>
+            </form>
+            <div class="search__basket"><a class="search__btn-basket link" @click="showBasket" href="javascript:;"><img class="search__btn-icon" src="image/store-dark.svg" alt="" height="30">(12)</a>
+              <basket-component v-if="basket"></basket-component>
+            </div>
+          </div>
+        </div>
+      </section>
+      <main class="index" id="index">
+        <div class="index__container container content">
+          <div class="index__content">
+            <div class="index__header">
+              <aside class="index__sidebar">
+                <ul class="index__catalog list">
+                  <li class="index__catalog-item"><a class="index__catalog-link link" href="javascript:;"><span class="index__catalog-image"><img src="image/mercedes-sprinter.png" alt=""></span>Разборка Мерседес Вито (1999-2003)</a>
+                    <ul class="index__category list">
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                    </ul>
+                  </li>
+                  <li class="index__catalog-item"><a class="index__catalog-link link" href="javascript:;"><span class="index__catalog-image"><img src="image/mercedes-sprinter.png" alt=""></span>Разборка Мерседес Вито (1999-2003)</a>
+                    <ul class="index__category list">
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                    </ul>
+                  </li>
+                  <li class="index__catalog-item"><a class="index__catalog-link link" href="javascript:;"><span class="index__catalog-image"><img src="image/mercedes-sprinter.png" alt=""></span>Разборка Мерседес Вито (1999-2003)</a>
+                    <ul class="index__category list">
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                    </ul>
+                  </li>
+                  <li class="index__catalog-item"><a class="index__catalog-link link" href="javascript:;"><span class="index__catalog-image"><img src="image/mercedes-sprinter.png" alt=""></span>Разборка Мерседес Вито (1999-2003)</a>
+                    <ul class="index__category list">
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                    </ul>
+                  </li>
+                  <li class="index__catalog-item"><a class="index__catalog-link link" href="javascript:;"><span class="index__catalog-image"><img src="image/mercedes-sprinter.png" alt=""></span>Разборка Мерседес Вито (1999-2003)</a>
+                    <ul class="index__category list">
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                    </ul>
+                  </li>
+                  <li class="index__catalog-item"><a class="index__catalog-link link" href="javascript:;"><span class="index__catalog-image"><img src="image/mercedes-sprinter.png" alt=""></span>Разборка Мерседес Вито (1999-2003)</a>
+                    <ul class="index__category list">
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                      <li class="index__category-item"><a class="index__category-link link" href="javascript:;"><span class="index__category-image"><img src="image/engines.png"></span><span class="index__category-title"> <span>Двигатель. Детали двигателя<span class="index__category-count"> (20)</span></span></span></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </aside>
+              <flickity class="index__slider" ref="flickity" :options="flickityOptions">
+                <div class="index__slide">
+                  <div class="index__slide-text">
+                    <vue-typer class="accent" text="Случилась неожиданная поломка?" :repeat="0" @typed="onTyped(0)"></vue-typer>
+                    <vue-typer v-if="typeds[0]" text="Решим проблему любого водителя!" :repeat="0"></vue-typer>
+                  </div><img class="index__slide-image" src="http://via.placeholder.com/885x664">
+                </div>
+                <div class="index__slide">
+                  <div class="index__slide-text">
+                    <vue-typer class="accent" text="Случилась неожиданная поломка?" :repeat="0" @typed="onTyped(1)"></vue-typer>
+                    <vue-typer v-if="typeds[1]" text="Решим проблему любого водителя!" :repeat="0"></vue-typer>
+                  </div><img class="index__slide-image" src="http://via.placeholder.com/885x664">
+                </div>
+                <div class="index__slide">
+                  <div class="index__slide-text">
+                    <vue-typer class="accent" text="Случилась неожиданная поломка?" :repeat="0" @typed="onTyped(2)"></vue-typer>
+                    <vue-typer v-if="typeds[2]" text="Решим проблему любого водителя!" :repeat="0"></vue-typer>
+                  </div><img class="index__slide-image" src="http://via.placeholder.com/885x664">
+                </div>
+              </flickity>
+            </div>
+            <h1 class="index__h1">Магазин авторазборки</h1>
+            <div class="last-products">
+              <h2 class="index__heading">Последние добавленные запчасти</h2>
+              <ul class="last-products__control-list">
+                            <li class="last-products__control-item" :class="{ active: lastProducts.tabs[0] }" @click="toggleTabs(0)"><a class="last-products__control-btn btn btn_dark link" href="javascript:;">Мерседес Спринтер</a></li>
+                            <li class="last-products__control-item" :class="{ active: lastProducts.tabs[1] }" @click="toggleTabs(1)"><a class="last-products__control-btn btn btn_dark link" href="javascript:;">Мерседес Спринтер</a></li>
+                            <li class="last-products__control-item" :class="{ active: lastProducts.tabs[2] }" @click="toggleTabs(2)"><a class="last-products__control-btn btn btn_dark link" href="javascript:;">Мерседес Спринтер</a></li>
+                            <li class="last-products__control-item" :class="{ active: lastProducts.tabs[3] }" @click="toggleTabs(3)"><a class="last-products__control-btn btn btn_dark link" href="javascript:;">Мерседес Спринтер</a></li>
+                            <li class="last-products__control-item" :class="{ active: lastProducts.tabs[4] }" @click="toggleTabs(4)"><a class="last-products__control-btn btn btn_dark link" href="javascript:;">Мерседес Спринтер</a></li>
+                            <li class="last-products__control-item" :class="{ active: lastProducts.tabs[5] }" @click="toggleTabs(5)"><a class="last-products__control-btn btn btn_dark link" href="javascript:;">Мерседес Спринтер</a></li>
+              </ul>
+              <ul class="last-products__content-list">
+                            <li class="last-products__content-item" :class="{ active: lastProducts.tabs[0] }">
+                                          <ul class="last-products__list">
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                          </ul>
+                            </li>
+                            <li class="last-products__content-item" :class="{ active: lastProducts.tabs[1] }">
+                                          <ul class="last-products__list">
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                          </ul>
+                            </li>
+                            <li class="last-products__content-item" :class="{ active: lastProducts.tabs[2] }">
+                                          <ul class="last-products__list">
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                          </ul>
+                            </li>
+                            <li class="last-products__content-item" :class="{ active: lastProducts.tabs[3] }">
+                                          <ul class="last-products__list">
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                          </ul>
+                            </li>
+                            <li class="last-products__content-item" :class="{ active: lastProducts.tabs[4] }">
+                                          <ul class="last-products__list">
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                          </ul>
+                            </li>
+                            <li class="last-products__content-item" :class="{ active: lastProducts.tabs[5] }">
+                                          <ul class="last-products__list">
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                            <li class="last-products__item"><span class="last-products__img"><img src="http://via.placeholder.com/220x165" alt=""></span>
+                                              <h5 class="last-products__title">Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)</h5><a class="last-products__link btn btn_dark link" href="products.html">Подробнее</a>
+                                            </li>
+                                          </ul>
+                            </li>
+              </ul><a class="last-products__all btn btn_accent link" href="products.html">Все запчасти</a>
+            </div>
+<section class="video"><img class="video__img" src="image/video-bg.png" alt=""><a class="video__link" href="javascript:;" @click="toggleVideo">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" viewBox="0 0 16 16">
+      <path d="M8 1c3.9 0 7 3.1 7 7s-3.1 7-7 7-7-3.1-7-7 3.1-7 7-7zM8 0c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8v0z"></path>
+      <path d="M6 4v8l6-4z"></path>
+    </svg></a></section>
+<div class="popup-video" :class="{ show: video }">
+  <div class="popup-video__wrap"><a class="popup-video__close" href="javascript:;" @click="toggleVideo"></a>
+    <iframe src="https://www.youtube.com/embed/ESXFanIvoNg" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+            <section class="excellence">
+              <h2 class="index__heading">Почему стоит обратиться именно к нам:</h2>
+              <div class="excellence__list">
+                            <div class="excellence__item"><span class="excellence__title" @click="toggleItem($event)">Цены</span>
+                              <div class="excellence__content"><span class="excellence__icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" viewBox="0 0 56.4 56.4" xml:space="preserve">
+                                    <path d="M36.3,29.3c-0.9,0-1.7,0.6-2.2,1.3c-0.5-0.7-1.3-1.3-2.2-1.3c-1.5,0-2.7,1.2-2.8,2.7c0,0.1-0.1,0.5,0.1,1.1 c0.2,0.9,0.7,1.6,1.4,2.3l3.2,2.8c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.3-0.1l3.2-2.8c0.7-0.6,1.2-1.4,1.4-2.2 c0.1-0.6,0.1-1,0.1-1.1C39,30.5,37.8,29.3,36.3,29.3z M38.3,32.9c-0.2,0.7-0.6,1.3-1.2,1.8l-3,2.6l-3-2.6c-0.6-0.5-1-1.1-1.2-1.8 c-0.1-0.5-0.1-0.7-0.1-0.7l0,0c0.1-1,0.8-2.1,2.1-2.1c0.9,0,1.5,0.7,1.9,1.4l0.4,0.8l0.4-0.8c0.3-0.7,1-1.4,1.9-1.4 c1.2,0,2,1,2.1,2.1C38.4,32.2,38.4,32.4,38.3,32.9z"></path>
+                                    <polygon points="17.6,29.4 27.4,39.2 29.8,36.8 20,27"></polygon>
+                                    <path d="M35.3,17.2h-5.5l-9.3,9.2l7.7,7.7c-0.1-0.2-0.2-0.5-0.3-0.8c-0.2-0.7-0.1-1.2-0.1-1.5c0.2-2.1,1.9-3.8,4-3.8 c0.8,0,1.6,0.3,2.2,0.8c0.7-0.5,1.4-0.8,2.2-0.8c0.6,0,1.2,0.2,1.8,0.4l1.5-1.5v-5.5L35.3,17.2z M34.2,23.8 c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5C35.7,23.1,35,23.8,34.2,23.8z"></path>
+                                    <rect x="8.6" y="9.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -11.8285 27.5614)" width="37.5" height="37.8"></rect>
+                                  </svg></span><span class="excellence__description">Нам важно, что бы Вы получили оригинальную и готовую к эксплуатации запчасть, поэтому каждая запчасть диагностируется нашими инженерами</span></div>
+                            </div>
+                            <div class="excellence__item"><span class="excellence__title" @click="toggleItem($event)">Скорость</span>
+                              <div class="excellence__content"><span class="excellence__icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" viewBox="0 0 63.1 63.1" xml:space="preserve">
+                                    <path d="M32.5,30L38,25l-4.9,5.6c0.1,0.3,0.2,0.6,0.2,0.9c0,1-0.8,1.8-1.8,1.8c-1,0-1.8-0.8-1.8-1.8c0-1,0.8-1.8,1.8-1.8 C31.9,29.7,32.2,29.8,32.5,30z M43.5,31.5c0,6.6-5.4,12-12,12s-12-5.4-12-12s5.4-12,12-12S43.5,24.9,43.5,31.5z M40.9,35.6 L39.4,35l0.2-0.4l1.5,0.6c0.4-1,0.6-2.1,0.7-3.2h-1.6v-0.9h1.6c-0.1-1.2-0.3-2.3-0.7-3.3l-1.5,0.6L39.4,28l1.5-0.6 c-1-2.3-2.9-4.2-5.2-5.2L35,23.7l-0.4-0.2l0.6-1.5c-1-0.4-2.1-0.6-3.2-0.7v1.6h-0.9v-1.6c-1.2,0.1-2.3,0.3-3.3,0.7l0.6,1.5 L28,23.7l-0.6-1.5c-1,0.4-1.9,1.1-2.7,1.8l1.1,1.1l-0.7,0.7L24,24.7c-0.8,0.8-1.4,1.8-1.8,2.8l1.5,0.6l-0.2,0.4L22,27.9 c-0.4,1-0.6,2.1-0.7,3.2h1.6V32h-1.6c0.1,1.2,0.3,2.3,0.7,3.3l1.5-0.6l0.2,0.4l-1.5,0.6c0.4,1,1.1,1.9,1.8,2.7l1.1-1.1l0.7,0.7 l-1.1,1.1c1.8,1.7,4.2,2.7,6.9,2.7c2.6,0,5.1-1,6.9-2.7l-1.1-1.1l0.7-0.7l1.1,1.1C39.8,37.6,40.5,36.6,40.9,35.6z M28.1,37.9h6.8 v-1.3h-6.8V37.9z"></path>
+                                    <rect x="9.8" y="9.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -13.0945 31.5854)" width="43.5" height="43.5"></rect>
+                                  </svg></span><span class="excellence__description">Каждый заказ обрабатывается в кратчайшие сроки</span></div>
+                            </div>
+                            <div class="excellence__item"><span class="excellence__title" @click="toggleItem($event)">Помощь</span>
+                              <div class="excellence__content"><span class="excellence__icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" viewBox="0 0 63.1 63.1" xml:space="preserve">
+                                    <path d="M40.3,33c-0.4-2.8-2-4.8-4.1-4.8h-9.4c-2,0-3.7,2-4.1,4.8c-1.5,0.7-2.2,2.1-2.2,3.7c0,1.3,0.4,2.4,1.3,3.2v2.6 h3.5v-1.6h12.4v1.6h3.5v-2.6c0.9-0.8,1.3-1.9,1.3-3.2C42.5,35.1,41.8,33.7,40.3,33z M26.8,29.2h9.4c1.3,0,2.5,1.5,2.9,3.4 c-0.2,0-0.4-0.1-0.7-0.1c0,0,0,0,0,0c0-1.1-1-2.1-2.2-2.1c-1.2,0-2.2,0.9-2.2,2.1h-9.2c-0.3,0-0.7,0-1,0.1 C24.3,30.7,25.5,29.2,26.8,29.2z M37.8,32.6h-3.1c0-0.8,0.7-1.4,1.5-1.4C37.1,31.2,37.8,31.8,37.8,32.6z M24.3,38.1 c-0.8,0-1.5-0.6-1.5-1.4c0-0.8,0.7-1.4,1.5-1.4c0.8,0,1.5,0.6,1.5,1.4C25.8,37.5,25.1,38.1,24.3,38.1z M35.8,37.9h-8.5 c-0.2,0-0.4-0.1-0.4-0.3c0-0.2,0.2-0.3,0.4-0.3h8.5c0.2,0,0.4,0.1,0.4,0.3C36.1,37.7,36,37.9,35.8,37.9z M35.8,36.7h-8.5 c-0.2,0-0.4-0.1-0.4-0.3c0-0.2,0.2-0.3,0.4-0.3h8.5c0.2,0,0.4,0.1,0.4,0.3C36.1,36.5,36,36.7,35.8,36.7z M38.7,38.1 c-0.8,0-1.5-0.6-1.5-1.4c0-0.8,0.7-1.4,1.5-1.4c0.8,0,1.5,0.6,1.5,1.4C40.2,37.5,39.5,38.1,38.7,38.1z M37,24.6 c0.5,0.7,1.4,1.2,2.4,1.2c1.1,0,2.1-0.6,2.5-1.5l-1.9,0c-0.7,0-1.2-0.5-1.2-1.2c0-0.6,0.5-1.2,1.2-1.2H42c-0.5-0.9-1.4-1.5-2.5-1.5 c-1,0-1.9,0.5-2.4,1.2h-12c-0.4-0.4-1-0.7-1.7-0.7c-1.3,0-2.3,0.9-2.3,2.1c0,1.2,1,2.1,2.3,2.1c0.7,0,1.3-0.3,1.7-0.7H37z M22.8,24.1l-0.6-1l0.6-1l1.2,0l0.6,1l-0.6,1H22.8z"></path>
+                                    <rect x="9.8" y="9.8" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -13.0622 31.535)" width="43.4" height="43.5"></rect>
+                                  </svg></span><span class="excellence__description">Наш персонал с радостью поможет в подборе интересующей Вас детали</span></div>
+                            </div>
+                            <div class="excellence__item"><span class="excellence__title" @click="toggleItem($event)">Ассортимент</span>
+                              <div class="excellence__content"><span class="excellence__icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" viewBox="0 0 63.9 63.9" xml:space="preserve">
+                                    <path d="M23.8,31.2c0.2,0.1,0.4,0.3,0.5,0.4c0.1,0.2,0.2,0.4,0.1,0.6c-0.1,0.3-0.2,0.5-0.4,0.6c-0.2,0.1-0.4,0.1-0.6,0.1 L23.8,31.2z M23.7,29.8l0.3-1.5c-0.2,0-0.3,0-0.5,0.1c-0.2,0.1-0.3,0.3-0.4,0.5c0,0.2,0,0.4,0.2,0.6 C23.4,29.6,23.5,29.7,23.7,29.8z M25.3,23.4l2.8,3l-2.2,10.3l-6.5-1.5l2.2-10.3L25.3,23.4z M24.6,27.4l0.1-0.6l-0.4-0.1l-0.1,0.6 c-0.5-0.1-0.9,0-1.3,0.2c-0.4,0.3-0.7,0.7-0.8,1.2c-0.1,0.5,0,0.9,0.2,1.2c0.2,0.3,0.6,0.6,1.2,1l-0.4,1.9 c-0.2-0.1-0.4-0.2-0.5-0.4c-0.1-0.2-0.1-0.5,0-0.9l-1.2-0.3l0,0.2c-0.1,0.6-0.1,1.1,0.2,1.5c0.3,0.4,0.7,0.7,1.3,0.9l-0.2,0.9 l0.4,0.1l0.2-0.9c0.6,0.1,1.1,0,1.5-0.2c0.5-0.3,0.7-0.7,0.9-1.3c0.1-0.5,0-0.9-0.2-1.3c-0.2-0.4-0.6-0.7-1.3-1.1L24,30l0.3-1.7 c0.2,0.1,0.4,0.2,0.5,0.3c0.1,0.2,0.1,0.4,0.1,0.7l1.1,0.2c0.1-0.6,0-1.1-0.2-1.5C25.5,27.8,25.1,27.6,24.6,27.4z M32.2,29.2h-0.4 l1.5-4.2h0.5h0.5l1.5,4.2h-0.5h-0.5l-0.3-0.9h-1.6l-0.3,0.9C32.7,29.2,32.2,29.2,32.2,29.2z M33.2,27.6h1.1l-0.5-1.7v0h0l0,0 L33.2,27.6z M41.9,30.5h-1.5v0.9h1.5V30.5z M39,30.5h-1.5v0.9H39V30.5z M34.6,31.4H36v-0.9h-1.5V31.4z M33.1,30.5h-1.5v0.9h1.5 V30.5z M41.9,33.2h-1.5v0.9h1.5V33.2z M39,33.2h-1.5v0.9H39V33.2z M41.9,25.3h-1.5v0.9h1.5V25.3z M39,25.3h-1.5v0.9H39V25.3z M41.9,28.1h-1.5v0.9h1.5V28.1z M39,28.1h-1.5v0.9H39V28.1z M34.6,34.2H36v-0.9h-1.5V34.2z M33.1,33.2h-1.5v0.9h1.5V33.2z M41.9,36h-1.5V37h1.5V36z M39,36h-1.5V37H39V36z M34.6,37H36V36h-1.5V37z M33.1,36h-1.5V37h1.5V36z M41.9,38.8h-1.5v0.9h1.5V38.8 z M39,38.8h-1.5v0.9H39V38.8z M34.6,39.7H36v-0.9h-1.5V39.7z M33.1,38.8h-1.5v0.9h1.5V38.8z M44.4,20.8v24H28.6v-24H44.4z M43.1,23.2H30v18.3h13.1C43.1,41.5,43.1,23.2,43.1,23.2z M37.3,44.1v-0.7v-0.9h-1.5v0.9v0.7H37.3z"></path>
+                                    <rect x="9.9" y="10" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -13.268 31.9754)" width="44.1" height="44.1"></rect>
+                                  </svg></span><span class="excellence__description">Наш каталог насчитывает более 1000 запчастей, ко всем предоставленным в каталоге автомобиле</span></div>
+                            </div>
+              </div>
+            </section>
+            <h2 class="index__heading">Почему нам можно доверять?</h2>
+            <div class="index__trust">
+              <flickity class="index__trust-slider" ref="flickity" :options="trustOptions">
+                <div class="index__trust-slide">
+                  <h3 class="index__trust-title">Опыт</h3><span class="index__trust-image"><img src="image/tabs-pic-1.png" alt=""></span>
+                  <div class="index__trust-text-wrap"><span class="index__trust-text">Специфика работы нашей разборки во многом отличается от других авто разборок Украины которые разбирают все марки автомобилей. Работы в определённой категории можем предложить своему клиенту лучшие запчасти.<span class="index__trust-line"></span></span></div>
+                </div>
+                <div class="index__trust-slide">
+                  <h3 class="index__trust-title">Качество</h3><span class="index__trust-image"><img src="image/tabs-pic-1.png" alt=""></span>
+                  <div class="index__trust-text-wrap"><span class="index__trust-text">Специфика работы нашей разборки во многом отличается от других авто разборок Украины которые разбирают все марки автомобилей. Работы в определённой категории можем предложить своему клиенту лучшие запчасти.<span class="index__trust-line"></span></span></div>
+                </div>
+                <div class="index__trust-slide">
+                  <h3 class="index__trust-title">Цена</h3><span class="index__trust-image"><img src="image/tabs-pic-1.png" alt=""></span>
+                  <div class="index__trust-text-wrap"><span class="index__trust-text">Специфика работы нашей разборки во многом отличается от других авто разборок Украины которые разбирают все марки автомобилей. Работы в определённой категории можем предложить своему клиенту лучшие запчасти.<span class="index__trust-line"></span></span></div>
+                </div>
+                <div class="index__trust-slide">
+                  <h3 class="index__trust-title">Надёжность</h3><span class="index__trust-image"><img src="image/tabs-pic-1.png" alt=""></span>
+                  <div class="index__trust-text-wrap"><span class="index__trust-text">Специфика работы нашей разборки во многом отличается от других авто разборок Украины которые разбирают все марки автомобилей. Работы в определённой категории можем предложить своему клиенту лучшие запчасти.<span class="index__trust-line"></span></span></div>
+                </div>
+              </flickity>
+            </div>
+            <div class="text-block"><h2 style="text-align: center">Danler – ваша разборка микроавтобусов в Украине!</h2>
+<p>Каждый автовладелец в процессе ремонта сталкивается с поиском необходимой автозапчасти для своего микроавтобуса, покупка которых может значительно ударить по карману.</p>
+<p>Специалисты Bus-razborka.com.ua выполняют&nbsp; разборку бусов с конечной диагностикой каждой детали, что бы Вы получили качественную запчасть по разумной стоимости.</p>
+<h2>Авторазборка Данлер &ndash; лучший помошник приобрести оригинальные б/у запчасти</h2>
+<p>Что нас выделяет от других сервисов Украины?</p>
+<ul>
+<li>Не специализируемся на разборке автомобилей, которые изжили себя, нам важно, что бы каждая деталь получаемая Вами соответствовала ожидаемому качеству.</li>
+<li>Заботимся о своей репутации, поэтому каждый покупатель получает гарантию на приобретенную запчасть.</li>
+<li>Используем качественное оборудование, что позволяет производить нам множество действий, направленных на диагностику и восстановление деталей.</li>
+<li>Ответственно подходим к вопросу упаковки пересылаемых заказов.</li>
+</ul>
+<h3>Разборка авто: отличия от других точек продаж автозапчастей</h3>
+<p>Магазины автозапчастей во многих случаях не могут предложить автовладельцам необходимые запчасти на микроавтобусы, по причинам снятия с производства или редкости той или иной детали. В этих случаях авторазборка &nbsp;&ndash; лучший помощник для автовладельца, так как тут можно заказать б/у запчасти, которые не найдешь в специализированных точках продаж. Главное преимущество авторазборки &ndash; доступная стоимость деталей.</p>
+<p>Ассортимент нашего каталога минимизирует ваше время на поиск деталей, так как все запчасти разбираются полностью с микроавтобуса, а не из определенных частей, и включает в себя:</p>
+<ul>
+<li>Элементы кузова, трансмиссии, подвески</li>
+<li>Двигатели в сборе и отдельные его элементы</li>
+<li>Электрооборудование</li>
+<li>Запчасти рулевой системы управления</li>
+</ul>
+<h3>&nbsp;Данлер&nbsp;&ndash; это лучшие решения с авторазборки для владельцев микроавтобусов!</h3>
+<p>Помимо опыта специалистов и качества проводимых нами работ, нам важно, что бы покупаемые б/у запчасти соответствовали техническим параметрам вашего авто, для этого мы:</p>
+<ol>
+<li>Позаботились о навигации на сайте, и создали его максимально удобным и понятным</li>
+<li>Предоставляем полную информацию по необходимой детали</li>
+<li>Оказываем исчерпывающие консультации, что бы Вы были уверенны в своем выборе</li>
+<li>Организовали внутреннюю логистику работы с целью более быстрой доставки</li>
+</ol>
+<p>Обращайтесь к нам и Вы убедитесь в качестве запчастей с нашей разборки!</p>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
 <footer class="footer">
   <div class="footer__container container">

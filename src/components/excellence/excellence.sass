@@ -1,0 +1,83 @@
+.excellence
+    margin-bottom: 60px
+
+    &__title, &__description
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+
+    &__list
+        display: flex
+
+    &__item
+        background-color: bg-color(main-light)
+        color: text-color(light)
+        padding: 15px
+        position: relative
+        overflow: hidden
+        
+
+    &__title
+        text-align: center
+        text-transform: uppercase
+        font-size: rem(18px)
+        font-weight: 700
+
+    &__icon
+        width: 100%
+        +alignment()
+        padding-top: 15px
+        margin-bottom: 15px
+
+        & > svg
+            +size(100px)
+            margin: 0
+            fill: none
+            stroke: bg-color(accent)
+
+    &__description
+        font-size: rem(12px)
+        line-height: rem(18px)
+
++media-breakpoint-up(breakpoints(lg))
+    .excellence
+
+        &__item
+            width: calc(100% / 4)
+
+            &:first-child
+                border-radius: 5px 0 0 5px
+
+            &:last-child
+                border-radius: 0 5px 5px 0
+
++media-breakpoint-between(breakpoints(sm), breakpoints(lg))
+    .excellence
+
+        &__list
+            flex-wrap: wrap
+
+        &__item
+            width: calc(100% / 2 - 7.5px)
+            border-radius: 5px
+            margin-bottom: 15px
+
+            &:nth-child(odd)
+                margin-right: 15px
+
++media-breakpoint-down(breakpoints(sm))
+    .excellence
+
+        &__list
+            flex-direction: column
+
+        &__item
+            margin-bottom: 15px
+            border-radius: 5px
+
+        &__content
+            display: none
+
+            &.active
+                display: block

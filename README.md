@@ -4,10 +4,11 @@
 
 ## GitHub Pages
 
-* [Card page](https://valeriykobysh.github.io/danler/dist/card.html) - Example card page
-* [Category page](https://valeriykobysh.github.io/danler/dist/category.html) - Example category page
-* [Products page](https://valeriykobysh.github.io/danler/dist/products.html) - Example products page
-* [Articles page](https://valeriykobysh.github.io/danler/dist/articles.html) - Example articles page
-* [Article page](https://valeriykobysh.github.io/danler/dist/article.html) - Example article page
-* [Contacts page](https://valeriykobysh.github.io/danler/dist/contacts.html) - Example contacts page
-* [Reviews page](https://valeriykobysh.github.io/danler/dist/contacts.html) - Example reviews page
+* [Index page](https://valeriykobysh.github.io/danler/dist) - Example card page
+* [Card page](https://valeriykobysh.github.io/danler/dist/card) - Example card page
+* [Category page](https://valeriykobysh.github.io/danler/dist/category) - Example category page
+* [Products page](https://valeriykobysh.github.io/danler/dist/products) - Example products page
+* [Articles page](https://valeriykobysh.github.io/danler/dist/articles) - Example articles page
+* [Article page](https://valeriykobysh.github.io/danler/dist/article) - Example article page
+* [Contacts page](https://valeriykobysh.github.io/danler/dist/contacts) - Example contacts page
+* [Reviews page](https://valeriykobysh.github.io/danler/dist/reviews) - Example reviews page

@@ -150,7 +150,11 @@ module.exports = {
                     name: '[name].[ext]',
                     outputPath: 'image/'
                 }
-            }
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+              },
         ]
     },
     resolve: {

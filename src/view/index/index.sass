@@ -1,0 +1,431 @@
+@import '../../style/default.sass'
+@import '../../components/header/header.sass'
+@import '../../components/basket/basket.sass'
+@import '../../components/dialog/dialog.sass'
+@import '../../components/search/search.sass'
+@import '../../components/last-products/last-products.sass'
+@import '../../components/excellence/excellence.sass'
+@import '../../components/video/video.sass'
+@import '../../components/footer/footer.sass'
+
+.index
+
+    &__content
+        width: 100%
+
+    &__h1
+        text-transform: uppercase
+        text-align: center
+        margin-bottom: 60px
+
+    &__heading
+        background-color: bg-color(accent)
+        text-transform: uppercase
+        text-align: center
+        padding: 15px
+        font-weight: 700
+        margin-bottom: 30px
+        border-radius: 5px
+
+    &__header
+        display: flex
+        margin-bottom: 30px
+        position: relative
+
+    &__sidebar
+        width: 365px
+        flex-shrink: 0
+        z-index: 10
+
+    &__catalog
+        display: flex
+        flex-direction: column
+
+        &-item
+            display: flex
+            align-items: center
+            border-bottom: 1px solid bg-color(grey-light)
+            border-right: 15px solid transparent
+            +transition()
+
+            &:last-child
+                border-bottom: 0
+
+            &:hover
+            
+                .index__category
+                    display: flex
+                    flex-wrap: wrap
+
+        &-link
+            height: 100%
+            +alignment($jc: start)
+            color: text-color(dark)
+            font-size: rem(18px)
+            line-height: rem(24px)
+            padding: 0 15px
+            background-color: bg-color(white)
+
+            &:after
+                content: ''
+                flex-shrink: 0
+                display: flex
+                +size(10px)
+                border-right: 2px solid bg-color(main-light)
+                border-bottom: 2px solid bg-color(main-light)
+                transform: rotate(-45deg)
+                margin-left: 15px
+
+        &-image
+            margin-right: 15px
+
+            img
+                width: 100%
+
+    &__category
+        display: none
+        position: absolute
+        top: 0
+        right: 0
+        width: calc(100% - 365px)
+        background-color: rgba(bg-color(white), .8)
+
+        &-item
+            width: calc(100% / 3)
+            border: 2px solid transparent
+            +transition()
+
+            &:hover
+                border-color: bg-color(accent)
+        
+        &-link
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            color: text-color(dark)
+            font-size: rem(14px)
+            line-height: rem(18px)
+
+        &-image
+            +alignment()
+            width: 100%
+            flex-shrink: 0
+
+        &-count
+            font-weight: 700
+
+    &__slider
+        width: 100%
+        overflow: hidden
+        outline: none
+        position: relative
+
+        .flickity-page-dots
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            +alignment()
+
+        .dot
+            display: flex
+            border-radius: 50%
+            background-color: bg-color(main-light)
+            margin-right: 15px
+
+            &:last-child
+                margin-right: 0
+
+            &.is-selected
+                background-color: bg-color(accent)
+
+        .flickity-prev-next-button
+            position: absolute
+            top: calc(50% - 22.5px)
+            +size(45px)
+            background-color: rgba(bg-color(accent), .7)
+            border: 0
+            border-radius: 5px
+            outline: none
+            cursor: pointer
+            fill: text-color(medium)
+            +transition()
+
+            &:hover
+                background-color: rgba(bg-color(accent), 1)
+                fill: text-color(dark)
+
+            *
+                height: 50%
+
+        .previous
+            left: 15px
+
+        .next
+            right: 15px
+
+    &__slide
+        width: 100%
+        position: relative
+
+        &-image
+            +size(100%)
+
+        &-text
+            display: flex
+            flex-direction: column
+            position: absolute
+            padding: 15px
+            width: 100%
+            top: 0
+            left: 0
+            background-color: rgba(bg-color(main-light), .7)
+            text-align: center
+
+
+            .custom.char.typed
+                color: text-color(light)
+
+            .accent .custom.char.typed
+                color: text-color(hover)
+
+    &__trust
+        border: 5px solid bg-color(main-light)
+        border-radius: 5px
+        margin-bottom: 60px
+        
+        &-slider
+            width: 100%
+            overflow: hidden
+            outline: none
+            position: relative
+
+            .flickity-page-dots
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                height: 50px
+                +alignment()
+
+            .dot
+                display: flex
+                border-radius: 50%
+                background-color: bg-color(main-light)
+                margin-right: 15px
+                +size(15px)
+
+                &:last-child
+                    margin-right: 0
+
+                &.is-selected
+                    background-color: bg-color(accent)
+
+        &-slide
+            width: 100%
+            display: flex
+            position: relative
+
+        &-title
+            background-color: rgba(bg-color(white), .5)
+            padding: 15px
+            text-transform: uppercase
+
+        &-image img
+            +size(100%)
+
+        &-text
+            font-size: rem(16px)
+            line-height: rem(30px)
+            position: relative
+
+        &-line:before, &-line:after
+            content: ""
+            display: flex
+            position: absolute
+            +size(100px, 50px)
+            border-bottom: 2px solid bg-color(accent)
+            border-right: 2px solid bg-color(accent)
+
+        &-line:before
+            left: calc(100% + 30px)
+            bottom: -30px
+
+        &-line:after
+            left: calc(100% + 40px)
+            bottom: -40px
+
++media-breakpoint-up(breakpoints(xl))
+    .index
+
+        &__header
+            height: 664px
+
+        &__catalog
+
+            &-item
+                height: 111px
+
+            &-image
+                width: 170px
+
+        &__category
+
+            &-item
+                height: 133px
+                padding: 15px
+
+            &-image
+                margin-bottom: 15px
+
++media-breakpoint-up(breakpoints(md))
+    .index
+
+        &__heading
+            font-size: rem(20px)
+
+        &__slider
+
+            .flickity-page-dots
+                height: 100px
+
+            .dot
+                +size(15px)
+
+                &.is-selected
+                    +size(20px)
+
+        &__slide
+
+            &-text
+                font-size: rem(24px)
+                line-height: rem(32px)
+
+        &__trust
+
+            &-slider
+            
+                .flickity-page-dots
+                    background-color: rgba(bg-color(white), .5)
+
+            &-title
+                position: absolute
+                width: 50%
+                font-size: rem(24px)
+                z-index: 20
+
+            &-text-wrap
+                padding: 5%
+
+            &-text:before
+                content: ''
+                display: flex
+                position: absolute
+                top: -10%
+                left: -5%
+                +size(100px, 50px)
+                border-left: 2px solid bg-color(accent)
+                border-top: 2px solid bg-color(accent)
+
+            &-image, &-text-wrap
+                width: 50%
+
+            &-image
+                margin-right: 30px
+
++media-breakpoint-between(breakpoints(lg), breakpoints(xl))
+    .index
+
+        &__header
+            height: 424px
+
+        &__catalog
+
+            &-item
+                height: 71px
+
+            &-image
+                width: 165px
+
+        &__category
+
+            &-item
+                height: 85px
+
+                &:hover
+
+                    .index__category-title
+                        visibility: visible
+
+            &-link
+                position: relative
+                height: 100%
+
+            &-title
+                visibility: hidden
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                z-index: 10
+                background-color: rgba(bg-color(white), .7)
+                +alignment()
+                text-align: center
+
++media-breakpoint-down(breakpoints(lg))
+    .index
+
+        &__content
+            background-color: bg-color(white)
+            padding: 15px
+
+        &__sidebar
+            display: none
+
+        &__slider
+
+            .flickity-prev-next-button
+                display: none
+
++media-breakpoint-down(breakpoints(md))
+    .index
+
+        &__heading
+            font-size: rem(16px)
+
+        &__slider
+
+            .flickity-page-dots
+                height: 50px
+
+            .dot
+                +size(10px)
+
+                &.is-selected
+                    +size(15px)
+
+        &__trust
+
+            &-slide
+                flex-direction: column
+
+            &-title
+                position: relative
+                z-index: 10
+
+            &-image, &-text-wrap
+                width: 100%
+
+            &-image
+                position: absolute
+                height: 100%
+
+            &-text-wrap
+                background-color: rgba(bg-color(white), .5)
+                padding: 0 30px 60px
+                position: relative
+                z-index: 10
+
+            &-line
+                display: none

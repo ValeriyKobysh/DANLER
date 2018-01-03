@@ -4,91 +4,133 @@ block variables
     - var title = 'Главная'
 
 block content
-    section mySSS
-//- block main_content
-//-     - var pageName = "index"
-//-     h1.main-heading Магазин авторазборки
-//-     include ../_blocks/_last-products/_last-products
-//-     include ../_blocks/_video/_video
-//-     include ../_blocks/_excellence/_excellence
-//-     h2.second-heading Почему нам можно доверять?
-//-     ul.accordion-tabs-minimal
-//-         li.tab-header-and-content
-//-             a(href="#").tab-link Опыт
-//-                 svg.triangle
-//-                     polygon(points="0,0 20,0 10,20")
-//-             .tab-content
-//-                 .image
-//-                     img.image-pic(src="img/tabs-pic-1.png", alt="")
-//-                 .text
-//-                     svg.line.before-line
-//-                         line(x1="0" y1="0" x2="100" y2="0")
-//-                         line(x1="0" y1="0" x2="0" y2="50")
-//-                     p Специфика работы нашей разборки во многом отличается от других авто разборок Украины которые разбирают все марки автомобилей. Работы в определённой категории можем предложить своему клиенту лучшие запчасти.
-//-                         svg.line.after-line
-//-                             line(x1="0" y1="50" x2="100" y2="50")
-//-                             line(x1="100" y1="0" x2="100" y2="50")
-//-                         svg.line.after-line-second
-//-                             line(x1="0" y1="50" x2="100" y2="50")
-//-                             line(x1="100" y1="0" x2="100" y2="50")
-//-         li.tab-header-and-content
-//-             a(href="#").tab-link Качество
-//-                 svg.triangle
-//-                     polygon(points="0,0 20,0 10,20")
-//-             .tab-content
-//-                 .image
-//-                     img.image-pic(src="img/tabs-pic-1.png", alt="")
-//-                 .text
-//-                     svg.line.before-line
-//-                         line(x1="0" y1="0" x2="100" y2="0")
-//-                         line(x1="0" y1="0" x2="0" y2="50")
-//-                     p Специфика работы нашей разборки во многом отличается от других авто разборок Украины которые разбирают все марки автомобилей. Работы в определённой категории можем предложить своему клиенту лучшие запчасти.
-//-                         svg.line.after-line
-//-                             line(x1="0" y1="50" x2="100" y2="50")
-//-                             line(x1="100" y1="0" x2="100" y2="50")
-//-                         svg.line.after-line-second
-//-                             line(x1="0" y1="50" x2="100" y2="50")
-//-                             line(x1="100" y1="0" x2="100" y2="50")
-//-         li.tab-header-and-content
-//-             a(href="#").tab-link Цена
-//-                 svg.triangle
-//-                     polygon(points="0,0 20,0 10,20")
-//-             .tab-content
-//-                 .image
-//-                     img.image-pic(src="img/tabs-pic-1.png", alt="")
-//-                 .text
-//-                     svg.line.before-line
-//-                         line(x1="0" y1="0" x2="100" y2="0")
-//-                         line(x1="0" y1="0" x2="0" y2="50")
-//-                     p Специфика работы нашей разборки во многом отличается от других авто разборок Украины которые разбирают все марки автомобилей. Работы в определённой категории можем предложить своему клиенту лучшие запчасти.
-//-                         svg.line.after-line
-//-                             line(x1="0" y1="50" x2="100" y2="50")
-//-                             line(x1="100" y1="0" x2="100" y2="50")
-//-                         svg.line.after-line-second
-//-                             line(x1="0" y1="50" x2="100" y2="50")
-//-                             line(x1="100" y1="0" x2="100" y2="50")
-//-         li.tab-header-and-content
-//-             a(href="#").tab-link Надёжность
-//-                 svg.triangle
-//-                     polygon(points="0,0 20,0 10,20")
-//-             .tab-content
-//-                 .image
-//-                     img.image-pic(src="img/tabs-pic-1.png", alt="")
-//-                 .text
-//-                     svg.line.before-line
-//-                         line(x1="0" y1="0" x2="100" y2="0")
-//-                         line(x1="0" y1="0" x2="0" y2="50")
-//-                     p Специфика работы нашей разборки во многом отличается от других авто разборок Украины которые разбирают все марки автомобилей. Работы в определённой категории можем предложить своему клиенту лучшие запчасти.
-//-                         svg.line.after-line
-//-                             line(x1="0" y1="50" x2="100" y2="50")
-//-                             line(x1="100" y1="0" x2="100" y2="50")
-//-                         svg.line.after-line-second
-//-                             line(x1="0" y1="50" x2="100" y2="50")
-//-                             line(x1="100" y1="0" x2="100" y2="50")
+    
+    include ../../components/search/search
+
+    main.index#index
+        .index__container.container.content
+            .index__content
+
+                .index__header
+                    aside.index__sidebar
+                        ul.index__catalog.list
+                            -for(var i = 0; i < 6; i++)
+                                li.index__catalog-item
+                                    a.index__catalog-link.link(href="javascript:;")
+                                        span.index__catalog-image
+                                            img(src=require("../../assets/image/mercedes-sprinter.png"), alt="")
+                                        | Разборка Мерседес Вито (1999-2003)
+
+                                    ul.index__category.list
+                                        -for(var k = 0; k < 15; k++)
+                                            li.index__category-item
+                                                a.index__category-link.link(href="javascript:;")
+                                                    span.index__category-image
+                                                        img(src=require("../../assets/image/category/engines.png"))
+
+                                                    span.index__category-title 
+                                                        span Двигатель. Детали двигателя
+                                                            span.index__category-count  (20)
+
+                    flickity.index__slider(ref="flickity" :options="flickityOptions")
+                        -for(var i = 0; i < 3; i++ )
+                            .index__slide
+                                .index__slide-text
+                                    vue-typer.accent(
+                                    text='Случилась неожиданная поломка?'
+                                    :repeat="0"
+                                    @typed="onTyped(" + i + ")"
+                                    )
+                                    vue-typer(
+                                        v-if="typeds[" + i + "]"
+                                        text='Решим проблему любого водителя!'
+                                        :repeat="0"
+                                        )
+                                img.index__slide-image(src="http://via.placeholder.com/885x664")
+
+                h1.index__h1 Магазин авторазборки
+
+                include ../../components/last-products/last-products
+
+                include ../../components/video/video
+
+                include ../../components/excellence/excellence
+
+                h2.index__heading Почему нам можно доверять?
+
+                .index__trust
+
+                    flickity.index__trust-slider(ref="flickity" :options="trustOptions")
+                        each item, index in ["Опыт", "Качество", "Цена", "Надёжность"]
+                            .index__trust-slide
+                                h3.index__trust-title #{item}
+                                span.index__trust-image
+                                    img(src=require("../../assets/image/tabs-pic-1.png"), alt="")
+                        
+                                .index__trust-text-wrap
+                                    span.index__trust-text
+                                        | Специфика работы нашей разборки во многом отличается от других авто разборок Украины которые разбирают все марки автомобилей. Работы в определённой категории можем предложить своему клиенту лучшие запчасти.
+                                        span.index__trust-line
+                //- .index__tabs
+                //-     ul.index__control-list.list
+                //-         each item, index in ["Опыт", "Качество", "Цена", "Надёжность"]
+                //-             li.index__control-item(
+                //-                 :class="{ active: tabs[" + index + "] }" 
+                //-                 @click="toggleControls(" + index + ")") #{item}
+
+                //-     ul.index__content-list.list
+                //-         -for(var i = 0; i < 4; i++)
+                //-             li.index__content-item(v-if="tabs[" + i + "]")
+                //-                 span.index__content-image
+                //-                     img(src=require("../../assets/image/tabs-pic-1.png"), alt="")
+                    
+                //-                 .index__content-text-wrap
+                //-                     span.index__content-text
+                //-                         | Специфика работы нашей разборки во многом отличается от других авто разборок Украины которые разбирают все марки автомобилей. Работы в определённой категории можем предложить своему клиенту лучшие запчасти.
+                //-                         span.index__content-line
+
+                .text-block
+                    <h2 style="text-align: center">Danler – ваша разборка микроавтобусов в Украине!</h2>
+                    
+                    <p>Каждый автовладелец в процессе ремонта сталкивается с поиском необходимой автозапчасти для своего микроавтобуса, покупка которых может значительно ударить по карману.</p>
+
+                    <p>Специалисты Bus-razborka.com.ua выполняют&nbsp; разборку бусов с конечной диагностикой каждой детали, что бы Вы получили качественную запчасть по разумной стоимости.</p>
+
+                    <h2>Авторазборка Данлер &ndash; лучший помошник приобрести оригинальные б/у запчасти</h2>
+
+                    <p>Что нас выделяет от других сервисов Украины?</p>
+
+                    <ul>
+                        <li>Не специализируемся на разборке автомобилей, которые изжили себя, нам важно, что бы каждая деталь получаемая Вами соответствовала ожидаемому качеству.</li>
+                        <li>Заботимся о своей репутации, поэтому каждый покупатель получает гарантию на приобретенную запчасть.</li>
+                        <li>Используем качественное оборудование, что позволяет производить нам множество действий, направленных на диагностику и восстановление деталей.</li>
+                        <li>Ответственно подходим к вопросу упаковки пересылаемых заказов.</li>
+                    </ul>
+
+                    <h3>Разборка авто: отличия от других точек продаж автозапчастей</h3>
+
+                    <p>Магазины автозапчастей во многих случаях не могут предложить автовладельцам необходимые запчасти на микроавтобусы, по причинам снятия с производства или редкости той или иной детали. В этих случаях авторазборка &nbsp;&ndash; лучший помощник для автовладельца, так как тут можно заказать б/у запчасти, которые не найдешь в специализированных точках продаж. Главное преимущество авторазборки &ndash; доступная стоимость деталей.</p>
+
+                    <p>Ассортимент нашего каталога минимизирует ваше время на поиск деталей, так как все запчасти разбираются полностью с микроавтобуса, а не из определенных частей, и включает в себя:</p>
+
+                    <ul>
+                        <li>Элементы кузова, трансмиссии, подвески</li>
+                        <li>Двигатели в сборе и отдельные его элементы</li>
+                        <li>Электрооборудование</li>
+                        <li>Запчасти рулевой системы управления</li>
+                    </ul>
+
+                    <h3>&nbsp;Данлер&nbsp;&ndash; это лучшие решения с авторазборки для владельцев микроавтобусов!</h3>
+
+                    <p>Помимо опыта специалистов и качества проводимых нами работ, нам важно, что бы покупаемые б/у запчасти соответствовали техническим параметрам вашего авто, для этого мы:</p>
+
+                    <ol>
+                        <li>Позаботились о навигации на сайте, и создали его максимально удобным и понятным</li>
+                        <li>Предоставляем полную информацию по необходимой детали</li>
+                        <li>Оказываем исчерпывающие консультации, что бы Вы были уверенны в своем выборе</li>
+                        <li>Организовали внутреннюю логистику работы с целью более быстрой доставки</li>
+                    </ol>
+
+                    <p>Обращайтесь к нам и Вы убедитесь в качестве запчастей с нашей разборки!</p>
+
 //-     include ../_blocks/_reviews/_reviews
-
-
-//- block append custom_scripts
-//-     script(src="libs/owl-carousel-js/owl.carousel.min.js")
-//-     script(src="libs/typed/typed.min.js")
-//-     script(src="js/index-page.js")

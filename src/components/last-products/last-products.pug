@@ -1,0 +1,28 @@
+mixin controlItem(title, index)
+    li.last-products__control-item(:class="{ active: lastProducts.tabs[" + index + "] }" @click="toggleTabs(" + index + ")")
+        a.last-products__control-btn.btn.btn_dark.link(href="javascript:;") #{title}
+
+mixin contentItem(index)
+    li.last-products__content-item(:class="{ active: lastProducts.tabs[" + index + "] }")
+        +productsList()
+
+mixin productsList()
+    ul.last-products__list
+        - for (var k = 0; k < 4; k++)
+            li.last-products__item
+                span.last-products__img
+                    img(src="http://via.placeholder.com/220x165", alt="")
+
+                h5.last-products__title Блок двигателя Мерседес Спринтер 2.2 cdi (Mercedes Sprinter)
+
+                a.last-products__link.btn.btn_dark.link(href="products.html") Подробнее
+
+.last-products
+    h2.index__heading Последние добавленные запчасти
+    ul.last-products__control-list
+        -for(var i = 0; i < 6; i++)
+            +controlItem("Мерседес Спринтер", i)
+    ul.last-products__content-list
+        -for(var i = 0; i < 6; i++)
+            +contentItem(i)
+    a.last-products__all.btn.btn_accent.link(href="products.html") Все запчасти

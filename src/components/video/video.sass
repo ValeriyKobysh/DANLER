@@ -1,0 +1,99 @@
+.video
+    width: 100%
+    margin-bottom: 60px
+    position: relative
+
+    & > img
+        width: 100%
+
+    &__link
+        position: absolute
+        fill: text-color(hover)
+        +transition()
+
+        &:hover
+            fill: text-color(light)
+
+        svg
+            height: 100%
+
+.popup-video
+    position: fixed
+    top: 0
+    left: 0
+    +size(100%)
+    background-color: rgba(bg-color(main-light), .8)
+    z-index: 10000
+    display: none
+    align-items: center
+    justify-content: center
+
+    &.show
+        display: flex!important
+
+    &__wrap
+        +size(940px, 530px)
+        position: relative
+
+        & > iframe
+            +size(100%)
+            display: block!important
+            border-radius: 5px 0 5px 5px
+            border: 5px solid bg-color(red)
+
+    &__close
+        +size(45px)
+        +alignment()
+        position: absolute
+        right: 0px
+        top: -40px
+        background-color: bg-color(red)
+        border-radius: 5px
+        +transition()
+
+        &:hover
+            // background-color: lighten($bodyColor, 10%)
+
+        &:after, &:before
+            content: ""
+            +size(25px, 1px)
+            background-color: bg-color(white)
+            position: absolute
+
+        &:after
+            transform: rotateZ(45deg)
+
+        &:before
+            transform: rotateZ(-45deg)
+
++media-breakpoint-up(breakpoints(xl))
+    .video
+        height: 405px
+
++media-breakpoint-up(breakpoints(md))
+    .video
+
+        &__link
+            top: calc(50% - 50px)
+            left: calc(50% - 50px)
+            +size(100px)
+
++media-breakpoint-between(breakpoints(md), breakpoints(xl))
+    .popup-video
+
+        &__wrap
+            +size(600px, 330px)
+            width: 600px
+            height: 330px
+
++media-breakpoint-down(breakpoints(md))
+    .video
+
+        &__link
+            +size(50px)
+            top: calc(50% - 25px)
+            left: calc(50% - 25px)
+
+    .popup-video
+        &__wrap
+            +size(320px, 200px)
